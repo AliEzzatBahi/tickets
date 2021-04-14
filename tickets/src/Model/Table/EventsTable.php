@@ -116,10 +116,10 @@ class EventsTable extends Table
             ->notEmptyString('lng');
 
         $validator
-            ->scalar('location')
-            ->maxLength('location', 255)
-            ->requirePresence('location', 'create')
-            ->notEmptyString('location');
+            ->scalar('address')
+            ->maxLength('address', 255)
+            ->requirePresence('address', 'create')
+            ->notEmptyString('address');
 
         $validator
             ->boolean('is_hot')

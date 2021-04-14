@@ -29,7 +29,7 @@ class EventsSeed extends AbstractSeed
                 'image_folder' => '1234567',
                 'lat' => '12.514',
                 'lng' => '13.136',
-                'location' => '123 Street',
+                'address' => '123 Street',
                 'is_hot' => '1',
                 'video' => '#',
                 'city_id' => '1',

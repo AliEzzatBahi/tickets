@@ -15,7 +15,7 @@ use Cake\ORM\Entity;
  * @property string $image_folder
  * @property float $lat
  * @property float $lng
- * @property string $location
+ * @property string $address
  * @property bool $is_hot
  * @property string $video
  * @property int $city_id
@@ -48,7 +48,7 @@ class Event extends Entity
         'image_folder' => true,
         'lat' => true,
         'lng' => true,
-        'location' => true,
+        'address' => true,
         'is_hot' => true,
         'video' => true,
         'city_id' => true,

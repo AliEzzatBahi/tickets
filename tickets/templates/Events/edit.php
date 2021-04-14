@@ -1,43 +1,87 @@
-<?php
-/**
- * @var \App\View\AppView $this
- * @var \App\Model\Entity\Event $event
- */
-?>
-<div class="row">
-    <aside class="column">
-        <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Form->postLink(
-                __('Delete'),
-                ['action' => 'delete', $event->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $event->id), 'class' => 'side-nav-item']
-            ) ?>
-            <?= $this->Html->link(__('List Events'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
-        </div>
-    </aside>
-    <div class="column-responsive column-80">
-        <div class="events form content">
-            <?= $this->Form->create($event) ?>
-            <fieldset>
-                <legend><?= __('Edit Event') ?></legend>
-                <?php
-                    echo $this->Form->control('name');
-                    echo $this->Form->control('description');
-                    echo $this->Form->control('info');
-                    echo $this->Form->control('image_folder');
-                    echo $this->Form->control('lat');
-                    echo $this->Form->control('lng');
-                    echo $this->Form->control('location');
-                    echo $this->Form->control('is_hot');
-                    echo $this->Form->control('video');
-                    echo $this->Form->control('city_id', ['options' => $cities]);
-                    echo $this->Form->control('country_id', ['options' => $countries]);
-                    echo $this->Form->control('category_id', ['options' => $categories]);
-                ?>
-            </fieldset>
-            <?= $this->Form->button(__('Submit')) ?>
-            <?= $this->Form->end() ?>
+<div class="kt-content  kt-grid__item kt-grid__item--fluid" id="kt_content">
+    <div class="row">
+        <div class="col-md-6 form-data">
+
+            <!--begin::Portlet-->
+            <div class="kt-portlet">
+                <div class="kt-portlet__head">
+                    <div class="kt-portlet__head-label">
+                        <h3 class="kt-portlet__head-title">
+                            Edit Event
+                        </h3>
+                    </div>
+                </div>
+
+                <!--begin::Form-->
+                <?= $this->Form->create($event, ['class' => 'kt-form']) ?>
+                    <div class="kt-portlet__body">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <?= $this->Form->control('name', ['class' => 'form-control', 'placeholder' => 'Enter name', 'type' => 'text', 'label' => false]); ?>
+                        </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <?= $this->Form->control('description', ['class' => 'form-control', 'rows' => 3, 'label' => false]); ?>
+                        </div>
+                        <div class="form-group">
+                            <label>Info</label>
+                            <?= $this->Form->control('info', ['class' => 'form-control', 'rows' => 3, 'label' => false]); ?>
+                        </div>
+                        <div class="form-group">
+                            <label>Image Folder</label>
+                            <?= $this->Form->control('image_folder', ['class' => 'form-control', 'placeholder' => 'Enter image folder', 'type' => 'text', 'label' => false]); ?>
+                        </div>
+                        <div class="form-group">
+                            <label>LAT</label>
+                            <?= $this->Form->control('lat', ['class' => 'form-control', 'placeholder' => 'Enter latitude', 'type' => 'number', 'label' => false]); ?>
+                        </div>
+                        <div class="form-group">
+                            <label>LNG</label>
+                            <?= $this->Form->control('lng', ['class' => 'form-control', 'placeholder' => 'Enter longitude', 'type' => 'number', 'label' => false]); ?>
+                        </div>
+                        <div class="form-group">
+                            <label>Address</label>
+                            <?= $this->Form->control('address', ['class' => 'form-control', 'placeholder' => 'Enter address', 'type' => 'text', 'label' => false]); ?>
+                        </div>
+                        <div class="form-group">
+                            <div class="input checkbox">
+                                <input type="hidden" name="is_hot" value="0">
+                                <label for="is-hot" class="kt-checkbox">
+                                    <input type="checkbox" name="is_hot" value="1" id="is-hot">Is hot
+                                    <span></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleSelect1">Video</label>
+                            <?= $this->Form->control('video', ['class' => 'form-control', 'placeholder' => 'Enter first name', 'type' => 'text', 'label' => false]); ?>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleSelect1">Category</label>
+                            <?= $this->Form->control('category_id', ['options' => $categories, 'class' => 'form-control', 'label' => false]); ?>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleSelect1">Country</label>
+                            <?= $this->Form->control('country_id', ['options' => $countries, 'class' => 'form-control', 'label' => false]); ?>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleSelect1">City</label>
+                            <?= $this->Form->control('city_id', ['options' => $cities, 'class' => 'form-control', 'label' => false]); ?>
+                        </div>
+                    </div>
+                    <div class="kt-portlet__foot">
+                        <div class="kt-form__actions">
+                            <?= $this->Form->button(__('Submit'), ['class'=>'btn btn-primary']); ?>
+                            <button type="reset" class="btn btn-secondary">Clear data</button>
+                        </div>
+                    </div>
+                <?= $this->Form->end() ?>
+
+                <!--end::Form-->
+            </div>
+
+            <!--end::Portlet-->
+
         </div>
     </div>
 </div>

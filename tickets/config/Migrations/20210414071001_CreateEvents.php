@@ -41,7 +41,7 @@ class CreateEvents extends AbstractMigration
             'default' => null,
             'null' => false,
         ]);
-        $table->addColumn('location', 'string', [
+        $table->addColumn('address', 'string', [
             'default' => null,
             'limit' => 255,
             'null' => false,

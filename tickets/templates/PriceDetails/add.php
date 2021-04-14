@@ -1,33 +1,62 @@
-<?php
-/**
- * @var \App\View\AppView $this
- * @var \App\Model\Entity\PriceDetail $priceDetail
- */
-?>
-<div class="row">
-    <aside class="column">
-        <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Html->link(__('List Price Details'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
-        </div>
-    </aside>
-    <div class="column-responsive column-80">
-        <div class="priceDetails form content">
-            <?= $this->Form->create($priceDetail) ?>
-            <fieldset>
-                <legend><?= __('Add Price Detail') ?></legend>
-                <?php
-                    echo $this->Form->control('date');
-                    echo $this->Form->control('time');
-                    echo $this->Form->control('price');
-                    echo $this->Form->control('min_seats_number');
-                    echo $this->Form->control('max_seats_num');
-                    echo $this->Form->control('event_id', ['options' => $events]);
-                    echo $this->Form->control('ticket_type_id', ['options' => $ticketTypes]);
-                ?>
-            </fieldset>
-            <?= $this->Form->button(__('Submit')) ?>
-            <?= $this->Form->end() ?>
+<div class="kt-content  kt-grid__item kt-grid__item--fluid" id="kt_content">
+    <div class="row">
+        <div class="col-md-6 form-data">
+
+            <!--begin::Portlet-->
+            <div class="kt-portlet">
+                <div class="kt-portlet__head">
+                    <div class="kt-portlet__head-label">
+                        <h3 class="kt-portlet__head-title">
+                            Add Price Details
+                        </h3>
+                    </div>
+                </div>
+
+                <!--begin::Form-->
+                <?= $this->Form->create($priceDetail, ['class' => 'kt-form']) ?>
+                    <div class="kt-portlet__body">
+                        <div class="form-group">
+                            <label>Date</label>
+                            <?= $this->Form->control('date', ['class' => 'form-control', 'type' => 'date', 'label' => false]); ?>
+                        </div>
+                        <div class="form-group">
+                            <label>Time</label>
+                            <?= $this->Form->control('time', ['class' => 'form-control', 'type' => 'time', 'label' => false]); ?>
+                        </div>
+                        <div class="form-group">
+                            <label>Price</label>
+                            <?= $this->Form->control('price', ['class' => 'form-control', 'placeholder' => 'Enter price', 'type' => 'number', 'label' => false]); ?>
+                        </div>
+                        <div class="form-group">
+                            <label>Minimum Seats Number</label>
+                            <?= $this->Form->control('min_seats_number', ['class' => 'form-control', 'placeholder' => 'Enter minimum seats number', 'type' => 'number', 'label' => false]); ?>
+                        </div>
+                        <div class="form-group">
+                            <label>Maximum Seats Number</label>
+                            <?= $this->Form->control('max_seats_num', ['class' => 'form-control', 'placeholder' => 'Enter maximum seats number', 'type' => 'number', 'label' => false]); ?>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleSelect1">Event</label>
+                            <?= $this->Form->control('event_id', ['options' => $events, 'class' => 'form-control', 'label' => false]); ?>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleSelect1">Ticket Type</label>
+                            <?= $this->Form->control('ticket_type_id', ['options' => $ticketTypes, 'class' => 'form-control', 'label' => false]); ?>
+                        </div>
+                    </div>
+                    <div class="kt-portlet__foot">
+                        <div class="kt-form__actions">
+                            <?= $this->Form->button(__('Submit'), ['class'=>'btn btn-primary']); ?>
+                            <button type="reset" class="btn btn-secondary">Clear data</button>
+                        </div>
+                    </div>
+                <?= $this->Form->end() ?>
+
+                <!--end::Form-->
+            </div>
+
+            <!--end::Portlet-->
+
         </div>
     </div>
 </div>
