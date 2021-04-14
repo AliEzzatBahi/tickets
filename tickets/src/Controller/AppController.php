@@ -17,6 +17,7 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use Cake\Controller\Controller;
+use Cake\Event\EventInterface;
 
 /**
  * Application Controller
@@ -28,6 +29,16 @@ use Cake\Controller\Controller;
  */
 class AppController extends Controller
 {
+    public function beforeFilter(EventInterface $event)
+    {
+        parent::beforeFilter($event);
+
+        $this->viewBuilder()->setLayout('backend/backend');
+        
+        define('BASE_URL','http://localhost:8765');
+        $this->set('title', 'Tickets - ' . $this->request->getParam('controller') . ' ' . $this->request->getParam('action'));
+    }
+
     /**
      * Initialization hook method.
      *
