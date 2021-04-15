@@ -57,9 +57,19 @@
                                 <td><?= h($event->created) ?></td>
                                 <td><?= h($event->modified) ?></td>
                                 <td class="actions">
-                                    <?= $this->Html->link(__('View'), ['action' => 'view', $event->id]) ?>
-                                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $event->id]) ?>
-                                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $event->id], ['confirm' => __('Are you sure you want to delete # {0}?', $event->id)]) ?>
+                                    <?= $this->Html->link('<i class="flaticon-medical"></i>',
+                                        ['action' => 'view', $event->id],
+                                        ['escape' => false]) 
+                                    ?>
+                                    <?= $this->Html->link('<i class="flaticon-edit"></i>',
+                                        ['action' => 'edit', $event->id],
+                                        ['escape' => false]) 
+                                    ?>
+                                    <?= $this->Form->postLink(
+                                        $this->Html->tag('i', '', ['class' => 'flaticon-delete']),
+                                        ['action' => 'delete', $event->id],
+                                        ['confirm' => __('Are you sure you want to delete # {0}?', $event->id), 'escape'=>false])
+                                    ?>
                                 </td>
                             </tr>
                             <?php endforeach; ?>

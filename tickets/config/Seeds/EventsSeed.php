@@ -23,20 +23,20 @@ class EventsSeed extends AbstractSeed
         $data = [
             [
                 'id' => '1',
-                'name' => 'Layaly Ramadan',
+                'name' => 'Event Name',
                 'description' => 'This is description',
                 'info' => 'This is info',
-                'image_folder' => '1234567',
-                'lat' => '12.514',
-                'lng' => '13.136',
-                'address' => '123 Street',
+                'image_folder' => '#',
+                'lat' => '12.13',
+                'lng' => '13.12',
+                'address' => '10 Street',
                 'is_hot' => '1',
                 'video' => '#',
                 'city_id' => '1',
                 'country_id' => '1',
                 'category_id' => '1',
-                'created' => '2021-04-14 08:26:12',
-                'modified' => '2021-04-14 08:26:12',
+                'created' => '2021-04-15 08:09:15',
+                'modified' => '2021-04-15 08:09:15',
             ],
         ];
 

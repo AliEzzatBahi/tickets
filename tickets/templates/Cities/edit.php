@@ -1,33 +1,42 @@
-<?php
-/**
- * @var \App\View\AppView $this
- * @var \App\Model\Entity\City $city
- */
-?>
-<div class="row">
-    <aside class="column">
-        <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Form->postLink(
-                __('Delete'),
-                ['action' => 'delete', $city->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $city->id), 'class' => 'side-nav-item']
-            ) ?>
-            <?= $this->Html->link(__('List Cities'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
-        </div>
-    </aside>
-    <div class="column-responsive column-80">
-        <div class="cities form content">
-            <?= $this->Form->create($city) ?>
-            <fieldset>
-                <legend><?= __('Edit City') ?></legend>
-                <?php
-                    echo $this->Form->control('name');
-                    echo $this->Form->control('country_id', ['options' => $countries]);
-                ?>
-            </fieldset>
-            <?= $this->Form->button(__('Submit')) ?>
-            <?= $this->Form->end() ?>
+<div class="kt-content  kt-grid__item kt-grid__item--fluid" id="kt_content">
+    <div class="row">
+        <div class="col-md-6 form-data">
+
+            <!--begin::Portlet-->
+            <div class="kt-portlet">
+                <div class="kt-portlet__head">
+                    <div class="kt-portlet__head-label">
+                        <h3 class="kt-portlet__head-title">
+                            <?= __('Edit City') ?>
+                        </h3>
+                    </div>
+                </div>
+
+                <!--begin::Form-->
+                <?= $this->Form->create($city, ['class' => 'kt-form']) ?>
+                    <div class="kt-portlet__body">
+                        <div class="form-group">
+                            <label>First name</label>
+                            <?= $this->Form->control('name', ['class' => 'form-control', 'placeholder' => 'Enter first name', 'type' => 'text', 'label' => false]); ?>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleSelect1">Country</label>
+                            <?= $this->Form->control('country_id', ['options' => $countries, 'class' => 'form-control', 'label' => false]); ?>
+                        </div>
+                    </div>
+                    <div class="kt-portlet__foot">
+                        <div class="kt-form__actions">
+                            <?= $this->Form->button(__('Submit'), ['class'=>'btn btn-primary']); ?>
+                            <a href="<?= BASE_URL ?>/cities"><input type="button" class="btn btn-secondary" value="Cancel"></input></a>
+                        </div>
+                    </div>
+                <?= $this->Form->end() ?>
+
+                <!--end::Form-->
+            </div>
+
+            <!--end::Portlet-->
+
         </div>
     </div>
 </div>

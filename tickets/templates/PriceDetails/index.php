@@ -51,9 +51,19 @@
                                 <td><?= h($priceDetail->created) ?></td>
                                 <td><?= h($priceDetail->modified) ?></td>
                                 <td class="actions">
-                                    <?= $this->Html->link(__('View'), ['action' => 'view', $priceDetail->id]) ?>
-                                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $priceDetail->id]) ?>
-                                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $priceDetail->id], ['confirm' => __('Are you sure you want to delete # {0}?', $priceDetail->id)]) ?>
+                                    <?= $this->Html->link('<i class="flaticon-medical"></i>',
+                                        ['action' => 'view', $priceDetail->id],
+                                        ['escape' => false]) 
+                                    ?>
+                                    <?= $this->Html->link('<i class="flaticon-edit"></i>',
+                                        ['action' => 'edit', $priceDetail->id],
+                                        ['escape' => false]) 
+                                    ?>
+                                    <?= $this->Form->postLink(
+                                        $this->Html->tag('i', '', ['class' => 'flaticon-delete']),
+                                        ['action' => 'delete', $priceDetail->id],
+                                        ['confirm' => __('Are you sure you want to delete # {0}?', $priceDetail->id), 'escape'=>false])
+                                    ?>
                                 </td>
                             </tr>
                         <?php endforeach; ?>

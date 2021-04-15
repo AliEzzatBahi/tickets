@@ -7,7 +7,7 @@
                 <div class="kt-portlet__head">
                     <div class="kt-portlet__head-label">
                         <h3 class="kt-portlet__head-title">
-                            Edit Event
+                            <?= __('Edit Event') ?>
                         </h3>
                     </div>
                 </div>
@@ -44,13 +44,15 @@
                             <?= $this->Form->control('address', ['class' => 'form-control', 'placeholder' => 'Enter address', 'type' => 'text', 'label' => false]); ?>
                         </div>
                         <div class="form-group">
-                            <div class="input checkbox">
-                                <input type="hidden" name="is_hot" value="0">
-                                <label for="is-hot" class="kt-checkbox">
-                                    <input type="checkbox" name="is_hot" value="1" id="is-hot">Is hot
-                                    <span></span>
-                                </label>
-                            </div>
+                        <div class="input checkbox">
+                            <input type="hidden" name="is_hot" value="0">
+                            <label for="is-hot" class="kt-checkbox">
+                                <?= $this->Form->input('is_hot', ['type' => 'checkbox', 'id' => 'is-hot']);
+                                ?>
+                                Is hot
+                                <span></span>
+                            </label>
+                        </div>
                         </div>
                         <div class="form-group">
                             <label for="exampleSelect1">Video</label>
@@ -72,7 +74,7 @@
                     <div class="kt-portlet__foot">
                         <div class="kt-form__actions">
                             <?= $this->Form->button(__('Submit'), ['class'=>'btn btn-primary']); ?>
-                            <button type="reset" class="btn btn-secondary">Clear data</button>
+                            <a href="<?= BASE_URL ?>/events"><input type="button" class="btn btn-secondary" value="Cancel"></input></a>
                         </div>
                     </div>
                 <?= $this->Form->end() ?>

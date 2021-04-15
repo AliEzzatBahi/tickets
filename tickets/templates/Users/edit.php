@@ -7,7 +7,7 @@
                 <div class="kt-portlet__head">
                     <div class="kt-portlet__head-label">
                         <h3 class="kt-portlet__head-title">
-                            Edit User
+                            <?= __('Edit User') ?>
                         </h3>
                     </div>
                 </div>
@@ -64,7 +64,7 @@
                     <div class="kt-portlet__foot">
                         <div class="kt-form__actions">
                             <?= $this->Form->button(__('Submit'), ['class'=>'btn btn-primary']); ?>
-                            <button type="reset" class="btn btn-secondary">Clear data</button>
+                            <a href="<?= BASE_URL ?>/users"><input type="button" class="btn btn-secondary" value="Cancel"></input></a>
                         </div>
                     </div>
                 <?= $this->Form->end() ?>

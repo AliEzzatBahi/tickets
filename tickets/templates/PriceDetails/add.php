@@ -47,7 +47,7 @@
                     <div class="kt-portlet__foot">
                         <div class="kt-form__actions">
                             <?= $this->Form->button(__('Submit'), ['class'=>'btn btn-primary']); ?>
-                            <button type="reset" class="btn btn-secondary">Clear data</button>
+                            <a href="<?= BASE_URL ?>/price-details"><input type="button" class="btn btn-secondary" value="Cancel"></input></a>
                         </div>
                     </div>
                 <?= $this->Form->end() ?>
