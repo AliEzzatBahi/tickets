@@ -96,38 +96,65 @@
         </div>
     </div>
 </div>
-                        
 
-<div class="related">
-    <h4><?= __('Related Reservations') ?></h4>
-    <?php if (!empty($user->reservations)) : ?>
-    <div class="table-responsive">
-        <table>
-            <tr>
-                <th><?= __('Id') ?></th>
-                <th><?= __('Current Time') ?></th>
-                <th><?= __('Price Id') ?></th>
-                <th><?= __('User Id') ?></th>
-                <th><?= __('Created') ?></th>
-                <th><?= __('Modified') ?></th>
-                <th class="actions"><?= __('Actions') ?></th>
-            </tr>
-            <?php foreach ($user->reservations as $reservations) : ?>
-            <tr>
-                <td><?= h($reservations->id) ?></td>
-                <td><?= h($reservations->current_time) ?></td>
-                <td><?= h($reservations->price_id) ?></td>
-                <td><?= h($reservations->user_id) ?></td>
-                <td><?= h($reservations->created) ?></td>
-                <td><?= h($reservations->modified) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['controller' => 'Reservations', 'action' => 'view', $reservations->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'Reservations', 'action' => 'edit', $reservations->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Reservations', 'action' => 'delete', $reservations->id], ['confirm' => __('Are you sure you want to delete # {0}?', $reservations->id)]) ?>
-                </td>
-            </tr>
-            <?php endforeach; ?>
-        </table>
+<div class="kt-portlet">
+    <div class="kt-portlet__head">
+        <div class="kt-portlet__head-label">
+            <h3 class="kt-portlet__head-title">
+                <?= __('Related Reservations') ?>
+            </h3>
+        </div>
     </div>
-    <?php endif; ?>
+    <div class="kt-portlet__body">
+
+        <!--begin::Section-->
+        <div class="kt-section">
+            <?php if (!empty($user->reservations)) : ?>
+                <div class="kt-section__content">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th><?= __('Id') ?></th>
+                                <th><?= __('Price Detail Id') ?></th>
+                                <th><?= __('User Id') ?></th>
+                                <th><?= __('Created') ?></th>
+                                <th><?= __('Modified') ?></th>
+                                <th class="actions"><?= __('Actions') ?></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($user->reservations as $reservations) : ?>
+                                <tr>
+                                    <td><?= h($reservations->id) ?></td>
+                                    <td><?= h($reservations->price_detail_id) ?></td>
+                                    <td><?= h($reservations->user_id) ?></td>
+                                    <td><?= h($reservations->created) ?></td>
+                                    <td><?= h($reservations->modified) ?></td>
+                                    <td class="actions">
+                                        <?= $this->Html->link('<i class="flaticon-medical"></i>',
+                                            ['controller' => 'Reservations', 'action' => 'view', $reservations->id],
+                                            ['escape' => false]) 
+                                        ?>
+                                        <?= $this->Html->link('<i class="flaticon-edit"></i>',
+                                            ['controller' => 'Reservations', 'action' => 'edit', $reservations->id],
+                                            ['escape' => false]) 
+                                        ?>
+                                        <?= $this->Form->postLink(
+                                            $this->Html->tag('i', '', ['class' => 'flaticon-delete']),
+                                            ['controller' => 'Reservations', 'action' => 'delete', $reservations->id],
+                                            ['confirm' => __('Are you sure you want to delete # {0}?', $reservations->id), 'escape'=>false])
+                                        ?>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+            <?php endif; ?>
+        </div>
+
+        <!--end::Section-->
+    </div>
+
+    <!--end::Form-->
 </div>
