@@ -30,7 +30,6 @@
                             <th><?= $this->Paginator->sort('address') ?></th>
                             <th><?= $this->Paginator->sort('phone') ?></th>
                             <th><?= $this->Paginator->sort('email') ?></th>
-                            <th><?= $this->Paginator->sort('password') ?></th>
                             <th><?= $this->Paginator->sort('gender') ?></th>
                             <th><?= $this->Paginator->sort('image') ?></th>
                             <th><?= $this->Paginator->sort('group_id') ?></th>
@@ -50,7 +49,6 @@
                                 <td><?= h($user->address) ?></td>
                                 <td><?= h($user->phone) ?></td>
                                 <td><?= h($user->email) ?></td>
-                                <td><?= h($user->password) ?></td>
                                 <td><?= h($user->gender) ?></td>
                                 <td><?= h($user->image) ?></td>
                                 <td><?= $user->has('group') ? $this->Html->link($user->group->name, ['controller' => 'Groups', 'action' => 'view', $user->group->id]) : '' ?></td>
