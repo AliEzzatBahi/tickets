@@ -65,6 +65,9 @@ class UsersTable extends Table
         $this->hasMany('Reservations', [
             'foreignKey' => 'user_id',
         ]);
+        $this->hasMany('Notifications', [
+            'foreignKey' => 'user_id',
+        ]);
     }
 
     /**

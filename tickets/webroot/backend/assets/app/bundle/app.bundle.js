@@ -470,3 +470,13 @@ $(document).ready(function() {
         KTQuickSearchMobile().init(KTUtil.get('kt_quick_search_inline'));
     }
 });
+
+
+// Make item active in sidebar
+// $(document).ready(function () {
+//     $('.kt-menu__nav a').click(function(e) {
+//         $('.kt-menu__nav').find(".kt-menu__item--active").removeClass("kt-menu__item--active");
+//         $(this).parent().addClass('kt-menu__item--active');
+//         e.preventDefault();
+//     });
+// });

@@ -58,6 +58,7 @@ class User extends Entity
         'country' => true,
         'city' => true,
         'reservations' => true,
+        'notifications' => true,
     ];
 
     /**

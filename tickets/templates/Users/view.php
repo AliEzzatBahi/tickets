@@ -97,6 +97,7 @@
     </div>
 </div>
 
+<!-- Related Reservations -->
 <div class="kt-portlet">
     <div class="kt-portlet__head">
         <div class="kt-portlet__head-label">
@@ -143,6 +144,67 @@
                                             $this->Html->tag('i', '', ['class' => 'flaticon-delete']),
                                             ['controller' => 'Reservations', 'action' => 'delete', $reservations->id],
                                             ['confirm' => __('Are you sure you want to delete # {0}?', $reservations->id), 'escape'=>false])
+                                        ?>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+            <?php endif; ?>
+        </div>
+
+        <!--end::Section-->
+    </div>
+
+    <!--end::Form-->
+</div>
+
+<!-- Related Notifications -->
+<div class="kt-portlet">
+    <div class="kt-portlet__head">
+        <div class="kt-portlet__head-label">
+            <h3 class="kt-portlet__head-title">
+                <?= __('Related Notifications') ?>
+            </h3>
+        </div>
+    </div>
+    <div class="kt-portlet__body">
+
+        <!--begin::Section-->
+        <div class="kt-section">
+            <?php if (!empty($user->notifications)) : ?>
+                <div class="kt-section__content">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th><?= __('Id') ?></th>
+                                <th><?= __('Notification') ?></th>
+                                <th><?= __('Created') ?></th>
+                                <th><?= __('Modified') ?></th>
+                                <th class="actions"><?= __('Actions') ?></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($user->notifications as $notifications) : ?>
+                                <tr>
+                                    <td><?= h($notifications->id) ?></td>
+                                    <td><?= h($notifications->notification) ?></td>
+                                    <td><?= h($notifications->created) ?></td>
+                                    <td><?= h($notifications->modified) ?></td>
+                                    <td class="actions">
+                                        <?= $this->Html->link('<i class="flaticon-medical"></i>',
+                                            ['controller' => 'Notifications', 'action' => 'view', $notifications->id],
+                                            ['escape' => false]) 
+                                        ?>
+                                        <?= $this->Html->link('<i class="flaticon-edit"></i>',
+                                            ['controller' => 'Notifications', 'action' => 'edit', $notifications->id],
+                                            ['escape' => false]) 
+                                        ?>
+                                        <?= $this->Form->postLink(
+                                            $this->Html->tag('i', '', ['class' => 'flaticon-delete']),
+                                            ['controller' => 'Notifications', 'action' => 'delete', $notifications->id],
+                                            ['confirm' => __('Are you sure you want to delete # {0}?', $notifications->id), 'escape'=>false])
                                         ?>
                                     </td>
                                 </tr>
