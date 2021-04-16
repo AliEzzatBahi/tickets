@@ -25,7 +25,7 @@ class CategoriesSeed extends AbstractSeed
                 'id' => '1',
                 'name' => 'Arabic Egyptian',
                 'description' => 'This is description',
-                'image_folder' => '1234567',
+                'image_folder' => '1618583663',
                 'created' => '2021-04-14 08:25:17',
                 'modified' => '2021-04-14 08:25:17',
             ],

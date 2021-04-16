@@ -56,7 +56,10 @@ class CategoriesController extends AppController
             }
             $this->Flash->error(__('The category could not be saved. Please, try again.'));
         }
-        $this->set(compact('category'));
+        $image_folder_name_by_time = time();
+        if(!file_exists(ROOT."/webroot/responsive_filemanager/source/categories/" . $image_folder_name_by_time))
+            mkdir(ROOT."/webroot/responsive_filemanager/source/categories/" . $image_folder_name_by_time . '/', 0766);
+        $this->set(compact('category', 'image_folder_name_by_time'));
     }
 
     /**
@@ -71,16 +74,19 @@ class CategoriesController extends AppController
         $category = $this->Categories->get($id, [
             'contain' => [],
         ]);
+
+        $edit_images = $category->image_folder;
         if ($this->request->is(['patch', 'post', 'put'])) {
             $category = $this->Categories->patchEntity($category, $this->request->getData());
             if ($this->Categories->save($category)) {
+                chdir(ROOT."/webroot/responsive_filemanager/source/categories/" . $edit_images . '/');
                 $this->Flash->success(__('The category has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The category could not be saved. Please, try again.'));
         }
-        $this->set(compact('category'));
+        $this->set(compact('category', 'edit_images'));
     }
 
     /**

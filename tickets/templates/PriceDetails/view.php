@@ -18,16 +18,16 @@
                         <div class="kt-section__content">
                             <table class="table table-bordered table-hover">
                             <tr>
+                                <th><?= __('Id') ?></th>
+                                <td><?= $this->Number->format($priceDetail->id) ?></td>
+                            </tr>
+                            <tr>
                                 <th><?= __('Event') ?></th>
                                 <td><?= $priceDetail->has('event') ? $this->Html->link($priceDetail->event->name, ['controller' => 'Events', 'action' => 'view', $priceDetail->event->id]) : '' ?></td>
                             </tr>
                             <tr>
                                 <th><?= __('Ticket Type') ?></th>
                                 <td><?= $priceDetail->has('ticket_type') ? $this->Html->link($priceDetail->ticket_type->name, ['controller' => 'TicketTypes', 'action' => 'view', $priceDetail->ticket_type->id]) : '' ?></td>
-                            </tr>
-                            <tr>
-                                <th><?= __('Id') ?></th>
-                                <td><?= $this->Number->format($priceDetail->id) ?></td>
                             </tr>
                             <tr>
                                 <th><?= __('Price') ?></th>
@@ -42,8 +42,12 @@
                                 <td><?= $this->Number->format($priceDetail->max_seats_num) ?></td>
                             </tr>
                             <tr>
-                                <th><?= __('Date') ?></th>
-                                <td><?= h($priceDetail->date) ?></td>
+                                <th><?= __('Date From') ?></th>
+                                <td><?= h($priceDetail->date_from) ?></td>
+                            </tr>
+                            <tr>
+                                <th><?= __('Date To') ?></th>
+                                <td><?= h($priceDetail->date_to) ?></td>
                             </tr>
                             <tr>
                                 <th><?= __('Time') ?></th>
@@ -92,6 +96,7 @@
                             <tr>
                                 <th><?= __('Id') ?></th>
                                 <th><?= __('Seats Num') ?></th>
+                                <th><?= __('Total Price') ?></th>
                                 <th><?= __('Reservation Id') ?></th>
                                 <th><?= __('Price Detail Id') ?></th>
                                 <th><?= __('Created') ?></th>
@@ -104,6 +109,7 @@
                                 <tr>
                                     <td><?= h($reservationDetails->id) ?></td>
                                     <td><?= h($reservationDetails->seats_num) ?></td>
+                                    <td><?= h($reservationDetails->total_price) ?></td>
                                     <td><?= h($reservationDetails->reservation_id) ?></td>
                                     <td><?= h($reservationDetails->price_detail_id) ?></td>
                                     <td><?= h($reservationDetails->created) ?></td>

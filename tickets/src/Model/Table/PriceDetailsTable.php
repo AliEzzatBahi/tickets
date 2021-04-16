@@ -75,9 +75,14 @@ class PriceDetailsTable extends Table
             ->allowEmptyString('id', null, 'create');
 
         $validator
-            ->date('date')
-            ->requirePresence('date', 'create')
-            ->notEmptyDate('date');
+            ->date('date_from')
+            ->requirePresence('date_from', 'create')
+            ->notEmptyDate('date_from');
+
+        $validator
+            ->date('date_to')
+            ->requirePresence('date_to', 'create')
+            ->notEmptyDate('date_to');
 
         $validator
             ->time('time')

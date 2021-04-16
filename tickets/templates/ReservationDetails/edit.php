@@ -20,6 +20,10 @@
                             <?= $this->Form->control('seats_num', ['class' => 'form-control', 'placeholder' => 'Enter seats number', 'type' => 'number', 'label' => false]); ?>
                         </div>
                         <div class="form-group">
+                            <label>Total Price</label>
+                            <?= $this->Form->control('total_price', ['class' => 'form-control', 'placeholder' => 'Enter seats number', 'type' => 'number', 'label' => false]); ?>
+                        </div>
+                        <div class="form-group">
                             <label for="exampleSelect1">Price Detail</label>
                             <?= $this->Form->control('price_detail_id', ['options' => $priceDetails, 'class' => 'form-control', 'label' => false]); ?>
                         </div>

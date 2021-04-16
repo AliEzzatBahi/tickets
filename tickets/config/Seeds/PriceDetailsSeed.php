@@ -23,7 +23,8 @@ class PriceDetailsSeed extends AbstractSeed
         $data = [
             [
                 'id' => '1',
-                'date' => '2021-04-14',
+                'date_from' => '2021-04-14',
+                'date_to' => '2021-04-14',
                 'time' => '10:27:57',
                 'price' => '2300',
                 'min_seats_number' => '3',

@@ -24,6 +24,7 @@ class ReservationDetailsSeed extends AbstractSeed
             [
                 'id' => '1',
                 'seats_num' => '7',
+                'total_price' => '1350.0',
                 'reservation_id' => '1',
                 'price_detail_id' => '1',
                 'created' => '2021-04-14 08:47:31',

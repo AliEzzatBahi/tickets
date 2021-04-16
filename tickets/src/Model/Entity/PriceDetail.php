@@ -35,7 +35,8 @@ class PriceDetail extends Entity
      * @var array
      */
     protected $_accessible = [
-        'date' => true,
+        'date_from' => true,
+        'date_to' => true,
         'time' => true,
         'price' => true,
         'min_seats_number' => true,

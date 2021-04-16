@@ -179,7 +179,8 @@
                         <thead>
                             <tr>
                                 <th><?= __('Id') ?></th>
-                                <th><?= __('Date') ?></th>
+                                <th><?= __('Date From') ?></th>
+                                <th><?= __('Date To') ?></th>
                                 <th><?= __('Time') ?></th>
                                 <th><?= __('Price') ?></th>
                                 <th><?= __('Min Seats Number') ?></th>
@@ -195,7 +196,8 @@
                             <?php foreach ($event->price_details as $priceDetails) : ?>
                                 <tr>
                                     <td><?= h($priceDetails->id) ?></td>
-                                    <td><?= h($priceDetails->date) ?></td>
+                                    <td><?= h($priceDetails->date_from) ?></td>
+                                    <td><?= h($priceDetails->date_to) ?></td>
                                     <td><?= h($priceDetails->time) ?></td>
                                     <td><?= h($priceDetails->price) ?></td>
                                     <td><?= h($priceDetails->min_seats_number) ?></td>

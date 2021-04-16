@@ -15,7 +15,11 @@ class CreatePriceDetails extends AbstractMigration
     public function change()
     {
         $table = $this->table('price_details');
-        $table->addColumn('date', 'date', [
+        $table->addColumn('date_from', 'date', [
+            'default' => null,
+            'null' => false,
+        ]);
+        $table->addColumn('date_to', 'date', [
             'default' => null,
             'null' => false,
         ]);

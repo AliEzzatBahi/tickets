@@ -75,6 +75,11 @@ class ReservationDetailsTable extends Table
             ->requirePresence('seats_num', 'create')
             ->notEmptyString('seats_num');
 
+        $validator
+            ->numeric('total_price')
+            ->requirePresence('total_price', 'create')
+            ->notEmptyString('total_price');
+
         return $validator;
     }
 

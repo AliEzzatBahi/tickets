@@ -20,6 +20,10 @@ class CreateReservationDetails extends AbstractMigration
             'limit' => 11,
             'null' => false,
         ]);
+        $table->addColumn('total_price', 'double', [
+            'default' => null,
+            'null' => false,
+        ]);
         $table->addColumn('reservation_id', 'integer', [
             'default' => null,
             'limit' => 11,

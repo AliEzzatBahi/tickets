@@ -62,7 +62,11 @@ class EventsController extends AppController
         $cities = $this->Events->Cities->find('list', ['limit' => 200]);
         $countries = $this->Events->Countries->find('list', ['limit' => 200]);
         $categories = $this->Events->Categories->find('list', ['limit' => 200]);
-        $this->set(compact('event', 'cities', 'countries', 'categories'));
+        
+        $image_folder_name_by_time = time();
+        if(!file_exists(ROOT."/webroot/responsive_filemanager/source/events/" . $image_folder_name_by_time))
+            mkdir(ROOT."/webroot/responsive_filemanager/source/events/" . $image_folder_name_by_time . '/', 0766);
+        $this->set(compact('event', 'cities', 'countries', 'categories', 'image_folder_name_by_time'));
     }
 
     /**
@@ -77,9 +81,12 @@ class EventsController extends AppController
         $event = $this->Events->get($id, [
             'contain' => [],
         ]);
+
+        $edit_images = $event->image_folder;
         if ($this->request->is(['patch', 'post', 'put'])) {
             $event = $this->Events->patchEntity($event, $this->request->getData());
             if ($this->Events->save($event)) {
+                chdir(ROOT."/webroot/responsive_filemanager/source/events/" . $edit_images . '/');
                 $this->Flash->success(__('The event has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
@@ -89,7 +96,7 @@ class EventsController extends AppController
         $cities = $this->Events->Cities->find('list', ['limit' => 200]);
         $countries = $this->Events->Countries->find('list', ['limit' => 200]);
         $categories = $this->Events->Categories->find('list', ['limit' => 200]);
-        $this->set(compact('event', 'cities', 'countries', 'categories'));
+        $this->set(compact('event', 'cities', 'countries', 'categories', 'edit_images'));
     }
 
     /**

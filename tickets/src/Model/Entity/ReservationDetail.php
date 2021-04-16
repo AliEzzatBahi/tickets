@@ -31,6 +31,7 @@ class ReservationDetail extends Entity
      */
     protected $_accessible = [
         'seats_num' => true,
+        'total_price' => true,
         'reservation_id' => true,
         'price_detail_id' => true,
         'created' => true,

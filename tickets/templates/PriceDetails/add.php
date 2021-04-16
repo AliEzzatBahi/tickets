@@ -16,8 +16,12 @@
                 <?= $this->Form->create($priceDetail, ['class' => 'kt-form']) ?>
                     <div class="kt-portlet__body">
                         <div class="form-group">
-                            <label>Date</label>
-                            <?= $this->Form->control('date', ['class' => 'form-control', 'type' => 'date', 'label' => false]); ?>
+                            <label>Date From</label>
+                            <?= $this->Form->control('date_from', ['class' => 'form-control', 'type' => 'date', 'label' => false]); ?>
+                        </div>
+                        <div class="form-group">
+                            <label>Date To</label>
+                            <?= $this->Form->control('date_to', ['class' => 'form-control', 'type' => 'date', 'label' => false]); ?>
                         </div>
                         <div class="form-group">
                             <label>Time</label>

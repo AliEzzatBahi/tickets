@@ -25,7 +25,8 @@
                     <thead>
                         <tr>
                             <th><?= $this->Paginator->sort('id') ?></th>
-                            <th><?= $this->Paginator->sort('date') ?></th>
+                            <th><?= $this->Paginator->sort('date_from') ?></th>
+                            <th><?= $this->Paginator->sort('date_to') ?></th>
                             <th><?= $this->Paginator->sort('time') ?></th>
                             <th><?= $this->Paginator->sort('price') ?></th>
                             <th><?= $this->Paginator->sort('min_seats_number') ?></th>
@@ -41,7 +42,8 @@
                         <?php foreach ($priceDetails as $priceDetail): ?>
                             <tr>
                                 <td><?= $this->Number->format($priceDetail->id) ?></td>
-                                <td><?= h($priceDetail->date) ?></td>
+                                <td><?= h($priceDetail->date_from) ?></td>
+                                <td><?= h($priceDetail->date_to) ?></td>
                                 <td><?= h($priceDetail->time) ?></td>
                                 <td><?= $this->Number->format($priceDetail->price) ?></td>
                                 <td><?= $this->Number->format($priceDetail->min_seats_number) ?></td>

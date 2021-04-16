@@ -72,6 +72,7 @@
                             <tr>
                                 <th><?= __('Id') ?></th>
                                 <th><?= __('Seats Num') ?></th>
+                                <th><?= __('Total Price') ?></th>
                                 <th><?= __('Reservation Id') ?></th>
                                 <th><?= __('Price Detail Id') ?></th>
                                 <th><?= __('Created') ?></th>
@@ -84,6 +85,7 @@
                                 <tr>
                                     <td><?= h($reservationDetails->id) ?></td>
                                     <td><?= h($reservationDetails->seats_num) ?></td>
+                                    <td><?= h($reservationDetails->total_price) ?></td>
                                     <td><?= h($reservationDetails->reservation_id) ?></td>
                                     <td><?= h($reservationDetails->price_detail_id) ?></td>
                                     <td><?= h($reservationDetails->created) ?></td>

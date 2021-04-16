@@ -26,6 +26,7 @@
                         <tr>
                             <th><?= $this->Paginator->sort('id') ?></th>
                             <th><?= $this->Paginator->sort('seats_num') ?></th>
+                            <th><?= $this->Paginator->sort('total_price') ?></th>
                             <th><?= $this->Paginator->sort('reservation_id') ?></th>
                             <th><?= $this->Paginator->sort('price_detail_id') ?></th>
                             <th><?= $this->Paginator->sort('created') ?></th>
@@ -38,6 +39,7 @@
                             <tr>
                                 <td><?= $this->Number->format($reservationDetail->id) ?></td>
                                 <td><?= $this->Number->format($reservationDetail->seats_num) ?></td>
+                                <td><?= $this->Number->format($reservationDetail->total_price) ?></td>
                                 <td><?= $reservationDetail->has('reservation') ? $this->Html->link($reservationDetail->reservation->id, ['controller' => 'Reservations', 'action' => 'view', $reservationDetail->reservation->id]) : '' ?></td>
                                 <td><?= $reservationDetail->has('price_detail') ? $this->Html->link($reservationDetail->price_detail->id, ['controller' => 'PriceDetails', 'action' => 'view', $reservationDetail->price_detail->id]) : '' ?></td>
                                 <td><?= h($reservationDetail->created) ?></td>

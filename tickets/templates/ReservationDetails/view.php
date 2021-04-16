@@ -18,6 +18,10 @@
                         <div class="kt-section__content">
                             <table class="table table-bordered table-hover">
                                 <tr>
+                                    <th><?= __('Id') ?></th>
+                                    <td><?= $this->Number->format($reservationDetail->id) ?></td>
+                                </tr>
+                                <tr>
                                     <th><?= __('Reservation') ?></th>
                                     <td><?= $reservationDetail->has('reservation') ? $this->Html->link($reservationDetail->reservation->id, ['controller' => 'Reservations', 'action' => 'view', $reservationDetail->reservation->id]) : '' ?></td>
                                 </tr>
@@ -26,12 +30,12 @@
                                     <td><?= $reservationDetail->has('price_detail') ? $this->Html->link($reservationDetail->price_detail->id, ['controller' => 'PriceDetails', 'action' => 'view', $reservationDetail->price_detail->id]) : '' ?></td>
                                 </tr>
                                 <tr>
-                                    <th><?= __('Id') ?></th>
-                                    <td><?= $this->Number->format($reservationDetail->id) ?></td>
-                                </tr>
-                                <tr>
                                     <th><?= __('Seats Num') ?></th>
                                     <td><?= $this->Number->format($reservationDetail->seats_num) ?></td>
+                                </tr>
+                                <tr>
+                                    <th><?= __('Total Price') ?></th>
+                                    <td><?= $this->Number->format($reservationDetail->total_price) ?></td>
                                 </tr>
                                 <tr>
                                     <th><?= __('Created') ?></th>

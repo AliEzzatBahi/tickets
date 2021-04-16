@@ -26,7 +26,7 @@ class EventsSeed extends AbstractSeed
                 'name' => 'Event Name',
                 'description' => 'This is description',
                 'info' => 'This is info',
-                'image_folder' => '#',
+                'image_folder' => '1618581810',
                 'lat' => '12.13',
                 'lng' => '13.12',
                 'address' => '10 Street',

@@ -62,4 +62,25 @@ class Event extends Entity
         'additional_fees' => true,
         'price_details' => true,
     ];
+
+    // A virtual field for event images
+    protected function _getImages()
+    {
+        $image_folder = ROOT.'/webroot/responsive_filemanager/source/events/' . $this->image_folder;
+        $folder_URL = ROOT_URL.'/webroot/responsive_filemanager/source/events/' . $this->image_folder;
+        
+        $file_list = array();
+        if ($handle = opendir($image_folder)) {
+
+            while ($entry = readdir($handle)) {
+                if($entry == '.' || $entry == '..'){
+
+                }else{
+                    $file_list[] = $folder_URL.'/'.$entry;
+                }
+            }
+            closedir($handle);
+        }
+        return  $file_list;
+    }
 }

@@ -24,8 +24,11 @@
                             <?= $this->Form->control('description', ['class' => 'form-control', 'rows' => 3, 'label' => false]); ?>
                         </div>
                         <div class="form-group">
-                            <label>Image Folder</label>
-                            <?= $this->Form->control('image_folder', ['class' => 'form-control', 'placeholder' => 'Enter image folder', 'type' => 'text', 'label' => false]); ?>
+                        <label>Upload an Images (You Can Drag and Drop Your Images Here)</label>
+                            <iframe  style="width: 100%; height: 500px" frameborder="0"
+                                src="<?= BASE_URL ?>/responsive_filemanager/filemanager/dialog.php?type=2&field_id=image-folder&fldr=categories/<?= $edit_images ?>">
+                            </iframe>
+                            <?= $this->Form->control('image_folder', ['class' => 'form-control', 'placeholder' => 'Enter image folder', 'type' => 'text', 'label' => false, 'hidden', 'value' => $edit_images]); ?>
                         </div>
                     </div>
                     <div class="kt-portlet__foot">
