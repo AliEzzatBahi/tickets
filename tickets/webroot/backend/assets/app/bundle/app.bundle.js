@@ -480,3 +480,11 @@ $(document).ready(function() {
 //         e.preventDefault();
 //     });
 // });
+
+// function myFunction() {
+//     setTimeout(function(){
+//         $('#lat').keyup(function() {
+//             $('#review_lat').html($(this).val());
+//         });
+//      }, 5000);
+//   }

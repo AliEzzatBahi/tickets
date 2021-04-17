@@ -36,6 +36,9 @@ License: You must have a valid license purchased only from themeforest(the above
 
 		<!--begin::Page Vendors Styles(used by this page) -->
 		<link href="<?= BASE_URL ?>/backend/assets/vendors/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
+
+		<!-- Wizard Css -->
+		<link href="<?= BASE_URL ?>/backend/assets/app/custom/wizard/wizard-v1.default.css" rel="stylesheet" type="text/css" />
 		
 		<link href="<?= BASE_URL ?>/backend/assets/vendors/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
 		<!--end::Page Vendors Styles -->

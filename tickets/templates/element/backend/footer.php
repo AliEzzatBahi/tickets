@@ -722,6 +722,9 @@ var KTAppOptions = {
 <!--begin::Page Scripts(used by this page) -->
 <script src="<?= BASE_URL ?>/backend/assets/app/custom/general/dashboard.js" type="text/javascript"></script>
 <script src="<?= BASE_URL ?>/backend/assets/app/custom/general/crud/datatables/basic/headers.js" type="text/javascript"></script>
+
+<!-- Wizard JS -->
+<script src="<?= BASE_URL ?>/backend/assets/app/custom/wizard/wizard-v1.js" type="text/javascript"></script>
 <!--end::Page Scripts -->
 
 <!--begin::Global App Bundle(used by all pages) -->
