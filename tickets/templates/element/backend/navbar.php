@@ -770,7 +770,7 @@
 										<h3 class="kt-mycart__title">My Cart</h3>
 									</div>
 									<div class="kt-mycart__button">
-										<button type="button" class="btn btn-success btn-sm" style=" ">2 Items</button>
+										<button type="button" class="btn btn-success btn-sm">2 Items</button>
 									</div>
 								</div>
 								<div class="kt-mycart__body kt-scroll" data-scroll="true" data-height="245" data-mobile-height="200">
