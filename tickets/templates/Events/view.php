@@ -160,12 +160,12 @@
     <!--end::Form-->
 </div>
 
-<!-- Related Price Details -->
+<!-- Related Ticket Types -->
 <div class="kt-portlet">
     <div class="kt-portlet__head">
         <div class="kt-portlet__head-label">
             <h3 class="kt-portlet__head-title">
-                <?= __('Related Price Details') ?>
+                <?= __('Related Ticket Types') ?>
             </h3>
         </div>
     </div>
@@ -173,52 +173,40 @@
 
         <!--begin::Section-->
         <div class="kt-section">
-            <?php if (!empty($event->price_details)) : ?>
+            <?php if (!empty($event->ticket_types)) : ?>
                 <div class="kt-section__content">
                     <table class="table table-bordered table-hover">
                         <thead>
                             <tr>
                                 <th><?= __('Id') ?></th>
-                                <th><?= __('Date From') ?></th>
-                                <th><?= __('Date To') ?></th>
-                                <th><?= __('Time') ?></th>
-                                <th><?= __('Price') ?></th>
-                                <th><?= __('Min Seats Number') ?></th>
-                                <th><?= __('Max Seats Num') ?></th>
-                                <th><?= __('Event Id') ?></th>
-                                <th><?= __('Ticket Type Id') ?></th>
+                                <th><?= __('Name') ?></th>
+                                <th><?= __('Description') ?></th>
                                 <th><?= __('Created') ?></th>
                                 <th><?= __('Modified') ?></th>
                                 <th class="actions"><?= __('Actions') ?></th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($event->price_details as $priceDetails) : ?>
+                            <?php foreach ($event->ticket_types as $ticketTypes) : ?>
                                 <tr>
-                                    <td><?= h($priceDetails->id) ?></td>
-                                    <td><?= h($priceDetails->date_from) ?></td>
-                                    <td><?= h($priceDetails->date_to) ?></td>
-                                    <td><?= h($priceDetails->time) ?></td>
-                                    <td><?= h($priceDetails->price) ?></td>
-                                    <td><?= h($priceDetails->min_seats_number) ?></td>
-                                    <td><?= h($priceDetails->max_seats_num) ?></td>
-                                    <td><?= h($priceDetails->event_id) ?></td>
-                                    <td><?= h($priceDetails->ticket_type_id) ?></td>
-                                    <td><?= h($priceDetails->created) ?></td>
-                                    <td><?= h($priceDetails->modified) ?></td>
+                                    <td><?= h($ticketTypes->id) ?></td>
+                                    <td><?= h($ticketTypes->name) ?></td>
+                                    <td><?= h($ticketTypes->description) ?></td>
+                                    <td><?= h($ticketTypes->created) ?></td>
+                                    <td><?= h($ticketTypes->modified) ?></td>
                                     <td class="actions">
                                         <?= $this->Html->link('<i class="flaticon-medical"></i>',
-                                            ['controller' => 'PriceDetails', 'action' => 'view', $priceDetails->id],
+                                            ['controller' => 'TicketTypes', 'action' => 'view', $ticketTypes->id],
                                             ['escape' => false]) 
                                         ?>
                                         <?= $this->Html->link('<i class="flaticon-edit"></i>',
-                                            ['controller' => 'PriceDetails', 'action' => 'edit', $priceDetails->id],
+                                            ['controller' => 'TicketTypes', 'action' => 'edit', $ticketTypes->id],
                                             ['escape' => false]) 
                                         ?>
                                         <?= $this->Form->postLink(
                                             $this->Html->tag('i', '', ['class' => 'flaticon-delete']),
-                                            ['controller' => 'PriceDetails', 'action' => 'delete', $priceDetails->id],
-                                            ['confirm' => __('Are you sure you want to delete # {0}?', $priceDetails->id), 'escape'=>false])
+                                            ['controller' => 'TicketTypes', 'action' => 'delete', $ticketTypes->id],
+                                            ['confirm' => __('Are you sure you want to delete # {0}?', $ticketTypes->id), 'escape'=>false])
                                         ?>
                                     </td>
                                 </tr>

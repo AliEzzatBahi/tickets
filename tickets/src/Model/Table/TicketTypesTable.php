@@ -47,8 +47,10 @@ class TicketTypesTable extends Table
 
         $this->addBehavior('Timestamp');
 
-        $this->hasMany('PriceDetails', [
+        $this->belongsToMany('Events', [
             'foreignKey' => 'ticket_type_id',
+            'targetForeignKey' => 'event_id',
+            'joinTable' => 'price_details',
         ]);
     }
 

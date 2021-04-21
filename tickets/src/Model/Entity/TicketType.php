@@ -32,6 +32,6 @@ class TicketType extends Entity
         'description' => true,
         'created' => true,
         'modified' => true,
-        'price_details' => true,
+        'events' => true,
     ];
 }

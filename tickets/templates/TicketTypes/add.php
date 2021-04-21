@@ -23,6 +23,10 @@
                             <label>Description</label>
                             <?= $this->Form->control('description', ['class' => 'form-control', 'rows' => 3, 'label' => false]); ?>
                         </div>
+                        <div class="form-group">
+                            <label for="exampleSelect1">Events</label>
+                            <?= $this->Form->control('events._ids', ['options' => $events, 'class' => 'form-control', 'label' => false]); ?>
+                        </div>
                     </div>
                     <div class="kt-portlet__foot">
                         <div class="kt-form__actions">

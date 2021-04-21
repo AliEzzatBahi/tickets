@@ -60,7 +60,7 @@ class Event extends Entity
         'country' => true,
         'category' => true,
         'additional_fees' => true,
-        'price_details' => true,
+        'ticket_types' => true,
     ];
 
     // A virtual field for event images

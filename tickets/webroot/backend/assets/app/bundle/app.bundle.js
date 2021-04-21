@@ -6,29 +6,29 @@ var KTDemoPanel = function() {
 
     var init = function() {
         offcanvas = new KTOffcanvas(demoPanel, {
-            overlay: true,  
+            overlay: true,
             baseClass: 'kt-demo-panel',
             closeBy: 'kt_demo_panel_close',
             toggleBy: 'kt_demo_panel_toggle'
-        }); 
+        });
 
         var head = KTUtil.find(demoPanel, '.kt-demo-panel__head');
         var body = KTUtil.find(demoPanel, '.kt-demo-panel__body');
 
         KTUtil.scrollInit(body, {
-            disableForMobile: true, 
-            resetHeightOnDestroy: true, 
-            handleWindowResize: true, 
+            disableForMobile: true,
+            resetHeightOnDestroy: true,
+            handleWindowResize: true,
             height: function() {
                 var height = parseInt(KTUtil.getViewPort().height);
-               
+
                 if (head) {
                     height = height - parseInt(KTUtil.actualHeight(head));
                     height = height - parseInt(KTUtil.css(head, 'marginBottom'));
                 }
-        
+
                 height = height - parseInt(KTUtil.css(demoPanel, 'paddingTop'));
-                height = height - parseInt(KTUtil.css(demoPanel, 'paddingBottom'));    
+                height = height - parseInt(KTUtil.css(demoPanel, 'paddingBottom'));
 
                 return height;
             }
@@ -37,7 +37,7 @@ var KTDemoPanel = function() {
         if (typeof offcanvas !== 'undefined' && offcanvas.length === 0) {
             offcanvas.on('hide', function() {
                 var expires = new Date(new Date().getTime() + 60 * 60 * 1000); // expire in 60 minutes from now
-                Cookies.set('kt_demo_panel_shown', 1, {expires: expires});
+                Cookies.set('kt_demo_panel_shown', 1, { expires: expires });
             });
         }
     }
@@ -52,13 +52,13 @@ var KTDemoPanel = function() {
                 var expires = new Date(new Date().getTime() + 15 * 60 * 1000); // expire in 15 minutes from now
                 Cookies.set('kt_demo_panel_shown', 1, { expires: expires });
                 offcanvas.show();
-            } 
+            }
         }, 4000);
     }
 
-    return {     
-        init: function() {  
-            init(); 
+    return {
+        init: function() {
+            init();
             remind();
         }
     };
@@ -80,26 +80,26 @@ var KTOffcanvasPanel = function() {
         var body = KTUtil.find(notificationPanel, '.kt-offcanvas-panel__body');
 
         var offcanvas = new KTOffcanvas(notificationPanel, {
-            overlay: true,  
+            overlay: true,
             baseClass: 'kt-offcanvas-panel',
             closeBy: 'kt_offcanvas_toolbar_notifications_close',
             toggleBy: 'kt_offcanvas_toolbar_notifications_toggler_btn'
-        }); 
+        });
 
         KTUtil.scrollInit(body, {
-            disableForMobile: true, 
-            resetHeightOnDestroy: true, 
-            handleWindowResize: true, 
+            disableForMobile: true,
+            resetHeightOnDestroy: true,
+            handleWindowResize: true,
             height: function() {
                 var height = parseInt(KTUtil.getViewPort().height);
-               
+
                 if (head) {
                     height = height - parseInt(KTUtil.actualHeight(head));
                     height = height - parseInt(KTUtil.css(head, 'marginBottom'));
                 }
-        
+
                 height = height - parseInt(KTUtil.css(notificationPanel, 'paddingTop'));
-                height = height - parseInt(KTUtil.css(notificationPanel, 'paddingBottom'));    
+                height = height - parseInt(KTUtil.css(notificationPanel, 'paddingBottom'));
 
                 return height;
             }
@@ -111,26 +111,26 @@ var KTOffcanvasPanel = function() {
         var body = KTUtil.find(quickActionsPanel, '.kt-offcanvas-panel__body');
 
         var offcanvas = new KTOffcanvas(quickActionsPanel, {
-            overlay: true,  
+            overlay: true,
             baseClass: 'kt-offcanvas-panel',
             closeBy: 'kt_offcanvas_toolbar_quick_actions_close',
             toggleBy: 'kt_offcanvas_toolbar_quick_actions_toggler_btn'
-        }); 
+        });
 
         KTUtil.scrollInit(body, {
-            disableForMobile: true, 
-            resetHeightOnDestroy: true, 
-            handleWindowResize: true, 
+            disableForMobile: true,
+            resetHeightOnDestroy: true,
+            handleWindowResize: true,
             height: function() {
                 var height = parseInt(KTUtil.getViewPort().height);
-               
+
                 if (head) {
                     height = height - parseInt(KTUtil.actualHeight(head));
                     height = height - parseInt(KTUtil.css(head, 'marginBottom'));
                 }
-        
+
                 height = height - parseInt(KTUtil.css(quickActionsPanel, 'paddingTop'));
-                height = height - parseInt(KTUtil.css(quickActionsPanel, 'paddingBottom'));    
+                height = height - parseInt(KTUtil.css(quickActionsPanel, 'paddingBottom'));
 
                 return height;
             }
@@ -142,26 +142,26 @@ var KTOffcanvasPanel = function() {
         var body = KTUtil.find(profilePanel, '.kt-offcanvas-panel__body');
 
         var offcanvas = new KTOffcanvas(profilePanel, {
-            overlay: true,  
+            overlay: true,
             baseClass: 'kt-offcanvas-panel',
             closeBy: 'kt_offcanvas_toolbar_profile_close',
             toggleBy: 'kt_offcanvas_toolbar_profile_toggler_btn'
-        }); 
+        });
 
         KTUtil.scrollInit(body, {
-            disableForMobile: true, 
-            resetHeightOnDestroy: true, 
-            handleWindowResize: true, 
+            disableForMobile: true,
+            resetHeightOnDestroy: true,
+            handleWindowResize: true,
             height: function() {
                 var height = parseInt(KTUtil.getViewPort().height);
-               
+
                 if (head) {
                     height = height - parseInt(KTUtil.actualHeight(head));
                     height = height - parseInt(KTUtil.css(head, 'marginBottom'));
                 }
-        
+
                 height = height - parseInt(KTUtil.css(profilePanel, 'paddingTop'));
-                height = height - parseInt(KTUtil.css(profilePanel, 'paddingBottom'));    
+                height = height - parseInt(KTUtil.css(profilePanel, 'paddingBottom'));
 
                 return height;
             }
@@ -171,37 +171,37 @@ var KTOffcanvasPanel = function() {
     var initSearch = function() {
         var head = KTUtil.find(searchPanel, '.kt-offcanvas-panel__head');
         var body = KTUtil.find(searchPanel, '.kt-offcanvas-panel__body');
-        
+
         var offcanvas = new KTOffcanvas(searchPanel, {
-            overlay: true,  
+            overlay: true,
             baseClass: 'kt-offcanvas-panel',
             closeBy: 'kt_offcanvas_toolbar_search_close',
             toggleBy: 'kt_offcanvas_toolbar_search_toggler_btn'
-        }); 
+        });
 
         KTUtil.scrollInit(body, {
-            disableForMobile: true, 
-            resetHeightOnDestroy: true, 
-            handleWindowResize: true, 
+            disableForMobile: true,
+            resetHeightOnDestroy: true,
+            handleWindowResize: true,
             height: function() {
                 var height = parseInt(KTUtil.getViewPort().height);
-               
+
                 if (head) {
                     height = height - parseInt(KTUtil.actualHeight(head));
                     height = height - parseInt(KTUtil.css(head, 'marginBottom'));
                 }
-        
+
                 height = height - parseInt(KTUtil.css(searchPanel, 'paddingTop'));
-                height = height - parseInt(KTUtil.css(searchPanel, 'paddingBottom'));    
+                height = height - parseInt(KTUtil.css(searchPanel, 'paddingBottom'));
 
                 return height;
             }
         });
     }
 
-    return {     
-        init: function() {  
-            initNotifications(); 
+    return {
+        init: function() {
+            initNotifications();
             initQucikActions();
             initProfile();
             initSearch();
@@ -232,18 +232,18 @@ var KTQuickPanel = function() {
 
     var initOffcanvas = function() {
         var offcanvas = new KTOffcanvas(panel, {
-            overlay: true,  
+            overlay: true,
             baseClass: 'kt-quick-panel',
             closeBy: 'kt_quick_panel_close_btn',
             toggleBy: 'kt_quick_panel_toggler_btn'
-        });   
+        });
     }
 
     var initNotifications = function() {
         KTUtil.scrollInit(notificationPanel, {
-            disableForMobile: true, 
-            resetHeightOnDestroy: true, 
-            handleWindowResize: true, 
+            disableForMobile: true,
+            resetHeightOnDestroy: true,
+            handleWindowResize: true,
             height: function() {
                 return getContentHeight();
             }
@@ -252,9 +252,9 @@ var KTQuickPanel = function() {
 
     var initLogs = function() {
         KTUtil.scrollInit(logsPanel, {
-            disableForMobile: true, 
-            resetHeightOnDestroy: true, 
-            handleWindowResize: true, 
+            disableForMobile: true,
+            resetHeightOnDestroy: true,
+            handleWindowResize: true,
             height: function() {
                 return getContentHeight();
             }
@@ -263,9 +263,9 @@ var KTQuickPanel = function() {
 
     var initSettings = function() {
         KTUtil.scrollInit(settingsPanel, {
-            disableForMobile: true, 
-            resetHeightOnDestroy: true, 
-            handleWindowResize: true, 
+            disableForMobile: true,
+            resetHeightOnDestroy: true,
+            handleWindowResize: true,
             height: function() {
                 return getContentHeight();
             }
@@ -273,16 +273,16 @@ var KTQuickPanel = function() {
     }
 
     var updatePerfectScrollbars = function() {
-        $(panel).find('a[data-toggle="tab"]').on('shown.bs.tab', function (e) { 
+        $(panel).find('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
             KTUtil.scrollUpdate(notificationPanel);
             KTUtil.scrollUpdate(logsPanel);
             KTUtil.scrollUpdate(settingsPanel);
         });
     }
 
-    return {     
-        init: function() {  
-            initOffcanvas(); 
+    return {
+        init: function() {
+            initOffcanvas();
             initNotifications();
             initLogs();
             initSettings();
@@ -307,8 +307,8 @@ var KTQuickSearch = function() {
     var inputGroup;
     var query = '';
 
-    var hasResult = false; 
-    var timeout = false; 
+    var hasResult = false;
+    var timeout = false;
     var isProcessing = false;
     var requestTimeout = 200; // ajax request fire timeout in milliseconds 
     var spinnerClass = 'kt-spinner kt-spinner--input kt-spinner--sm kt-spinner--brand kt-spinner--right';
@@ -317,11 +317,11 @@ var KTQuickSearch = function() {
 
     var showProgress = function() {
         isProcessing = true;
-        KTUtil.addClass(inputGroup, spinnerClass); 
+        KTUtil.addClass(inputGroup, spinnerClass);
 
         if (closeIcon) {
             KTUtil.hide(closeIcon);
-        }       
+        }
     }
 
     var hideProgress = function() {
@@ -333,14 +333,14 @@ var KTQuickSearch = function() {
                 KTUtil.hide(closeIcon);
             } else {
                 KTUtil.show(closeIcon, 'flex');
-            }            
+            }
         }
     }
 
     var showDropdown = function() {
         if (resultDropdownToggle && !KTUtil.hasClass(resultDropdown, 'show')) {
             $(resultDropdownToggle).dropdown('toggle');
-            $(resultDropdownToggle).dropdown('update'); 
+            $(resultDropdownToggle).dropdown('update');
         }
     }
 
@@ -351,7 +351,7 @@ var KTQuickSearch = function() {
     }
 
     var processSearch = function() {
-        if (hasResult && query === input.value) {  
+        if (hasResult && query === input.value) {
             hideProgress();
             KTUtil.addClass(target, resultClass);
             showDropdown();
@@ -389,7 +389,7 @@ var KTQuickSearch = function() {
                     KTUtil.scrollUpdate(resultWrapper);
                 }
             });
-        }, 1000);       
+        }, 1000);
     }
 
     var handleCancel = function(e) {
@@ -419,20 +419,20 @@ var KTQuickSearch = function() {
 
         timeout = setTimeout(function() {
             processSearch();
-        }, requestTimeout);     
+        }, requestTimeout);
     }
 
-    return {     
-        init: function(element) { 
+    return {
+        init: function(element) {
             // Init
             target = element;
             form = KTUtil.find(target, '.kt-quick-search__form');
             input = KTUtil.find(target, '.kt-quick-search__input');
             closeIcon = KTUtil.find(target, '.kt-quick-search__close');
             resultWrapper = KTUtil.find(target, '.kt-quick-search__wrapper');
-            resultDropdown = KTUtil.find(target, '.dropdown-menu'); 
+            resultDropdown = KTUtil.find(target, '.dropdown-menu');
             resultDropdownToggle = KTUtil.find(target, '[data-toggle="dropdown"]');
-            inputGroup = KTUtil.find(target, '.input-group');           
+            inputGroup = KTUtil.find(target, '.input-group');
 
             // Attach input keyup handler
             KTUtil.addEvent(input, 'keyup', handleSearch);
@@ -440,21 +440,21 @@ var KTQuickSearch = function() {
 
             // Prevent enter click
             form.onkeypress = function(e) {
-                var key = e.charCode || e.keyCode || 0;     
+                var key = e.charCode || e.keyCode || 0;
                 if (key == 13) {
                     e.preventDefault();
                 }
             }
-           
-            KTUtil.addEvent(closeIcon, 'click', handleCancel);     
+
+            KTUtil.addEvent(closeIcon, 'click', handleCancel);
 
             // Auto-focus on the form input on dropdown form open
             var toggle = KTUtil.getByID('kt_quick_search_toggle');
             if (toggle) {
-                $(toggle).on('shown.bs.dropdown', function () {
+                $(toggle).on('shown.bs.dropdown', function() {
                     input.focus();
                 });
-            }  
+            }
         }
     };
 };
@@ -488,3 +488,76 @@ $(document).ready(function() {
 //         });
 //      }, 5000);
 //   }
+
+$(document).ready(function() {
+    var field = 0,
+        count = 0;
+    $("#add-ticket-button").click(function() {
+        count++;
+        var element = '<div id="ticket-type-block-' + count + '">' +
+                            '<div class="row">' +
+                                '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">' +
+                                    '<div class="form-group">' +
+                                        '<label for="ticket_types.' + field + '.name">Ticket Name</label>' +
+                                        '<input id="ticket_types.' + field + '.name" type="text" name="ticket_types[' + field + '][name]" class="form-control" placeholder="Enter ticket name"">' +
+                                    '</div>' +
+                                '</div>' +
+                            '</div>' +
+                            '<div class="row">' +
+                                '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">' +
+                                    '<div class="form-group">' +
+                                        '<label for="ticket_types.' + field + '.description">Ticket Description</label>' +
+                                        '<input id="ticket_types.' + field + '.description" type="text" name="ticket_types[' + field + '][description]" class="form-control"">' +
+                                    '</div>' +
+                                '</div>' +
+                            '</div>' +
+                            '<div class="row">' +
+                                '<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">' +
+                                    '<div class="form-group">' +
+                                        '<label for="event.ticket_types.' + field + '.date_from">Date From</label>' +
+                                        '<input id="event.ticket_types.' + field + '.date_from" type="date" name="event.ticket_types[0][date_from]" class="form-control"">' +
+                                    '</div>' +
+                                '</div>' +
+                                '<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">' +
+                                    '<div class="form-group">' +
+                                        '<label for="event.ticket_types.' + field + '.date_to">Date To</label>' +
+                                        '<input id="event.ticket_types.' + field + '.date_to" type="date" name="event.ticket_types[0][date_to]" class="form-control"">' +
+                                    '</div>' +
+                                '</div>' +
+                            '</div>' +
+                            '<div class="row">' +
+                                '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">' +
+                                    '<div class="form-group">' +
+                                        '<label for="event.ticket_types.' + field + '.time">Time</label>' +
+                                        '<input id="event.ticket_types.' + field + '.time" type="time" name="event.ticket_types[0][time]" class="form-control"">' +
+                                    '</div>' +
+                                '</div>' +
+                            '</div>' +
+                            '<div class="row">' +
+                                '<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">' +
+                                    '<div class="form-group">' +
+                                        '<label for="event.ticket_types.' + field + '.min_seats_number">Minimum Seats Number</label>' +
+                                        '<input id="event.ticket_types.' + field + '.min_seats_number" type="number" name="event.ticket_types[0][min_seats_number]" class="form-control" placeholder="Enter minimum seats number"">' +
+                                    '</div>' +
+                                '</div>' +
+                                '<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">' +
+                                    '<div class="form-group">' +
+                                        '<label for="event.ticket_types.' + field + '.max_seats_num">Maximum Seats Number</label>' +
+                                        '<input id="event.ticket_types.' + field + '.max_seats_num" type="number" name="event.ticket_types[0][max_seats_number]" class="form-control" placeholder="Enter maximum seats number"">' +
+                                    '</div>' +
+                                '</div>' +
+                            '</div>' +
+                            '<div class="row">' +
+                                '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">' +
+                                    '<div class="form-group">' +
+                                        '<label for="event.ticket_types.' + field + '.price">Price</label>' +
+                                        '<input id="event.ticket_types.' + field + '.price" type="number" name=event."ticket_types[0][price]" class="form-control" placeholder="Enter price"">' +
+                                    '</div>' +
+                                '</div>' +
+                            '</div>' +
+                        '</div>'
+
+        $('#ticket-type-rendered').append(element);
+        field++;
+    });
+});

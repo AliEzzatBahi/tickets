@@ -33,7 +33,7 @@ class TicketTypesController extends AppController
     public function view($id = null)
     {
         $ticketType = $this->TicketTypes->get($id, [
-            'contain' => ['PriceDetails'],
+            'contain' => ['Events'],
         ]);
 
         $this->set(compact('ticketType'));
@@ -56,7 +56,9 @@ class TicketTypesController extends AppController
             }
             $this->Flash->error(__('The ticket type could not be saved. Please, try again.'));
         }
-        $this->set(compact('ticketType'));
+        $events = $this->TicketTypes->Events->find('list', ['limit' => 200]);
+
+        $this->set(compact('ticketType', 'events'));
     }
 
     /**
@@ -69,7 +71,7 @@ class TicketTypesController extends AppController
     public function edit($id = null)
     {
         $ticketType = $this->TicketTypes->get($id, [
-            'contain' => [],
+            'contain' => ['Events'],
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $ticketType = $this->TicketTypes->patchEntity($ticketType, $this->request->getData());
@@ -80,7 +82,9 @@ class TicketTypesController extends AppController
             }
             $this->Flash->error(__('The ticket type could not be saved. Please, try again.'));
         }
-        $this->set(compact('ticketType'));
+        $events = $this->TicketTypes->Events->find('list', ['limit' => 200]);
+
+        $this->set(compact('ticketType', 'events'));
     }
 
     /**

@@ -61,7 +61,7 @@
                                             <i class="flaticon-truck"></i>
                                         </div>
                                         <div class="kt-wizard-v1__nav-label">
-                                            4) Delivery Address
+                                            4) Add Tickets
                                         </div>
                                     </div>
                                 </a>
@@ -118,7 +118,7 @@
 
                             <!--begin: Form Wizard Step 2-->
                             <div class="kt-wizard-v1__content" data-ktwizard-type="step-content">
-                                <div class="kt-heading kt-heading--md">Enter the Details of your Delivery</div>
+                                <div class="kt-heading kt-heading--md">Enter the Details of your Event</div>
                                 <div class="kt-form__section kt-form__section--first">
                                     <div class="kt-wizard-v1__form">
                                         <div class="form-group">
@@ -178,14 +178,18 @@
 
                             <!--begin: Form Wizard Step 4-->
                             <div class="kt-wizard-v1__content" data-ktwizard-type="step-content">
-                                <div class="kt-heading kt-heading--md">Setup Your Delivery Location</div>
+                                <div class="kt-heading kt-heading--md">Setup Your Tickets</div>
                                 <div class="kt-form__section kt-form__section--first">
                                     <div class="kt-wizard-v1__form">
-                                        <!-- <div class="form-group">
-                                            <label>Address Line 1</label>
-                                            <input type="text" class="form-control" name="locaddress1" placeholder="Address Line 1" value="Address Line 1">
-                                            <span class="form-text text-muted">Please enter your Address.</span>
-                                        </div> -->
+                                        <div id="ticket-type-rendered">
+                                            <!-- <div class="form-group">
+                                                <label for="exampleSelect1">Tickets</label>
+                                                <?= $this->Form->control('ticket_types._ids', ['options' => $ticketTypes, 'class' => 'form-control', 'label' => false]); ?>
+                                            </div> -->
+                                        </div>
+                                        <div class="form-group">
+                                            <?= $this->Form->button('Add Ticket', ['class' => 'btn btn-outline-brand', 'type' => 'button', 'id' => 'add-ticket-button']); ?>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

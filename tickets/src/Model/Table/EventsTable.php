@@ -66,8 +66,10 @@ class EventsTable extends Table
         $this->hasMany('AdditionalFees', [
             'foreignKey' => 'event_id',
         ]);
-        $this->hasMany('PriceDetails', [
+        $this->belongsToMany('TicketTypes', [
             'foreignKey' => 'event_id',
+            'targetForeignKey' => 'ticket_type_id',
+            'joinTable' => 'price_details',
         ]);
     }
 
@@ -83,53 +85,53 @@ class EventsTable extends Table
             ->integer('id')
             ->allowEmptyString('id', null, 'create');
 
-        $validator
-            ->scalar('name')
-            ->maxLength('name', 255)
-            ->requirePresence('name', 'create')
-            ->notEmptyString('name');
+        // $validator
+        //     ->scalar('name')
+        //     ->maxLength('name', 255)
+        //     ->requirePresence('name', 'create')
+        //     ->notEmptyString('name');
 
-        $validator
-            ->scalar('description')
-            ->requirePresence('description', 'create')
-            ->notEmptyString('description');
+        // $validator
+        //     ->scalar('description')
+        //     ->requirePresence('description', 'create')
+        //     ->notEmptyString('description');
 
-        $validator
-            ->scalar('info')
-            ->requirePresence('info', 'create')
-            ->notEmptyString('info');
+        // $validator
+        //     ->scalar('info')
+        //     ->requirePresence('info', 'create')
+        //     ->notEmptyString('info');
 
-        $validator
-            ->scalar('image_folder')
-            ->maxLength('image_folder', 255)
-            ->requirePresence('image_folder', 'create')
-            ->notEmptyFile('image_folder');
+        // $validator
+        //     ->scalar('image_folder')
+        //     ->maxLength('image_folder', 255)
+        //     ->requirePresence('image_folder', 'create')
+        //     ->notEmptyFile('image_folder');
 
-        $validator
-            ->numeric('lat')
-            ->requirePresence('lat', 'create')
-            ->notEmptyString('lat');
+        // $validator
+        //     ->numeric('lat')
+        //     ->requirePresence('lat', 'create')
+        //     ->notEmptyString('lat');
 
-        $validator
-            ->numeric('lng')
-            ->requirePresence('lng', 'create')
-            ->notEmptyString('lng');
+        // $validator
+        //     ->numeric('lng')
+        //     ->requirePresence('lng', 'create')
+        //     ->notEmptyString('lng');
 
-        $validator
-            ->scalar('address')
-            ->maxLength('address', 255)
-            ->requirePresence('address', 'create')
-            ->notEmptyString('address');
+        // $validator
+        //     ->scalar('address')
+        //     ->maxLength('address', 255)
+        //     ->requirePresence('address', 'create')
+        //     ->notEmptyString('address');
 
-        $validator
-            ->boolean('is_hot')
-            ->notEmptyString('is_hot');
+        // $validator
+        //     ->boolean('is_hot')
+        //     ->notEmptyString('is_hot');
 
-        $validator
-            ->scalar('video')
-            ->maxLength('video', 255)
-            ->requirePresence('video', 'create')
-            ->notEmptyString('video');
+        // $validator
+        //     ->scalar('video')
+        //     ->maxLength('video', 255)
+        //     ->requirePresence('video', 'create')
+        //     ->notEmptyString('video');
 
         return $validator;
     }
