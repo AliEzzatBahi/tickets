@@ -100,9 +100,9 @@ class PriceDetailsTable extends Table
             ->notEmptyString('min_seats_number');
 
         $validator
-            ->integer('max_seats_num')
-            ->requirePresence('max_seats_num', 'create')
-            ->notEmptyString('max_seats_num');
+            ->integer('max_seats_number')
+            ->requirePresence('max_seats_number', 'create')
+            ->notEmptyString('max_seats_number');
 
         return $validator;
     }

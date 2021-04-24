@@ -28,7 +28,7 @@ class PriceDetailsSeed extends AbstractSeed
                 'time' => '10:27:57',
                 'price' => '2300',
                 'min_seats_number' => '3',
-                'max_seats_num' => '10',
+                'max_seats_number' => '10',
                 'event_id' => '1',
                 'ticket_type_id' => '1',
                 'created' => '2021-04-14 08:28:04',

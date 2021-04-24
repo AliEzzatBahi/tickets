@@ -36,7 +36,7 @@ class CreatePriceDetails extends AbstractMigration
             'limit' => 11,
             'null' => false,
         ]);
-        $table->addColumn('max_seats_num', 'integer', [
+        $table->addColumn('max_seats_number', 'integer', [
             'default' => null,
             'limit' => 11,
             'null' => false,

@@ -40,7 +40,7 @@ class PriceDetail extends Entity
         'time' => true,
         'price' => true,
         'min_seats_number' => true,
-        'max_seats_num' => true,
+        'max_seats_number' => true,
         'event_id' => true,
         'ticket_type_id' => true,
         'created' => true,

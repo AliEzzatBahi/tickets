@@ -51,9 +51,9 @@ class EventsController extends AppController
     {
         $event = $this->Events->newEmptyEntity();
         if ($this->request->is('post')) {
-            $event = $this->Events->patchEntity($event, $this->request->getData(), ['associated' => ['TicketTypes']]
-            );
-            if ($this->Events->save($event, ['associated' => ['TicketTypes._joinData']])) {
+            $event = $this->Events->patchEntity($event, $this->request->getData());
+            if ($this->Events->save($event)) {
+                $this->addTicketTypesToEvent($event->id);
                 $this->Flash->success(__('The event has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
@@ -121,5 +121,35 @@ class EventsController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+
+    public function addTicketTypesToEvent($event_id)
+    {
+        $this->autoRender = false;
+        $this->loadModel('TicketTypes');
+        $this->loadModel('PriceDetails');
+
+        $field = $_REQUEST['field'];
+        for($i=0; $i<=(int)$field; $i++){
+            $ticketType = $this->TicketTypes->newEmptyEntity();
+            $priceDetail = $this->PriceDetails->newEmptyEntity();
+
+            $this->request->allowMethod(['post', 'put']);
+            $ticketType->name = $_REQUEST['t_name'][$i];
+            $ticketType->description = $_REQUEST['t_desc'][$i];
+
+            if ($this->TicketTypes->save($ticketType)) {
+                $priceDetail->date_from = $_REQUEST['date_from'][$i];
+                $priceDetail->date_to = $_REQUEST['date_to'][$i];
+                $priceDetail->time = $_REQUEST['time'][$i];
+                $priceDetail->min_seats_number = $_REQUEST['min'][$i];
+                $priceDetail->max_seats_number = $_REQUEST['max'][$i];
+                $priceDetail->price = $_REQUEST['price'][$i];
+                $priceDetail->event_id = $event_id;
+                $priceDetail->ticket_type_id = $ticketType->id;
+
+                $this->PriceDetails->save($priceDetail);
+            } 
+        }
     }
 }

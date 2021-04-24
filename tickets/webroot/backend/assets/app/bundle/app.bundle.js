@@ -489,6 +489,11 @@ $(document).ready(function() {
 //      }, 5000);
 //   }
 
+$('#event-submit').click(function(e) {
+    history.go(-1);
+});
+
+
 $(document).ready(function() {
     var field = 0,
         count = 0;
@@ -498,8 +503,9 @@ $(document).ready(function() {
                             '<div class="row">' +
                                 '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">' +
                                     '<div class="form-group">' +
+                                        '<input type="hidden" name="field" value="' + field + '" " />' +
                                         '<label for="ticket_types.' + field + '.name">Ticket Name</label>' +
-                                        '<input id="ticket_types.' + field + '.name" type="text" name="ticket_types[' + field + '][name]" class="form-control" placeholder="Enter ticket name"">' +
+                                        '<input id="ticket_types.' + field + '.name" type="text" name="t_name[' + field + ']" class="form-control" placeholder="Enter ticket name"">' +
                                     '</div>' +
                                 '</div>' +
                             '</div>' +
@@ -507,7 +513,7 @@ $(document).ready(function() {
                                 '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">' +
                                     '<div class="form-group">' +
                                         '<label for="ticket_types.' + field + '.description">Ticket Description</label>' +
-                                        '<input id="ticket_types.' + field + '.description" type="text" name="ticket_types[' + field + '][description]" class="form-control"">' +
+                                        '<input id="ticket_types.' + field + '.description" type="text" name="t_desc[' + field + ']" class="form-control"">' +
                                     '</div>' +
                                 '</div>' +
                             '</div>' +
@@ -515,13 +521,13 @@ $(document).ready(function() {
                                 '<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">' +
                                     '<div class="form-group">' +
                                         '<label for="event.ticket_types.' + field + '.date_from">Date From</label>' +
-                                        '<input id="event.ticket_types.' + field + '.date_from" type="date" name="event.ticket_types[0][date_from]" class="form-control"">' +
+                                        '<input id="event.ticket_types.' + field + '.date_from" type="date" name="date_from[' + field + ']" class="form-control"">' +
                                     '</div>' +
                                 '</div>' +
                                 '<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">' +
                                     '<div class="form-group">' +
                                         '<label for="event.ticket_types.' + field + '.date_to">Date To</label>' +
-                                        '<input id="event.ticket_types.' + field + '.date_to" type="date" name="event.ticket_types[0][date_to]" class="form-control"">' +
+                                        '<input id="event.ticket_types.' + field + '.date_to" type="date" name="date_to[' + field + ']" class="form-control"">' +
                                     '</div>' +
                                 '</div>' +
                             '</div>' +
@@ -529,7 +535,7 @@ $(document).ready(function() {
                                 '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">' +
                                     '<div class="form-group">' +
                                         '<label for="event.ticket_types.' + field + '.time">Time</label>' +
-                                        '<input id="event.ticket_types.' + field + '.time" type="time" name="event.ticket_types[0][time]" class="form-control"">' +
+                                        '<input id="event.ticket_types.' + field + '.time" type="time" name="time[' + field + ']" class="form-control"">' +
                                     '</div>' +
                                 '</div>' +
                             '</div>' +
@@ -537,13 +543,13 @@ $(document).ready(function() {
                                 '<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">' +
                                     '<div class="form-group">' +
                                         '<label for="event.ticket_types.' + field + '.min_seats_number">Minimum Seats Number</label>' +
-                                        '<input id="event.ticket_types.' + field + '.min_seats_number" type="number" name="event.ticket_types[0][min_seats_number]" class="form-control" placeholder="Enter minimum seats number"">' +
+                                        '<input id="event.ticket_types.' + field + '.min_seats_number" type="number" name="min[' + field + ']" class="form-control" placeholder="Enter minimum seats number"">' +
                                     '</div>' +
                                 '</div>' +
                                 '<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">' +
                                     '<div class="form-group">' +
                                         '<label for="event.ticket_types.' + field + '.max_seats_num">Maximum Seats Number</label>' +
-                                        '<input id="event.ticket_types.' + field + '.max_seats_num" type="number" name="event.ticket_types[0][max_seats_number]" class="form-control" placeholder="Enter maximum seats number"">' +
+                                        '<input id="event.ticket_types.' + field + '.max_seats_num" type="number" name="max[' + field + ']" class="form-control" placeholder="Enter maximum seats number"">' +
                                     '</div>' +
                                 '</div>' +
                             '</div>' +
@@ -551,7 +557,7 @@ $(document).ready(function() {
                                 '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">' +
                                     '<div class="form-group">' +
                                         '<label for="event.ticket_types.' + field + '.price">Price</label>' +
-                                        '<input id="event.ticket_types.' + field + '.price" type="number" name=event."ticket_types[0][price]" class="form-control" placeholder="Enter price"">' +
+                                        '<input id="event.ticket_types.' + field + '.price" type="number" name="price[' + field + ']" class="form-control" placeholder="Enter price"">' +
                                     '</div>' +
                                 '</div>' +
                             '</div>' +
