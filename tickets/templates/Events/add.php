@@ -182,10 +182,7 @@
                                 <div class="kt-form__section kt-form__section--first">
                                     <div class="kt-wizard-v1__form">
                                         <div id="ticket-type-rendered">
-                                            <!-- <div class="form-group">
-                                                <label for="exampleSelect1">Tickets</label>
-                                                <?= $this->Form->control('ticket_types._ids', ['options' => $ticketTypes, 'class' => 'form-control', 'label' => false]); ?>
-                                            </div> -->
+                                        
                                         </div>
                                         <div class="form-group">
                                             <?= $this->Form->button('Add Ticket', ['class' => 'btn btn-outline-brand', 'type' => 'button', 'id' => 'add-ticket-button']); ?>

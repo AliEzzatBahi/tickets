@@ -46,9 +46,9 @@ class CreatePriceDetails extends AbstractMigration
             'limit' => 11,
             'null' => false,
         ]);
-        $table->addColumn('ticket_type_id', 'string', [
+        $table->addColumn('ticket_type_id', 'integer', [
             'default' => null,
-            'limit' => 255,
+            'limit' => 11,
             'null' => false,
         ]);
         $table->addColumn('created', 'datetime', [

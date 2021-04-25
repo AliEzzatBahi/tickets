@@ -59,6 +59,7 @@ class PriceDetailsController extends AppController
             }
             $this->Flash->error(__('The price detail could not be saved. Please, try again.'));
         }
+        var_dump($priceDetail);
         $events = $this->PriceDetails->Events->find('list', ['limit' => 200]);
         $ticketTypes = $this->PriceDetails->TicketTypes->find('list', ['limit' => 200]);
         $this->set(compact('priceDetail', 'events', 'ticketTypes'));

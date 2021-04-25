@@ -37,7 +37,7 @@
                         </div>
                         <div class="form-group">
                             <label>Maximum Seats Number</label>
-                            <?= $this->Form->control('max_seats_num', ['class' => 'form-control', 'placeholder' => 'Enter maximum seats number', 'type' => 'number', 'label' => false]); ?>
+                            <?= $this->Form->control('max_seats_number', ['class' => 'form-control', 'placeholder' => 'Enter maximum seats number', 'type' => 'number', 'label' => false]); ?>
                         </div>
                         <div class="form-group">
                             <label for="exampleSelect1">Event</label>
