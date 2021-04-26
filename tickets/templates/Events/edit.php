@@ -162,9 +162,9 @@
                                     <div class="form-group">
                                         <label>Upload an Images (You Can Drag and Drop Your Images Here)</label>
                                         <iframe  style="width: 100%; height: 500px" frameborder="0"
-                                            src="<?= BASE_URL ?>/responsive_filemanager/filemanager/dialog.php?type=2&field_id=image-folder&fldr=events/<?= $edit_images ?>">
+                                            src="<?= BASE_URL ?>/responsive_filemanager/filemanager/dialog.php?type=2&field_id=image-folder&fldr=events/<?= $image_folder_name_by_time ?>">
                                         </iframe>
-                                        <?= $this->Form->control('image_folder', ['class' => 'form-control', 'placeholder' => 'Enter image folder', 'type' => 'text', 'hidden', 'label' => false, 'value' => $edit_images]); ?>
+                                        <?= $this->Form->control('image_folder', ['class' => 'form-control', 'placeholder' => 'Enter image folder', 'type' => 'text', 'hidden', 'label' => false, 'value' => $image_folder_name_by_time]); ?>
                                     </div>
                                     
                                     
@@ -185,7 +185,7 @@
                                     <div class="kt-wizard-v1__form">
                                         <?php
                                             foreach($event->ticket_types as $event_ticket_type){ ?>
-                                            <div id="ticket-type-rendered">
+                                            <div id="edit-ticket-type-rendered">
                                                 <div class="row">
                                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                         <div class="form-group">
@@ -244,18 +244,14 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <input type="hidden" value="<?= $event->id ?>" name="event_id">
-                                                <input type="hidden" value="<?= $event_ticket_type->id ?>" name="price_detail_id" id="price_detail_id">
-                                                <button id="delete-ticket-from-event" class="btn btn-outline-danger btn-icon remove-ticket-btn">
+                                                <input type="hidden" value="<?= $event_ticket_type->id ?>" name="price_detail_id">
+                                                <input type="hidden" value="<?= $event_ticket_type->_joinData->ticket_type_id ?>" name="ticket_type_id">
+                                                <a href="<?= BASE_URL ?>/events/deleteTicketTypeFromEvent/<?= $event_ticket_type->id ?>/<?= $event_ticket_type->_joinData->ticket_type_id ?>" class="btn btn-outline-danger btn-icon remove-ticket-btn">
                                                     <i class="far fa-trash-alt"></i>
-                                                </button>
+                                                </a>
                                             </div>
                                         <?php }
                                         ?>
-                                        
-                                        <div id="add-ticket-type-rendered">
-
-                                        </div>
                                         <div class="form-group">
                                             <?= $this->Form->button('Add Ticket', ['class' => 'btn btn-outline-brand', 'type' => 'button', 'id' => 'add-ticket-button']); ?>
                                         </div>

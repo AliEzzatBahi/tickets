@@ -181,7 +181,7 @@
                                 <div class="kt-heading kt-heading--md">Setup Your Tickets</div>
                                 <div class="kt-form__section kt-form__section--first">
                                     <div class="kt-wizard-v1__form">
-                                        <div id="add-ticket-type-rendered">
+                                        <div id="ticket-type-rendered">
                                         
                                         </div>
                                         <div class="form-group">
