@@ -157,32 +157,38 @@ class EventsController extends AppController
         }
     }
 
-    public function deleteTicketTypeFromEvent($priceDetail_id, $ticketType_id)
-    {
-        $this->autoRender = false;
-        $this->loadModel('TicketTypes');
-        $this->loadModel('PriceDetails');
-
-        if($this->request->allowMethod(['post', 'delete'])){
-            $priceDetail = $this->PriceDetails->get($priceDetail_id);
-
-            if ($this->PriceDetails->delete($priceDetail)) {
-                $ticketType = $this->TicketTypes->get($ticketType_id);
-                if ($this->TicketTypes->delete($ticketType)) {
-                    $this->Flash->success(__('The ticket type has been deleted.'));
-                }
-            }
-        }
-    }
-
     public function editTicketType($price_detail_id, $ticket_type_id){
         $this->autoRender = false;
         $this->loadModel('TicketTypes');
         $this->loadModel('PriceDetails');
         
-        $ticket_type = $this->TicketTypes->get($ticket_type_id);
+        $ticketType = $this->TicketTypes->get($ticket_type_id);
 
-        $price_detail->title = 'CakePHP is THE best PHP framework!';
-        $articlesTable->save($article);
+        $ticketType->name = $_REQUEST['ticket_name'];
+        $ticketType->description = $_REQUEST['ticket_description'];
+        $this->TicketTypes->save($ticketType);
+
+        $priceDetail = $this->TicketTypes->get($price_detail_id);
+        $priceDetail->date_from = $_REQUEST['price_detail_date_from'];
+        $priceDetail->date_to = $_REQUEST['price_detail_date_to'];
+        $priceDetail->time = $_REQUEST['price_detail_time'];
+        $priceDetail->min_seats_number = $_REQUEST['price_detail_min_seats'];
+        $priceDetail->max_seats_number = $_REQUEST['price_detail_max_seats'];
+        $priceDetail->price = $_REQUEST['price_detail_price'];
+        $this->PriceDetails->save($priceDetail);
+        $this->addTicketTypesToEvent($_REQUEST['event_id']);
+    }
+
+    public function deleteTicketTypeFromEvent($priceDetail_id)
+    {
+        $this->autoRender = false;
+        $this->loadModel('PriceDetails');
+
+        if($this->request->allowMethod(['post', 'delete'])){
+            $priceDetail = $this->PriceDetails->get($priceDetail_id);
+            if ($this->PriceDetails->delete($priceDetail)) {
+                $this->Flash->success(__('The ticket type has been deleted.'));
+            }
+        }
     }
 }
