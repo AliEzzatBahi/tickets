@@ -65,7 +65,7 @@
                                         </div>
                                     </div>
                                 </a>
-                                <a class="kt-wizard-v1__nav-item" href="#" data-ktwizard-type="step">
+                                <!-- <a class="kt-wizard-v1__nav-item" href="#" data-ktwizard-type="step">
                                     <div class="kt-wizard-v1__nav-body">
                                         <div class="kt-wizard-v1__nav-icon">
                                             <i class="flaticon-globe"></i>
@@ -74,7 +74,7 @@
                                             5) Review and Submit
                                         </div>
                                     </div>
-                                </a>
+                                </a> -->
                             </div>
                         </div>
 
@@ -194,7 +194,7 @@
                             <!--end: Form Wizard Step 4-->
 
                             <!--begin: Form Wizard Step 5-->
-                            <div class="kt-wizard-v1__content" data-ktwizard-type="step-content">
+                            <!-- <div class="kt-wizard-v1__content" data-ktwizard-type="step-content">
                                 <div class="kt-heading kt-heading--md">Review your Details and Submit</div>
                                 <div class="kt-form__section kt-form__section--first">
                                     <div class="kt-wizard-v1__review">
@@ -227,7 +227,7 @@
                                                 Preferred Morning (8:00AM - 11:00AM) Delivery
                                             </div>
                                         </div>
-                                        <!-- <div class="kt-wizard-v1__review-item">
+                                        <div class="kt-wizard-v1__review-item">
                                             <div class="kt-wizard-v1__review-title">
                                                 Delivery Address
                                             </div>
@@ -236,10 +236,10 @@
                                                 Address Line 2<br />
                                                 Preston 3072, VIC, Australia
                                             </div>
-                                        </div> -->
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
 
                             <!--end: Form Wizard Step 5-->
 
