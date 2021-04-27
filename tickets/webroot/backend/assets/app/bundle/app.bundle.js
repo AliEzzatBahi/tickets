@@ -501,8 +501,8 @@ $(document).ready(function() {
         var element = '<div id="ticket-type-block-' + count + '">' +
                             '<div class="row">' +
                                 '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">' +
+                                    '<input type="hidden" name="field" value="' + field + '" " />' +
                                     '<div class="form-group">' +
-                                        '<input type="hidden" name="field" value="' + field + '" " />' +
                                         '<label for="ticket_types.' + field + '.name">Ticket Name</label>' +
                                         '<input id="ticket_types.' + field + '.name" type="text" name="ticket_name[' + field + ']" class="form-control" placeholder="Enter ticket name"">' +
                                     '</div>' +
@@ -560,7 +560,26 @@ $(document).ready(function() {
                             '</div>' +
                         '</div>'
 
-        $('#ticket-type-rendered').append(element);
+        $('#add-ticket-type-rendered').append(element);
         field++;
     });
+
+    // Delete a Ticket Type From Event
+    $("#delete-ticket-from-event").click(function() {
+        var priceDetailId = $("#price_detail_id").val()
+        var ticketTypeId = $("#ticket_type_id").val()
+        $.ajax({
+            type : "POST",
+            dataType : "json",
+            contentType: "application/json; charset=utf-8",
+            url : "/events/deleteTicketTypeFromEvent/" + priceDetailId + "/" + ticketTypeId,
+            success: function(data){
+                alert("Item Deleted Successfully")
+            },
+            error: function (e) {
+                // console.log(e);
+            }
+        });
+    });
+
 });

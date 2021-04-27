@@ -29087,6 +29087,13 @@ body {
   margin: auto;
 }
 
+#add-ticket-type-rendered{
+  border: 1px solid #f2f3f8;
+  border-radius: 5%;
+  padding: 20px;
+  margin: 10px;
+}
+
 #edit-ticket-type-rendered{
   border: 1px solid #f2f3f8;
   border-radius: 5%;

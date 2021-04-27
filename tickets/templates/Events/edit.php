@@ -162,9 +162,9 @@
                                     <div class="form-group">
                                         <label>Upload an Images (You Can Drag and Drop Your Images Here)</label>
                                         <iframe  style="width: 100%; height: 500px" frameborder="0"
-                                            src="<?= BASE_URL ?>/responsive_filemanager/filemanager/dialog.php?type=2&field_id=image-folder&fldr=events/<?= $image_folder_name_by_time ?>">
+                                            src="<?= BASE_URL ?>/responsive_filemanager/filemanager/dialog.php?type=2&field_id=image-folder&fldr=events/<?= $edit_images ?>">
                                         </iframe>
-                                        <?= $this->Form->control('image_folder', ['class' => 'form-control', 'placeholder' => 'Enter image folder', 'type' => 'text', 'hidden', 'label' => false, 'value' => $image_folder_name_by_time]); ?>
+                                        <?= $this->Form->control('image_folder', ['class' => 'form-control', 'placeholder' => 'Enter image folder', 'type' => 'text', 'hidden', 'label' => false, 'value' => $edit_images]); ?>
                                     </div>
                                     
                                     
@@ -184,13 +184,13 @@
                                 <div class="kt-form__section kt-form__section--first">
                                     <div class="kt-wizard-v1__form">
                                         <?php
-                                            foreach($event->ticket_types as $event_ticket_type){ ?>
+                                            foreach($event->ticket_types as $key => $event_ticket_type){ ?>
                                             <div id="edit-ticket-type-rendered">
                                                 <div class="row">
                                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                         <div class="form-group">
                                                             <label for="ticket_type_name">Ticket Name</label>
-                                                            <input id="ticket_type_name" type="text" name="ticket_name" class="form-control" placeholder="Enter ticket name" value="<?= $event_ticket_type->name ?>">
+                                                            <input id="ticket_type_name" type="text" name="ticket_name[<?= $key ?>]" class="form-control" placeholder="Enter ticket name" value="<?= $event_ticket_type->name ?>">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -198,7 +198,7 @@
                                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                         <div class="form-group">
                                                             <label for="ticket_type_description">Ticket Description</label>
-                                                            <textarea id="ticket_type_description" type="text" name="ticket_description" class="form-control"><?= $event_ticket_type->description ?></textarea>
+                                                            <textarea id="ticket_type_description" type="text" name="ticket_description[<?= $key ?>]" class="form-control"><?= $event_ticket_type->description ?></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -206,19 +206,19 @@
                                                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                                                         <div class="form-group">
                                                             <label for="price_detail_date_from">Date From</label>
-                                                            <input id="price_detail_date_from" type="date" name="price_detail_date_from" class="form-control" value="<?= date("Y-m-d", strtotime($event_ticket_type->_joinData->date_from)) ?>">
+                                                            <input id="price_detail_date_from" type="date" name="price_detail_date_from[<?= $key ?>]" class="form-control" value="<?= date("Y-m-d", strtotime($event_ticket_type->_joinData->date_from)) ?>">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                                                         <div class="form-group">
                                                             <label for="price_detail_date_to">Date To</label>
-                                                            <input id="price_detail_date_to" type="date" name="price_detail_date_to" class="form-control" value="<?= date("Y-m-d", strtotime($event_ticket_type->_joinData->date_to)) ?>">
+                                                            <input id="price_detail_date_to" type="date" name="price_detail_date_to[<?= $key ?>]" class="form-control" value="<?= date("Y-m-d", strtotime($event_ticket_type->_joinData->date_to)) ?>">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                                                         <div class="form-group">
                                                             <label for="price_detail_time">Time</label>
-                                                            <input id="price_detail_time" type="time" name="price_detail_time" class="form-control" value="<?= date("g:i", strtotime($event_ticket_type->_joinData->time)) ?>">
+                                                            <input id="price_detail_time" type="time" name="price_detail_time[<?= $key ?>]" class="form-control" value="<?= date("g:i", strtotime($event_ticket_type->_joinData->time)) ?>">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -226,13 +226,13 @@
                                                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                                         <div class="form-group">
                                                             <label for="price_detail_min_seats_number">Minimum Seats Number</label>
-                                                            <input id="price_detail_min_seats_number" type="number" name="price_detail_min_seats" class="form-control" placeholder="Enter minimum seats number" value="<?= $event_ticket_type->_joinData->min_seats_number ?>">
+                                                            <input id="price_detail_min_seats_number" type="number" name="price_detail_min_seats[<?= $key ?>]" class="form-control" placeholder="Enter minimum seats number" value="<?= $event_ticket_type->_joinData->min_seats_number ?>">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                                         <div class="form-group">
                                                             <label for="price_detail_max_seats_num">Maximum Seats Number</label>
-                                                            <input id="price_detail_max_seats_num" type="number" name="price_detail_max_seats" class="form-control" placeholder="Enter maximum seats number" value="<?= $event_ticket_type->_joinData->max_seats_number ?>">
+                                                            <input id="price_detail_max_seats_num" type="number" name="price_detail_max_seats[<?= $key ?>]" class="form-control" placeholder="Enter maximum seats number" value="<?= $event_ticket_type->_joinData->max_seats_number ?>">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -240,18 +240,24 @@
                                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                         <div class="form-group">
                                                             <label for="price_detail_price">Price</label>
-                                                            <input id="price_detail_price" type="number" name="price_detail_price" class="form-control" placeholder="Enter price" value="<?= $event_ticket_type->_joinData->price ?>">
+                                                            <input id="price_detail_price" type="number" name="price_detail_price[<?= $key ?>]" class="form-control" placeholder="Enter price" value="<?= $event_ticket_type->_joinData->price ?>">
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <input type="hidden" value="<?= $event_ticket_type->id ?>" name="price_detail_id">
-                                                <input type="hidden" value="<?= $event_ticket_type->_joinData->ticket_type_id ?>" name="ticket_type_id">
-                                                <a href="<?= BASE_URL ?>/events/deleteTicketTypeFromEvent/<?= $event_ticket_type->id ?>/<?= $event_ticket_type->_joinData->ticket_type_id ?>" class="btn btn-outline-danger btn-icon remove-ticket-btn">
+
+                                                <input type="hidden" value="<?= $key ?>" name="edit_key">
+                                                <input type="hidden" value="<?= $event_ticket_type->_joinData->id ?>" name="price_detail_id[<?= $key ?>]" id="price_detail_id">
+                                                <input type="hidden" value="<?= $event_ticket_type->_joinData->ticket_type_id ?>" name="ticket_type_id[<?= $key ?>]" id="ticket_type_id">
+                                                
+                                                <button class="btn btn-outline-danger btn-icon remove-ticket-btn" id="delete-ticket-from-event">
                                                     <i class="far fa-trash-alt"></i>
-                                                </a>
+                                                </button>
                                             </div>
                                         <?php }
                                         ?>
+                                        <div id="add-ticket-type-rendered">
+
+                                        </div>
                                         <div class="form-group">
                                             <?= $this->Form->button('Add Ticket', ['class' => 'btn btn-outline-brand', 'type' => 'button', 'id' => 'add-ticket-button']); ?>
                                         </div>

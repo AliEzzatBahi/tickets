@@ -89,7 +89,28 @@ class EventsController extends AppController
             $event = $this->Events->patchEntity($event, $this->request->getData());
             if ($this->Events->save($event)) {
 
-                $this->editTicketType($_REQUEST['price_detail_id'], $_REQUEST['ticket_type_id']);
+                $this->loadModel('TicketTypes');
+                $this->loadModel('PriceDetails');
+                
+                $edit_key = $_REQUEST['edit_key'];
+                for($i=0; $i<=(int)$edit_key; $i++){
+                    $ticketType = $this->TicketTypes->get($_REQUEST['ticket_type_id'][$i]);
+                    
+                    $ticketType->name = $_REQUEST['ticket_name'][$i];
+                    $ticketType->description = $_REQUEST['ticket_description'][$i];
+                    $this->TicketTypes->save($ticketType);
+                    
+                    $priceDetail = $this->PriceDetails->get($_REQUEST['price_detail_id'][$i]);
+                    $priceDetail->date_from = $_REQUEST['price_detail_date_from'][$i];
+                    $priceDetail->date_to = $_REQUEST['price_detail_date_to'][$i];
+                    $priceDetail->time = $_REQUEST['price_detail_time'][$i];
+                    $priceDetail->min_seats_number = $_REQUEST['price_detail_min_seats'][$i];
+                    $priceDetail->max_seats_number = $_REQUEST['price_detail_max_seats'][$i];
+                    $priceDetail->price = $_REQUEST['price_detail_price'][$i];
+                    $this->PriceDetails->save($priceDetail);
+                }
+                
+                $this->addTicketTypesToEvent($event->id);
                 chdir(ROOT."/webroot/responsive_filemanager/source/events/" . $edit_images . '/');
                 $this->Flash->success(__('The event has been saved.'));
 
@@ -136,53 +157,37 @@ class EventsController extends AppController
             $ticketType = $this->TicketTypes->newEmptyEntity();
             $priceDetail = $this->PriceDetails->newEmptyEntity();
 
-            if($this->request->allowMethod(['post', 'put']))
-            {
-                $ticketType->name = $_REQUEST['ticket_name'][$i];
-                $ticketType->description = $_REQUEST['ticket_desc'][$i];
+            $ticketType->name = $_REQUEST['ticket_name'][$i];
+            $ticketType->description = $_REQUEST['ticket_desc'][$i];
 
-                if ($this->TicketTypes->save($ticketType)) {
-                    $priceDetail->date_from = $_REQUEST['price_detail_date_from'][$i];
-                    $priceDetail->date_to = $_REQUEST['price_detail_date_to'][$i];
-                    $priceDetail->time = $_REQUEST['price_detail_time'][$i];
-                    $priceDetail->min_seats_number = $_REQUEST['price_detail_min_seats'][$i];
-                    $priceDetail->max_seats_number = $_REQUEST['price_detail_max_seats'][$i];
-                    $priceDetail->price = $_REQUEST['price_detail_price'][$i];
-                    $priceDetail->event_id = $event_id;
-                    $priceDetail->ticket_type_id = $ticketType->id;
+            if ($this->TicketTypes->save($ticketType)) {
+                $priceDetail->date_from = $_REQUEST['price_detail_date_from'][$i];
+                $priceDetail->date_to = $_REQUEST['price_detail_date_to'][$i];
+                $priceDetail->time = $_REQUEST['price_detail_time'][$i];
+                $priceDetail->min_seats_number = $_REQUEST['price_detail_min_seats'][$i];
+                $priceDetail->max_seats_number = $_REQUEST['price_detail_max_seats'][$i];
+                $priceDetail->price = $_REQUEST['price_detail_price'][$i];
+                $priceDetail->event_id = $event_id;
+                $priceDetail->ticket_type_id = $ticketType->id;
 
-                    $this->PriceDetails->save($priceDetail);
-                } 
+                $this->PriceDetails->save($priceDetail);
             }
         }
     }
 
-    public function deleteTicketTypeFromEvent($priceDetail_id, $ticketType_id)
+    public function deleteTicketTypeFromEvent($priceDetail_id, $ticket_type_id)
     {
         $this->autoRender = false;
-        $this->loadModel('TicketTypes');
         $this->loadModel('PriceDetails');
+        $this->loadModel('TicketTypes');
 
         if($this->request->allowMethod(['post', 'delete'])){
             $priceDetail = $this->PriceDetails->get($priceDetail_id);
+            $this->PriceDetails->delete($priceDetail);
 
-            if ($this->PriceDetails->delete($priceDetail)) {
-                $ticketType = $this->TicketTypes->get($ticketType_id);
-                if ($this->TicketTypes->delete($ticketType)) {
-                    $this->Flash->success(__('The ticket type has been deleted.'));
-                }
-            }
+            $ticketType = $this->TicketTypes->get($ticket_type_id);
+            $this->TicketTypes->delete($ticketType);
         }
     }
 
-    public function editTicketType($price_detail_id, $ticket_type_id){
-        $this->autoRender = false;
-        $this->loadModel('TicketTypes');
-        $this->loadModel('PriceDetails');
-        
-        $ticket_type = $this->TicketTypes->get($ticket_type_id);
-
-        $price_detail->title = 'CakePHP is THE best PHP framework!';
-        $articlesTable->save($article);
-    }
 }
