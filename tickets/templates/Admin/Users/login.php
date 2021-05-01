@@ -1,39 +1,24 @@
-<div class="users form">
-    <?= $this->Flash->render() ?>
-    <h3>Login</h3>
-    <?= $this->Form->create() ?>
-    <fieldset>
-        <legend><?= __('Please enter your username and password') ?></legend>
-        <?= $this->Form->control('email', ['required' => true]) ?>
-        <?= $this->Form->control('password', ['required' => true]) ?>
-    </fieldset>
-    <?= $this->Form->submit(__('Login')); ?>
-    <?= $this->Form->end() ?>
-
-    <?= $this->Html->link("Add User", ['action' => 'add']) ?>
-</div>
-
-<!-- <div class="kt-grid kt-grid--ver kt-grid--root">
-    <div class="kt-grid kt-grid--hor kt-grid--root kt-login kt-login--v2 kt-login--signin" id="kt_login">
-        <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" style="background-image: url(<?= BASE_URL ?>/backend/assets/media//bg/bg-1.jpg);">
+<div class="kt-grid kt-grid--ver kt-grid--root">
+    <div class="kt-grid kt-grid--hor kt-grid--root  kt-login kt-login--v4 kt-login--signin" id="kt_login">
+        <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" style="background-image: url(<?= BASE_URL ?>/backend/assets/media/bg/bg-2.jpg);">
             <div class="kt-grid__item kt-grid__item--fluid kt-login__wrapper">
                 <div class="kt-login__container">
                     <div class="kt-login__logo">
                         <a href="#">
-                            <img src="<?= BASE_URL ?>/backend/assets/media/logos/logo-mini-2-md.png">
+                            <img src="<?= BASE_URL ?>/backend/assets/media/logos/logo-5.png">
                         </a>
                     </div>
-                    <div class="kt-login__signin users form">
+                    <div class="kt-login__signin">
                         <?= $this->Flash->render() ?>
                         <div class="kt-login__head">
-                            <h3 class="kt-login__title">Sign In To Tickets System</h3>
+                            <h3 class="kt-login__title">Sign In To Admin</h3>
                         </div>
-                        <form method="post" accept-charset="utf-8" action="/admin/users/login" class="kt-form">
+                        <?= $this->Form->create(null, ['class' => 'kt-form']) ?>
                             <div class="input-group">
-                                <?= $this->Form->control('email', ['required' => true, 'class' => 'form-control', 'type' => 'text', 'placeholder' => 'Email', 'autocomplete' => 'off', 'label' => false]) ?>
+                                <input class="form-control" type="email" required="required" placeholder="Email" name="email" autocomplete="off" id="email">
                             </div>
                             <div class="input-group">
-                                <?= $this->Form->control('password', ['required' => true, 'class' => 'form-control', 'type' => 'password', 'placeholder' => 'Password', 'autocomplete' => 'off', 'label' => false]) ?>
+                                <input class="form-control" type="password" required="required" placeholder="Password" name="password" id="password">
                             </div>
                             <div class="row kt-login__extra">
                                 <div class="col">
@@ -43,31 +28,50 @@
                                     </label>
                                 </div>
                                 <div class="col kt-align-right">
-                                    <a href="javascript:;" id="kt_login_forgot" class="kt-link kt-login__link">Forget Password ?</a>
+                                    <a href="javascript:;" id="kt_login_forgot" class="kt-login__link">Forget Password ?</a>
                                 </div>
                             </div>
                             <div class="kt-login__actions">
-                                <?= $this->Form->submit(__('Login'), ['id' => 'kt_login_signin_submit', 'class' => 'btn btn-pill kt-login__btn-primary']); ?>
+                                <button class="btn btn-brand btn-pill kt-login__btn-primary" type="submit">Sign In</button>
                             </div>
-                        </form>
+                        <?= $this->Form->end() ?>
                     </div>
                     <div class="kt-login__signup">
                         <div class="kt-login__head">
                             <h3 class="kt-login__title">Sign Up</h3>
-                            <div class="kt-login__desc">Enter your details to create your account:</div>
                         </div>
-                        <form class="kt-login__form kt-form" action="">
-                            <div class="input-group">
-                                <input class="form-control" type="text" placeholder="Fullname" name="fullname">
+                        <?= $this->Form->create(null, ['class' => 'kt-form', 'url' => ['controller' => 'Users', 'action' => 'add']]) ?>
+                            <div class="row">
+                                <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <?= $this->Form->control('first_name', ['class' => 'form-control', 'placeholder' => 'First name', 'type' => 'text', 'label' => false]); ?>
+                                </div>
+                                <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <?= $this->Form->control('last_name', ['class' => 'form-control', 'placeholder' => 'Last name', 'type' => 'text', 'label' => false]); ?>
+                                </div>
                             </div>
-                            <div class="input-group">
-                                <input class="form-control" type="text" placeholder="Email" name="email" autocomplete="off">
+                            <div class="row">
+                                <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <?= $this->Form->control('address', ['class' => 'form-control', 'placeholder' => 'Address', 'type' => 'text', 'label' => false]); ?>
+                                </div>
+                                <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <?= $this->Form->control('phone', ['class' => 'form-control', 'placeholder' => 'Phone number', 'type' => 'tel', 'label' => false]); ?>
+                                </div>
                             </div>
-                            <div class="input-group">
-                                <input class="form-control" type="password" placeholder="Password" name="password">
+                            <div class="row">
+                                <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <?= $this->Form->control('email', ['class' => 'form-control', 'placeholder' => 'E-mail', 'type' => 'email', 'label' => false, 'aria-describedby' => 'emailHelp']); ?>
+                                </div>
+                                <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <?= $this->Form->control('password', ['class' => 'form-control', 'placeholder' => 'Password', 'type' => 'password', 'label' => false]); ?>
+                                </div>
                             </div>
-                            <div class="input-group">
-                                <input class="form-control" type="password" placeholder="Confirm Password" name="rpassword">
+                            <div class="row">
+                                <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <?= $this->Form->control('gender', ['class' => 'form-control', 'placeholder' => 'Gender', 'type' => 'text', 'label' => false]); ?>
+                                </div>
+                                <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <?= $this->Form->control('image', ['class' => 'form-control', 'placeholder' => 'Image', 'type' => 'text', 'label' => false]); ?>
+                                </div>
                             </div>
                             <div class="row kt-login__extra">
                                 <div class="col kt-align-left">
@@ -79,10 +83,10 @@
                                 </div>
                             </div>
                             <div class="kt-login__actions">
-                                <button id="kt_login_signup_submit" class="btn btn-pill kt-login__btn-primary">Sign Up</button>&nbsp;&nbsp;
-                                <button id="kt_login_signup_cancel" class="btn btn-pill kt-login__btn-secondary">Cancel</button>
+                                <?= $this->Form->button(__('Sign Up'), ['class'=>'btn btn-brand btn-pill kt-login__btn-primary']); ?>
+                                <button id="kt_login_signup_cancel" class="btn btn-secondary btn-pill kt-login__btn-secondary">Cancel</button>
                             </div>
-                        </form>
+                        <?= $this->Form->end() ?>
                     </div>
                     <div class="kt-login__forgot">
                         <div class="kt-login__head">
@@ -94,19 +98,20 @@
                                 <input class="form-control" type="text" placeholder="Email" name="email" id="kt_email" autocomplete="off">
                             </div>
                             <div class="kt-login__actions">
-                                <button id="kt_login_forgot_submit" class="btn btn-pill kt-login__btn-primary">Request</button>&nbsp;&nbsp;
-                                <button id="kt_login_forgot_cancel" class="btn btn-pill kt-login__btn-secondary">Cancel</button>
+                                <button id="kt_login_forgot_submit" class="btn btn-brand btn-pill kt-login__btn-primary">Request</button>&nbsp;&nbsp;
+                                <button id="kt_login_forgot_cancel" class="btn btn-secondary btn-pill kt-login__btn-secondary">Cancel</button>
                             </div>
                         </form>
                     </div>
                     <div class="kt-login__account">
                         <span class="kt-login__account-msg">
                             Don't have an account yet ?
-                        </span>&nbsp;&nbsp;
-                        <a href="javascript:;" id="kt_login_signup" class="kt-link kt-link--light kt-login__account-link">Sign Up</a>
+                        </span>
+                        &nbsp;&nbsp;
+                        <a href="javascript:;" id="kt_login_signup" class="kt-login__account-link">Sign Up!</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div> -->
+</div>

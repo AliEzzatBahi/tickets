@@ -87,7 +87,7 @@ License: You must have a valid license purchased only from themeforest(the above
 		<link href="<?= BASE_URL ?>/backend/assets/demo/default/skins/header/menu/light.css" rel="stylesheet" type="text/css" />
 		<link href="<?= BASE_URL ?>/backend/assets/demo/default/skins/brand/dark.css" rel="stylesheet" type="text/css" />
 		<link href="<?= BASE_URL ?>/backend/assets/demo/default/skins/aside/dark.css" rel="stylesheet" type="text/css" />
-		<link href="<?= BASE_URL ?>/backend/assets/app/custom/login/login-v2.default.css" rel="stylesheet" type="text/css" />
+		<link href="<?= BASE_URL ?>/backend/assets/app/custom/login/login-v4.default.css" rel="stylesheet" type="text/css" />
 
 		<!--end::Layout Skins -->
 		<link rel="shortcut icon" href="<?= BASE_URL ?>/backend/assets/media/logos/favicon.ico" />
