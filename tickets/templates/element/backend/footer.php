@@ -128,6 +128,7 @@ var KTAppOptions = {
 <script src="//maps.google.com/maps/api/js?key=AIzaSyBTGnKT7dt597vo9QgeQ7BFhvSRP4eiMSM" type="text/javascript"></script>
 <script src="<?= BASE_URL ?>/backend/assets/vendors/custom/gmaps/gmaps.js" type="text/javascript"></script>
 <script src="<?= BASE_URL ?>/backend/assets/vendors/custom/datatables/datatables.bundle.js" type="text/javascript"></script>
+<script src="<?= BASE_URL ?>/backend/assets/app/custom/login/login-general.js" type="text/javascript"></script>
 
 <!--end::Page Vendors -->
 

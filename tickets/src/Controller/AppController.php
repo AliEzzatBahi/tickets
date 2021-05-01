@@ -32,11 +32,20 @@ class AppController extends Controller
     public function beforeFilter(EventInterface $event)
     {
         parent::beforeFilter($event);
-
-        $this->viewBuilder()->setLayout('backend/backend');
+        // $this->Authentication->addUnauthenticatedActions(['index', 'view']);
         
         define('BASE_URL','http://localhost:8765');
         $this->set('title', 'Tickets - ' . $this->request->getParam('controller') . ' ' . $this->request->getParam('action'));
+        
+        if ($this->request->getParam('prefix') === 'Admin') 
+        {
+            $this->viewBuilder()->setLayout('backend/backend');
+        }
+
+        else
+        {
+            $this->viewBuilder()->setLayout('frontend/frontend');
+        }
     }
 
     /**
@@ -54,6 +63,9 @@ class AppController extends Controller
 
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
+
+        // This line to check authentication result and lock your site
+        $this->loadComponent('Authentication.Authentication');
 
         /*
          * Enable the following component for recommended CakePHP form protection settings.

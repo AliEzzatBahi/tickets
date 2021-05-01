@@ -8,7 +8,7 @@
         <div class="kt-portlet__head-toolbar">
                 <div class="kt-portlet__head-wrapper">
                     <div class="kt-portlet__head-actions">
-                        <a href="<?= BASE_URL ?>/countries/add" class="btn btn-outline-warning btn-elevate btn-icon-sm">
+                        <a href="<?= BASE_URL ?>/admin/countries/add" class="btn btn-outline-warning btn-elevate btn-icon-sm">
                             <i class="la la-plus"></i>
                             <?= __("Add New") ?>
                         </a>

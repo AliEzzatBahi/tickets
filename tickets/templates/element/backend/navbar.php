@@ -567,7 +567,7 @@
 								</div>
 							</a>
 							<div class="kt-notification__custom">
-								<a href="custom_user_login-v2.html" target="_blank" class="btn btn-label-brand btn-sm btn-bold">Sign Out</a>
+								<a href="/admin/users/logout" class="btn btn-label-brand btn-sm btn-bold">Sign Out</a>
 							</div>
 						</div>
 
