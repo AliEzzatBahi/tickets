@@ -322,7 +322,7 @@
                                 <div class="btn btn-secondary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-prev">
                                     Previous
                                 </div>
-                                    <?= $this->Form->button(__('Submit'), ['data-ktwizard-type' => 'action-submit', 'class'=>'btn btn-success btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u']); ?>
+                                    <?= $this->Form->button(__('Submit'), ['data-ktwizard-type' => 'action-submit', 'class'=>'btn btn-success btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u', 'id' => 'event-submit']); ?>
                                 <div class="btn btn-brand btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-next">
                                     Next Step
                                 </div>

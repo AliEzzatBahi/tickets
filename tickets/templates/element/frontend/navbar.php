@@ -113,8 +113,16 @@
 											</li>
 											<li id="menu-item-2653"
 												class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2653">
-												<a class="js-target-scroll"
-													href="bookmarked-event/index.html">Bookmarked Event</a></li>
+												<a class="js-target-scroll"	href="bookmarked-event/index.html">Bookmarked Event</a>
+											</li>
+											<li id="menu-item-2653"
+												class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2653">
+												<a class="js-target-scroll"	href="/admin/events">Admin Panel</a>
+											</li>
+											<li id="menu-item-2653"
+												class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2653">
+												<a class="js-target-scroll"	href="/admin/users/logout">Logout</a>
+											</li>
 										</ul>
 									</li>
 									<li id="menu-item-2637"
