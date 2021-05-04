@@ -68,9 +68,6 @@ class UsersTable extends Table
         $this->hasMany('Notifications', [
             'foreignKey' => 'user_id',
         ]);
-        $this->hasMany('Blogs', [
-            'foreignKey' => 'user_id',
-        ]);
     }
 
     /**
