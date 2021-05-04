@@ -282,8 +282,7 @@
 
 					<div class="footer_logo logo">
 
-						<a href="index.html" title="BeEvent" rel="home"><img
-								src="<?= BASE_URL ?>/frontend/wp-content/themes/beevent/assets/images/logo.png"></a>
+						<a href="index.html" title="BeEvent" rel="home"><img width="200" src="<?= BASE_URL ?>/frontend/wp-content/themes/beevent/assets/images/logo.png"></a>
 
 					</div>
 

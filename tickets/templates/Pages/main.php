@@ -166,7 +166,7 @@
 												<div class="elementor-element elementor-element-af8e239 elementor-widget elementor-widget-text-editor" data-id="af8e239" data-element_type="widget" data-widget_type="text-editor.default">
 													<div class="elementor-widget-container">
 														<div class="elementor-text-editor elementor-clearfix">
-															<h2>Why Choose BeEvent</h2>
+															<h2>Why Choose TicketsGuide</h2>
 															<p>Because our digital story started with our dreams integrated manually.</p>
 														</div>
 													</div>
