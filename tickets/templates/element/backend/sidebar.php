@@ -14,8 +14,7 @@ use Cake\Http\Client\Auth\Basic;
 					<div class="kt-aside__brand kt-grid__item " id="kt_aside_brand">
 						<div class="kt-aside__brand-logo">
 							<a href="index.html">
-								<!-- <img alt="Logo" src="<?= BASE_URL ?>/backend/assets/media/logos/logo-light.png" /> -->
-								<h3 style="color: white;">TICKETS</h3>
+								<img alt="Logo" width="150" src="<?= BASE_URL ?>/backend/assets/media/logos/logoo.png" />
 							</a>
 						</div>
 						<div class="kt-aside__brand-tools">

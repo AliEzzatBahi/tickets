@@ -21,7 +21,7 @@
 
 	<link rel="pingback" href="xmlrpc.php">
 
-	<link rel="shortcut icon" href="<?= BASE_URL ?>/frontend/wp-content/themes/beevent/assets/images/favicon-icon/favicon.png"
+	<link rel="shortcut icon" href="<?= BASE_URL ?>/frontend/wp-content/themes/beevent/assets/images/logo_title.png"
 		type="image/x-icon">
 	<title>BeEvent &#8211; Just another WordPress site</title>
 	<link rel='dns-prefetch' href='http://ajax.googleapis.com/' />

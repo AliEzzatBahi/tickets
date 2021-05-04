@@ -5,13 +5,13 @@
                 <div class="kt-login__container">
                     <div class="kt-login__logo">
                         <a href="#">
-                            <img src="<?= BASE_URL ?>/backend/assets/media/logos/logo-5.png">
+                            <img width="200" src="<?= BASE_URL ?>/backend/assets/media/logos/logoo.png">
                         </a>
                     </div>
                     <div class="kt-login__signin">
                         <?= $this->Flash->render() ?>
                         <div class="kt-login__head">
-                            <h3 class="kt-login__title">Sign In To Admin</h3>
+                            <h3 class="kt-login__title">Sign In</h3>
                         </div>
                         <?= $this->Form->create(null, ['class' => 'kt-form']) ?>
                             <div class="input-group">

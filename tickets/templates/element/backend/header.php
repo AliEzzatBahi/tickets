@@ -90,7 +90,7 @@ License: You must have a valid license purchased only from themeforest(the above
 		<link href="<?= BASE_URL ?>/backend/assets/app/custom/login/login-v4.default.css" rel="stylesheet" type="text/css" />
 
 		<!--end::Layout Skins -->
-		<link rel="shortcut icon" href="<?= BASE_URL ?>/backend/assets/media/logos/favicon.ico" />
+		<link rel="shortcut icon" href="<?= BASE_URL ?>/backend/assets/media/logos/logoo_title.png" />
 	</head>
 
 	<!-- end::Head -->
