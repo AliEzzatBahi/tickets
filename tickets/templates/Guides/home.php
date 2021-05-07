@@ -1,3 +1,4 @@
+
 <section class="elementor-section elementor-top-section elementor-element elementor-element-95d570d elementor-section-full_width elementor-section-stretched elementor-reverse-tablet elementor-reverse-mobile elementor-section-height-default elementor-section-height-default" data-id="95d570d" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;}">
 	<div class="elementor-container elementor-column-gap-no">
 		<div class="elementor-row">
@@ -7,139 +8,62 @@
 						<div class="elementor-element elementor-element-1bd2a26 elementor-widget elementor-widget-shortcode" data-id="1bd2a26" data-element_type="widget" data-widget_type="shortcode.default">
 							<div class="elementor-widget-container">
 								<div id="slideshow1" class="slideshow">
-									<div id="siderwidth2" class="slides" style="background-image:url(<?= BASE_URL ?>/frontend/wp-content/uploads/2020/02/PLQO9T0-scaled-1.jpg);">
-										<div class="banner-fixed">
-											<div class="container">
-												<div class="banner-content">
-													<div class="content">
-														<div class="banner-tagline text-center">
-															<h1>International Literacy Day</h1>
-															<ul class="gt-information">
-																<li><i class="fa fa-clock-o"></i><span>August 1, 2021</span> </li>
-																<li><i class="fa fa-map-marker"></i><span>NY, USA</span></li>
-															</ul>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="container countdown-tab">
-											<div class="countdown">
-												<div class="counter-sec">
-													<div class="countdown-counter half-width text-center">
-														<div class="timer">
-															<div class="countdown2 styled2">
-
+								<?php
+									$slideCount = 1;
+									foreach($hotestEvents as $hotEvent){
+										$slideCount++;
+								?>
+										<div id="siderwidth<?= $slideCount ?>" class="slides" style="background-image:url(<?= BASE_URL ?>/frontend/wp-content/uploads/2020/02/PLQO9T0-scaled-1.jpg);">
+											<div class="banner-fixed">
+												<div class="container">
+													<div class="banner-content">
+														<div class="content">
+															<div class="banner-tagline text-center">
+																<h1><?= $hotEvent->name ?></h1>
+																<ul class="gt-information">
+																	<input type="hidden" value="<?= $hotEvent->ticket_types[0]['_joinData']['date_from'] ?>" id="eventEndDate">
+																	<li><i class="fa fa-clock-o"></i><span><?= date("jS F Y", strtotime($hotEvent->ticket_types[0]['_joinData']['date_from'])) ?></span> </li>
+																	<li><i class="fa fa-map-marker"></i><span><?= $hotEvent->city['name'] ?>, <?= $hotEvent->country['name'] ?></span></li>
+																</ul>
 															</div>
 														</div>
 													</div>
-													<div class="countdown-btn half-width"><a class="btn btn-lg btn-danger js-target-scroll" href="event/international-literacy-day/index.html#event-display">Book now</a>
+												</div>
+											</div>
+											<div class="container countdown-tab">
+												<div class="countdown">
+													<div class="counter-sec">
+														<div class="countdown-counter half-width text-center">
+															<div class="timer">
+																<div class="countdown2 styled2">
+	
+																</div>
+															</div>
+														</div>
+														<div class="countdown-btn half-width"><a class="btn btn-lg btn-danger js-target-scroll" href="event/international-literacy-day/index.html#event-display">Book now</a>
+														</div>
 													</div>
 												</div>
 											</div>
-										</div>
-
-										<script type="text/javascript">
-											var endDate = "August 1, 2021";
-											//alert(endDate);
-											$('.countdown2.styled2').countdown({
-												date: endDate,
-												render: function(data) {
-													if (this.leadingZeros(data.years, 2) == 0) {
-														$(this.el).html("<div class='countdown-amount'>" + this.leadingZeros(data.days, 2) + " <span class='countdown-period'>Days</span></div><div class='countdown-amount'>" + this.leadingZeros(data.hours, 2) + " <span class='countdown-period'>Hours</span></div><div class='countdown-amount'>" + this.leadingZeros(data.min, 2) + " <span class='countdown-period'>Minutes</span></div><div class='countdown-amount'>" + this.leadingZeros(data.sec, 2) + " <span class='countdown-period'>Seconds</span></div>");
-													} else {
-														$(this.el).html("<div class='countdown-amount'>" + this.leadingZeros(data.years, 2) + " <span class='countdown-period'>Years</span></div><div class='countdown-amount'>" + this.leadingZeros(data.days, 2) + " <span class='countdown-period'>Days</span></div><div class='countdown-amount'>" + this.leadingZeros(data.hours, 2) + " <span class='countdown-period'>Hours</span></div><div class='countdown-amount'>" + this.leadingZeros(data.min, 2) + " <span class='countdown-period'>Minutes</span></div><div class='countdown-amount'>" + this.leadingZeros(data.sec, 2) + " <span class='countdown-period'>Seconds</span></div>");
+	
+											<script type="text/javascript">
+												var endDate = $('#eventEndDate').val();
+												//alert(endDate);
+												$('.countdown2.styled2').countdown({
+													date: endDate,
+													render: function(data) {
+														if (this.leadingZeros(data.years, 2) == 0) {
+															$(this.el).html("<div class='countdown-amount'>" + this.leadingZeros(data.days, 2) + " <span class='countdown-period'>Days</span></div><div class='countdown-amount'>" + this.leadingZeros(data.hours, 2) + " <span class='countdown-period'>Hours</span></div><div class='countdown-amount'>" + this.leadingZeros(data.min, 2) + " <span class='countdown-period'>Minutes</span></div><div class='countdown-amount'>" + this.leadingZeros(data.sec, 2) + " <span class='countdown-period'>Seconds</span></div>");
+														} else {
+															$(this.el).html("<div class='countdown-amount'>" + this.leadingZeros(data.years, 2) + " <span class='countdown-period'>Years</span></div><div class='countdown-amount'>" + this.leadingZeros(data.days, 2) + " <span class='countdown-period'>Days</span></div><div class='countdown-amount'>" + this.leadingZeros(data.hours, 2) + " <span class='countdown-period'>Hours</span></div><div class='countdown-amount'>" + this.leadingZeros(data.min, 2) + " <span class='countdown-period'>Minutes</span></div><div class='countdown-amount'>" + this.leadingZeros(data.sec, 2) + " <span class='countdown-period'>Seconds</span></div>");
+														}
 													}
-												}
-											});
-										</script>
-									</div>
-									<div id="siderwidth3" class="slides" style="background-image:url(<?= BASE_URL ?>/frontend/wp-content/uploads/2016/12/schedule_bg.jpg);">
-										<div class="banner-fixed">
-											<div class="container">
-												<div class="banner-content">
-													<div class="content">
-														<div class="banner-tagline text-center">
-															<h1>Digital Economy Conference</h1>
-															<ul class="gt-information">
-																<li><i class="fa fa-clock-o"></i><span>September 1, 2021</span> </li>
-																<li><i class="fa fa-map-marker"></i><span>London, UK</span></li>
-															</ul>
-														</div>
-													</div>
-												</div>
-											</div>
+												});
+											</script>
 										</div>
-										<div class="container countdown-tab">
-											<div class="countdown">
-												<div class="counter-sec">
-													<div class="countdown-counter half-width text-center">
-														<div class="timer">
-															<div class="countdown2 styled2"></div>
-														</div>
-													</div>
-													<div class="countdown-btn half-width"><a class="btn btn-lg btn-danger js-target-scroll" href="event/digital-economy-conference/index.html#event-display">Book now</a></div>
-												</div>
-											</div>
-										</div>
-										<script type="text/javascript">
-											var endDate = "September 1, 2021";
-											//alert(endDate);
-											$('.countdown2.styled2').countdown({
-												date: endDate,
-												render: function(data) {
-													if (this.leadingZeros(data.years, 2) == 0) {
-														$(this.el).html("<div class='countdown-amount'>" + this.leadingZeros(data.days, 2) + " <span class='countdown-period'>Days</span></div><div class='countdown-amount'>" + this.leadingZeros(data.hours, 2) + " <span class='countdown-period'>Hours</span></div><div class='countdown-amount'>" + this.leadingZeros(data.min, 2) + " <span class='countdown-period'>Minutes</span></div><div class='countdown-amount'>" + this.leadingZeros(data.sec, 2) + " <span class='countdown-period'>Seconds</span></div>");
-													} else {
-														$(this.el).html("<div class='countdown-amount'>" + this.leadingZeros(data.years, 2) + " <span class='countdown-period'>Years</span></div><div class='countdown-amount'>" + this.leadingZeros(data.days, 2) + " <span class='countdown-period'>Days</span></div><div class='countdown-amount'>" + this.leadingZeros(data.hours, 2) + " <span class='countdown-period'>Hours</span></div><div class='countdown-amount'>" + this.leadingZeros(data.min, 2) + " <span class='countdown-period'>Minutes</span></div><div class='countdown-amount'>" + this.leadingZeros(data.sec, 2) + " <span class='countdown-period'>Seconds</span></div>");
-													}
-												}
-											});
-										</script>
-									</div>
-									<div id="siderwidth4" class="slides" style="background-image:url(<?= BASE_URL ?>/frontend/wp-content/uploads/2019/12/live-concert-455762_1920.jpg);">
-										<div class="banner-fixed">
-											<div class="container">
-												<div class="banner-content">
-													<div class="content">
-														<div class="banner-tagline text-center">
-															<h1>Live Music Event Concert</h1>
-															<ul class="gt-information">
-																<li><i class="fa fa-clock-o"></i><span>November 1, 2021</span> </li>
-																<li><i class="fa fa-map-marker"></i><span>London, UK</span></li>
-															</ul>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="container countdown-tab">
-											<div class="countdown">
-												<div class="counter-sec">
-													<div class="countdown-counter half-width text-center">
-														<div class="timer">
-															<div class="countdown2 styled2"></div>
-														</div>
-													</div>
-													<div class="countdown-btn half-width"><a class="btn btn-lg btn-danger js-target-scroll" href="event/demo/index.html#event-display">Book now</a></div>
-												</div>
-											</div>
-										</div>
-										<script type="text/javascript">
-											var endDate = "November 1, 2021";
-											//alert(endDate);
-											$('.countdown2.styled2').countdown({
-												date: endDate,
-												render: function(data) {
-													if (this.leadingZeros(data.years, 2) == 0) {
-														$(this.el).html("<div class='countdown-amount'>" + this.leadingZeros(data.days, 2) + " <span class='countdown-period'>Days</span></div><div class='countdown-amount'>" + this.leadingZeros(data.hours, 2) + " <span class='countdown-period'>Hours</span></div><div class='countdown-amount'>" + this.leadingZeros(data.min, 2) + " <span class='countdown-period'>Minutes</span></div><div class='countdown-amount'>" + this.leadingZeros(data.sec, 2) + " <span class='countdown-period'>Seconds</span></div>");
-													} else {
-														$(this.el).html("<div class='countdown-amount'>" + this.leadingZeros(data.years, 2) + " <span class='countdown-period'>Years</span></div><div class='countdown-amount'>" + this.leadingZeros(data.days, 2) + " <span class='countdown-period'>Days</span></div><div class='countdown-amount'>" + this.leadingZeros(data.hours, 2) + " <span class='countdown-period'>Hours</span></div><div class='countdown-amount'>" + this.leadingZeros(data.min, 2) + " <span class='countdown-period'>Minutes</span></div><div class='countdown-amount'>" + this.leadingZeros(data.sec, 2) + " <span class='countdown-period'>Seconds</span></div>");
-													}
-												}
-											});
-										</script>
-									</div>
+								<?php
+									}
+								?>
 								</div>
 								<div class="elementor-shortcode"></div>
 							</div>
@@ -1092,48 +1016,19 @@
 												<div class="elementor-element elementor-element-1469f18 elementor-widget elementor-widget-shortcode" data-id="1469f18" data-element_type="widget" data-widget_type="shortcode.default">
 													<div class="elementor-widget-container">
 														<div id="testimonial_slider" class="owl-carousel">
-															<div class="item">
-																<div class="testimonial_head">
-																	<div class="testimonial_img"><img width="300" height="300" src="<?= BASE_URL ?>/frontend/wp-content/uploads/2017/02/team11-300x300.jpg" class="img-responsive center-block wp-post-image" alt="" loading="lazy" srcset="http://php.webmasterdriver.net/beevent/wp-content/uploads/2017/02/team11-300x300.jpg 300w, http://php.webmasterdriver.net/beevent/wp-content/uploads/2017/02/team11-150x150.jpg 150w" sizes="(max-width: 300px) 100vw, 300px" /></div>
-																	<h5>Samuel Doe</h5><small>Chief Executive Officer - ABC, London</small>
+															<?php
+																foreach($blogs as $blog){
+															?>
+																<div class="item">
+																	<div class="testimonial_head">
+																		<div class="testimonial_img"><img width="300" height="300" src="<?= BASE_URL ?>/frontend/wp-content/uploads/2017/02/team11-300x300.jpg" class="img-responsive center-block wp-post-image" alt="" loading="lazy" srcset="http://php.webmasterdriver.net/beevent/wp-content/uploads/2017/02/team11-300x300.jpg 300w, http://php.webmasterdriver.net/beevent/wp-content/uploads/2017/02/team11-150x150.jpg 150w" sizes="(max-width: 300px) 100vw, 300px" /></div>
+																		<h5><?= $blog->user->full_name ?></h5><small><?= $blog->title ?></small>
+																	</div>
+																	<p><?= $blog->post ?></p>
 																</div>
-																<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#8217;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-															</div>
-															<div class="item">
-																<div class="testimonial_head">
-																	<div class="testimonial_img"><img width="300" height="300" src="<?= BASE_URL ?>/frontend/wp-content/uploads/2017/02/team4-300x300.jpg" class="img-responsive center-block wp-post-image" alt="" loading="lazy" srcset="http://php.webmasterdriver.net/beevent/wp-content/uploads/2017/02/team4-300x300.jpg 300w, http://php.webmasterdriver.net/beevent/wp-content/uploads/2017/02/team4-150x150.jpg 150w" sizes="(max-width: 300px) 100vw, 300px" /></div>
-																	<h5>Anzela Haze</h5><small>Marketing Head - OPE Inc. NY.</small>
-																</div>
-																<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#8217;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-															</div>
-															<div class="item">
-																<div class="testimonial_head">
-																	<div class="testimonial_img"><img width="300" height="300" src="<?= BASE_URL ?>/frontend/wp-content/uploads/2017/02/team2-1-300x300.jpg" class="img-responsive center-block wp-post-image" alt="" loading="lazy" srcset="http://php.webmasterdriver.net/beevent/wp-content/uploads/2017/02/team2-1-300x300.jpg 300w, http://php.webmasterdriver.net/beevent/wp-content/uploads/2017/02/team2-1-150x150.jpg 150w" sizes="(max-width: 300px) 100vw, 300px" /></div>
-																	<h5>HOMER SIMPSON</h5><small>Social Marketing Head- Hero Corp. Australia</small>
-																</div>
-																<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#8217;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-															</div>
-															<div class="item">
-																<div class="testimonial_head">
-																	<div class="testimonial_img"><img width="300" height="300" src="<?= BASE_URL ?>/frontend/wp-content/uploads/2016/12/team10-300x300.jpg" class="img-responsive center-block wp-post-image" alt="" loading="lazy" srcset="http://php.webmasterdriver.net/beevent/wp-content/uploads/2016/12/team10-300x300.jpg 300w, http://php.webmasterdriver.net/beevent/wp-content/uploads/2016/12/team10-150x150.jpg 150w" sizes="(max-width: 300px) 100vw, 300px" /></div>
-																	<h5>Levi Rath</h5><small>Business Analyst, NY</small>
-																</div>
-																<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#8217;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-															</div>
-															<div class="item">
-																<div class="testimonial_head">
-																	<div class="testimonial_img"><img width="300" height="300" src="<?= BASE_URL ?>/frontend/wp-content/uploads/2016/12/spearker_2-300x300.jpg" class="img-responsive center-block wp-post-image" alt="" loading="lazy" srcset="http://php.webmasterdriver.net/beevent/wp-content/uploads/2016/12/spearker_2-300x300.jpg 300w, http://php.webmasterdriver.net/beevent/wp-content/uploads/2016/12/spearker_2-150x150.jpg 150w" sizes="(max-width: 300px) 100vw, 300px" /></div>
-																	<h5>Johan Johansina</h5><small>Event Manager - Uhe Inc. London</small>
-																</div>
-																<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#8217;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-															</div>
-															<div class="item">
-																<div class="testimonial_head">
-																	<div class="testimonial_img"><img width="300" height="300" src="<?= BASE_URL ?>/frontend/wp-content/uploads/2016/12/team7-300x300.jpg" class="img-responsive center-block wp-post-image" alt="" loading="lazy" srcset="http://php.webmasterdriver.net/beevent/wp-content/uploads/2016/12/team7-300x300.jpg 300w, http://php.webmasterdriver.net/beevent/wp-content/uploads/2016/12/team7-150x150.jpg 150w" sizes="(max-width: 300px) 100vw, 300px" /></div>
-																	<h5>HARRIETTE GELINAS</h5><small>Entrepreneur - Mexico</small>
-																</div>
-																<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#8217;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-															</div>
+															<?php
+																}
+															?>
 														</div>
 														<div class="elementor-shortcode"></div>
 													</div>
