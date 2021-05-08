@@ -26,7 +26,21 @@ class TicketTypesSeed extends AbstractSeed
                 'name' => 'VIP/Regular',
                 'description' => 'This is description',
                 'created' => '2021-04-14 08:27:44',
-                'modified' => '2021-04-14 08:27:44',
+                'modified' => '2021-05-08 14:51:13',
+            ],
+            [
+                'id' => '2',
+                'name' => 'Gold/Regular',
+                'description' => 'This is description',
+                'created' => '2021-04-14 08:27:44',
+                'modified' => '2021-05-08 14:51:13',
+            ],
+            [
+                'id' => '3',
+                'name' => 'Silver/Regular',
+                'description' => 'This is description',
+                'created' => '2021-04-14 08:27:44',
+                'modified' => '2021-05-07 14:22:49',
             ],
         ];
 

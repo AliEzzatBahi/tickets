@@ -55,8 +55,8 @@ class GuidesController extends AppController
         $onGoingEvents = array();
         foreach($events as $event){
             foreach($event->ticket_types as $eventDate){
-                if(strtotime(strval($eventDate->_joinData['date_from'])) == strtotime(strval($dateToday))){
-                    $onGoingEvents[] = $eventDate->_joinData['date_from'];
+                if(strtotime(strval($eventDate->_joinData['date_from'])) >= strtotime(strval($dateToday))){
+                    $onGoingEvents[] = $event;
                 }
             }
         }
