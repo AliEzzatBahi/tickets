@@ -1,11 +1,3 @@
-<?php
-
-foreach($onGoingEvents as $event){
-	echo $event;
-}
-
-?>
-
 <section class="elementor-section elementor-top-section elementor-element elementor-element-95d570d elementor-section-full_width elementor-section-stretched elementor-reverse-tablet elementor-reverse-mobile elementor-section-height-default elementor-section-height-default" data-id="95d570d" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;}">
 	<div class="elementor-container elementor-column-gap-no">
 		<div class="elementor-row">
@@ -482,7 +474,7 @@ foreach($onGoingEvents as $event){
 																		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 																			<div class="event_inner">
 																				<div class="listing-thumb">
-																					<a href='event/circus-carnival/index.html'>
+																					<a href='<?= BASE_URL ?>/guides/event-details'>
 																						<img src='<?= BASE_URL ?>/frontend/wp-content/uploads/2020/01/circus-828680_1920.jpg' />
 																					</a>
 																					<div class="event-status">ongoing </div>
@@ -642,7 +634,7 @@ foreach($onGoingEvents as $event){
 												</div>
 												<div class="elementor-element elementor-element-335f381 elementor-widget elementor-widget-text-editor" data-id="335f381" data-element_type="widget" data-widget_type="text-editor.default">
 													<div class="elementor-widget-container">
-														<div class="elementor-text-editor elementor-clearfix"><a class="btn" href="event.html">Browse More Event</a></div>
+														<div class="elementor-text-editor elementor-clearfix"><a class="btn" href="<?= BASE_URL ?>/guides/all-events">Browse More Event</a></div>
 													</div>
 												</div>
 											</div>

@@ -22,11 +22,11 @@
 								<ul id="menu-multiple-event" class="nav navbar-nav">
 									<li id="menu-item-2629"
 										class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-1800 current_page_item menu-item-has-children menu-item-2629">
-										<a class="js-target-scroll" href="index.html" aria-current="page">Home</a>
+										<a class="js-target-scroll" href="<?= BASE_URL ?>/guides/home" aria-current="page">Home</a>
 									</li>
 									<li id="menu-item-2641"
 										class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2641">
-										<a class="js-target-scroll" href="event/index.html">All Events</a>
+										<a class="js-target-scroll" href="<?= BASE_URL ?>/guides/all-events">All Events</a>
 									</li>
 									<li id="menu-item-2583"
 										class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown menu-item-2583">
@@ -34,23 +34,10 @@
 										<ul class="sub-menu">
 											<li id="menu-item-2636"
 												class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2636">
-												<a class="js-target-scroll" href="about-us-element/index.html">About
-													Us</a></li>
+												<a class="js-target-scroll" href="<?= BASE_URL ?>/guides/about-us">About Us</a></li>
 											<li id="menu-item-2652"
 												class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2652">
-												<a class="js-target-scroll" href="contact-us/index.html">Contact Us</a>
-											</li>
-											<li id="menu-item-2663"
-												class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2663">
-												<a class="js-target-scroll" href="coming-soon/index.html">Coming
-													Soon</a></li>
-											<li id="menu-item-2650"
-												class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2650">
-												<a class="js-target-scroll" href="404-error/index.html">404 Error</a>
-											</li>
-											<li id="menu-item-2653"
-												class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2653">
-												<a class="js-target-scroll"	href="bookmarked-event/index.html">Bookmarked Event</a>
+												<a class="js-target-scroll" href="<?= BASE_URL ?>/guides/contact-us">Contact Us</a>
 											</li>
 											<li id="menu-item-2653"
 												class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2653">
@@ -64,7 +51,7 @@
 									</li>
 									<li id="menu-item-2637"
 										class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2637">
-										<a class="js-target-scroll" href="blog/index.html">Blogs</a>
+										<a class="js-target-scroll" href="<?= BASE_URL ?>/guides/blogs">Blogs</a>
 									</li>
 								</ul>
 							</div>
@@ -75,7 +62,7 @@
 			</div>
 		</div>
 	</header>
-    <div class="container">
+    <div class="">
 		<div id="post-1800" class="post-1800 page type-page status-publish hentry">
 			<div data-elementor-type="wp-page" data-elementor-id="1800" class="elementor elementor-1800"
 				data-elementor-settings="[]">

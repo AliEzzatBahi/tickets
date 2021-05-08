@@ -35,7 +35,7 @@ class AppController extends Controller
         // $this->Authentication->addUnauthenticatedActions(['index', 'view']);
         
         define('BASE_URL','http://localhost:8765');
-        $this->set('title', 'Tickets - ' . $this->request->getParam('controller') . ' ' . $this->request->getParam('action'));
+        $this->set('title', 'TicketsGuide - ' . $this->request->getParam('controller') . ' ' . $this->request->getParam('action'));
         
         if ($this->request->getParam('prefix') === 'Admin') 
         {

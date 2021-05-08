@@ -26,9 +26,6 @@
                         <tr>
                             <th><?= $this->Paginator->sort('id') ?></th>
                             <th><?= $this->Paginator->sort('name') ?></th>
-                            <th><?= $this->Paginator->sort('image_folder') ?></th>
-                            <th><?= $this->Paginator->sort('lat') ?></th>
-                            <th><?= $this->Paginator->sort('lng') ?></th>
                             <th><?= $this->Paginator->sort('address') ?></th>
                             <th><?= $this->Paginator->sort('is_hot') ?></th>
                             <th><?= $this->Paginator->sort('video') ?></th>
@@ -45,9 +42,6 @@
                             <tr>
                                 <td><?= $this->Number->format($event->id) ?></td>
                                 <td><?= h($event->name) ?></td>
-                                <td><?= h($event->image_folder) ?></td>
-                                <td><?= $this->Number->format($event->lat) ?></td>
-                                <td><?= $this->Number->format($event->lng) ?></td>
                                 <td><?= h($event->address) ?></td>
                                 <td><?= h($event->is_hot) ?></td>
                                 <td><?= h($event->video) ?></td>

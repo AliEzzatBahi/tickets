@@ -23,7 +23,7 @@
 
 	<link rel="shortcut icon" href="<?= BASE_URL ?>/frontend/wp-content/themes/beevent/assets/images/logo_title.png"
 		type="image/x-icon">
-	<title>BeEvent &#8211; Just another WordPress site</title>
+	<title><?= $title ?></title>
 	<link rel='dns-prefetch' href='http://ajax.googleapis.com/' />
 	<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
 	<link rel='dns-prefetch' href='http://s.w.org/' />

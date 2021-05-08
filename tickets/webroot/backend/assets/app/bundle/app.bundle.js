@@ -565,21 +565,22 @@ $(document).ready(function() {
     });
 
     // Delete a Ticket Type From Event
-    $("#delete-ticket-from-event").click(function() {
-        var priceDetailId = $("#price_detail_id").val()
-        var ticketTypeId = $("#ticket_type_id").val()
-        $.ajax({
-            type : "POST",
-            dataType : "json",
-            contentType: "application/json; charset=utf-8",
-            url : "/events/deleteTicketTypeFromEvent/" + priceDetailId + "/" + ticketTypeId,
-            success: function(data){
-                alert("Item Deleted Successfully")
-            },
-            error: function (e) {
-                // console.log(e);
-            }
-        });
+    $(".delete-ticket-from-event").click(function() {
+        alert("Barararararakla")
+        // var priceDetailId = $("#price_detail_id").val()
+        // var ticketTypeId = $("#ticket_type_id").val()
+        // $.ajax({
+        //     type : "POST",
+        //     dataType : "json",
+        //     contentType: "application/json; charset=utf-8",
+        //     url : "/events/deleteTicketTypeFromEvent/" + priceDetailId + "/" + ticketTypeId,
+        //     success: function(data){
+        //         alert("Item Deleted Successfully")
+        //     },
+        //     error: function (e) {
+        //         // console.log(e);
+        //     }
+        // });
     });
 
 });

@@ -41,6 +41,9 @@ class Event extends Entity
      *
      * @var array
      */
+
+    protected $_virtual = ['images'];
+    
     protected $_accessible = [
         'name' => true,
         'description' => true,

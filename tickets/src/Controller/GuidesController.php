@@ -17,9 +17,29 @@ class GuidesController extends AppController
         $upComingEvents = $this->up_coming_events();
         $onGoingEvents = $this->on_going_events();
         $expiredEvents = $this->expired_events();
-        $blogs = $this->blogs();
+        $blogs = $this->get_blogs();
 
         $this->set(compact('events', 'hotestEvents', 'upComingEvents', 'onGoingEvents', 'expiredEvents', 'blogs'));
+    }
+
+    public function allEvents(){
+
+    }
+
+    public function blogs(){
+
+    }
+
+    public function aboutUs(){
+
+    }
+
+    public function contactUs(){
+        
+    }
+
+    public function eventDetails(){
+        
     }
 
     public function all_events(){
@@ -78,7 +98,7 @@ class GuidesController extends AppController
         return $expiredEvents;
     }
 
-    public function blogs(){
+    public function get_blogs(){
         $this->loadModel('Blogs');
         $blogs = $this->Blogs->find()->contain(['Users']);
         return $blogs;
