@@ -69,7 +69,7 @@ class Event extends Entity
     protected function _getImages()
     {
         $image_folder = ROOT.'/webroot/responsive_filemanager/source/events/' . $this->image_folder;
-        $folder_URL = BASE_URL.'/webroot/responsive_filemanager/source/events/' . $this->image_folder;
+        $folder_URL = BASE_URL.'/responsive_filemanager/source/events/' . $this->image_folder;
         
         $file_list = array();
         if ($handle = opendir($image_folder)) {

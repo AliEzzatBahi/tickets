@@ -23,7 +23,8 @@ class GuidesController extends AppController
     }
 
     public function allEvents(){
-
+        $upComingEvents = $this->up_coming_events();
+        $this->set(compact('upComingEvents'));
     }
 
     public function blogs(){
@@ -38,8 +39,10 @@ class GuidesController extends AppController
         
     }
 
-    public function eventDetails(){
-        
+    public function eventDetails($eventId){
+        $this->loadModel('Events');
+        $event = $this->Events->get($eventId, [ 'contain' => ['Cities', 'Countries', 'Categories', 'TicketTypes', 'AdditionalFees']]);
+        $this->set(compact('event'));
     }
 
     public function all_events(){
@@ -61,7 +64,7 @@ class GuidesController extends AppController
         foreach($events as $event){
             foreach($event->ticket_types as $eventDate){
                 if(strtotime(strval($eventDate->_joinData['date_from'])) > strtotime(strval($dateToday))){
-                    $upComingEvents[] = $eventDate->_joinData['date_from'];
+                    $upComingEvents[] = $event;
                 }
             }
         }
@@ -91,7 +94,7 @@ class GuidesController extends AppController
         foreach($events as $event){
             foreach($event->ticket_types as $eventDate){
                 if(strtotime(strval($eventDate->_joinData['date_from'])) < strtotime(strval($dateToday))){
-                    $expiredEvents[] = $eventDate->_joinData['date_from'];
+                    $expiredEvents[] = $event;
                 }
             }
         }

@@ -9,10 +9,11 @@
 								<div id="slideshow1" class="slideshow">
 								<?php
 									$slideCount = 1;
+									$slideImg = 0;
 									foreach($hotestEvents as $hotEvent){
 										$slideCount++;
 								?>
-										<div id="siderwidth<?= $slideCount ?>" class="slides" style="background-image:url(<?= BASE_URL ?>/frontend/wp-content/uploads/2020/02/PLQO9T0-scaled-1.jpg);">
+										<div id="siderwidth<?= $slideCount ?>" class="slides" style="background-image:url(<?= $hotEvent->images[$slideImg] ?>);">
 											<div class="banner-fixed">
 												<div class="container">
 													<div class="banner-content">
@@ -61,6 +62,7 @@
 											</script>
 										</div>
 								<?php
+									$slideImg++;
 									}
 								?>
 								</div>
@@ -353,117 +355,50 @@
 															</div>
 															<div class="tab-content">
 																<div class="tab-pane" id="upcoming">
-																	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-																		<div class="event_inner">
-																			<div class="listing-thumb">
-																				<a href='event/international-literacy-day/index.html'>
-																					<img src='<?= BASE_URL ?>/frontend/wp-content/uploads/2020/02/PLQO9T0-scaled-1.jpg' />
-																				</a>
-																				<div class="event-status">Upcoming </div>
-																				<div class="event-price">$199</div>
-																				<ul class="event_icon">
-																					<li><a href="#" data-post-type="grids" data-post-id="2336" data-success-text="Saved" class="status-btn add-to-fav add-to-fav Save" title="Add To Bookmark"><i class="fa fa-bookmark-o"></i></a></li>
-																					<li><a href="javascript:void(0)" onclick="location.http://php.webmasterdriver.net/beevent/wp-admin/admin-ajax.php?action=process_simple_interest&post_id=2336&nonce=bd6b1b441d&is_comment=0&disabled=true" class="batn interested sl-buttons sl-buttons-2336" data-nonce="bd6b1b441d" data-post-id="2336" data-iscomment="0" title="interest"><em class="sl-icons"><i class="fa fa-star-o"></i></em><span style="display:none;">interested</span></a><span id="sl-loaders"></span></li>
-																					<li><a class="batn dropdown-toggle" data-toggle="dropdown" title="Share This Event" aria-expanded="false"><i class="fa fa-share"></i> </a>
-																						<ul class="dropdown-menu dp_social_share">
-																							<li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Finternational-literacy-day%2F" target="_blank"><i class="fa fa-facebook"></i>Facebook </a></li>
-																							<li><a href="https://twitter.com/intent/tweet?text=International%20Literacy%20Day&amp;url=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Finternational-literacy-day%2F&amp;via=beevent" target="_blank"><i class="fa fa-twitter"></i>Twitter </a></li>
-																							<li><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Finternational-literacy-day%2F" target="_blank"><i class="fa fa-linkedin"></i>Linkedin </a></li>
-																							<li><a href="https://plus.google.com/share?url=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Finternational-literacy-day%2F" target="_blank"><i class="fa fa-google-plus"></i>Google+ </a></li>
-																						</ul>
-																					</li>
-																				</ul>
-																			</div>
-																			<div class="js-grid-item-body event_body__BfZIC">
-																				<div class="event_calendar__2x4Hv">
-																					<span class="event_month__S8D_o color-primary">Sun</span>
-																					<span class="event_date__2Z7TH">01</span>
-																				</div>
-																				<div class="event_content__2fB-4">
-																					<h2 class="event_title__3C2PA"><a href="event/international-literacy-day/index.html">International Literacy Day</a></h2>
-																					<ul class="event_meta__CFFPg list-none">
-																						<li class="event_metaList__1bEBH text-ellipsis"><span><i class="fa fa-calendar"> </i>August 1, 2021 - February 20, 2023</span></li>
-																						<li class="event_metaList__1bEBH text-ellipsis"><span><i class="fa fa-clock-o"> </i>12:00 PM - 5:00 PM</span></li>
-																						<li class="event_metaList__1bEBH text-ellipsis"><span><a href="#" target="_blank"><span><i class="fa fa-map-marker"></i>New York University, New York, NY, USA</span></a></span></li>
+																	<?php
+																		foreach($upComingEvents as $event){
+																	?>
+																		<!-- Incoming -->
+																		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+																			<div class="event_inner">
+																				<div class="listing-thumb">
+																					<a href='<?= BASE_URL ?>/guides/event-details'>
+																						<img src='<?= $event->images[0] ?>' />
+																					</a>
+																					<div class="event-status">ongoing </div>
+																					<div class="event-price">EGP <?= $event->ticket_types[0]->_joinData->price ?></div>
+																					<ul class="event_icon">
+																						<li><a href="#" data-post-type="grids" data-post-id="2332" data-success-text="Saved" class="status-btn add-to-fav add-to-fav Save" title="Add To Bookmark"><i class="fa fa-bookmark-o"></i></a></li>
+																						<li><a href="javascript:void(0)" onclick="location.http://php.webmasterdriver.net/beevent/wp-admin/admin-ajax.php?action=process_simple_interest&post_id=2332&nonce=bd6b1b441d&is_comment=0&disabled=true" class="batn interested sl-buttons sl-buttons-2332" data-nonce="bd6b1b441d" data-post-id="2332" data-iscomment="0" title="interest"><em class="sl-icons"><i class="fa fa-star-o"></i></em><span style="display:none;">interested</span></a><span id="sl-loaders"></span></li>
+																						<li><a class="batn dropdown-toggle" title="Share This Event" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-share"></i> </a>
+																							<ul class="dropdown-menu dp_social_share">
+																								<li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Fcircus-carnival%2F" target="_blank"><i class="fa fa-facebook"></i>Facebook </a></li>
+																								<li><a href="https://twitter.com/intent/tweet?text=Circus%20Carnival%202020&amp;url=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Fcircus-carnival%2F&amp;via=beevent" target="_blank"><i class="fa fa-twitter"></i>Twitter </a></li>
+																								<li><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Fcircus-carnival%2F" target="_blank"><i class="fa fa-linkedin"></i>Linkedin </a></li>
+																								<li><a href="https://plus.google.com/share?url=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Fcircus-carnival%2F" target="_blank"><i class="fa fa-google-plus"></i>Google+ </a></li>
+																							</ul>
+																						</li>
 																					</ul>
+																				</div>
+																				<div class="js-grid-item-body event_body__BfZIC">
+																					<div class="event_calendar__2x4Hv">
+																						<span class="event_month__S8D_o color-primary"><?= date('D', strtotime($event->ticket_types[0]->_joinData->date_from)) ?></span>
+																						<span class="event_date__2Z7TH"><?= date('d', strtotime($event->ticket_types[0]->_joinData->date_from)) ?></span>
+																					</div>
+																					<div class="event_content__2fB-4">
+																						<h2 class="event_title__3C2PA"><a href="event/circus-carnival/index.html"><?= $event->name ?></a></h2>
+																						<ul class="event_meta__CFFPg list-none">
+																							<li class="event_metaList__1bEBH text-ellipsis"><span><i class="fa fa-calendar"> </i><?= date("jS F Y", strtotime($event->ticket_types[0]->_joinData->date_from)) ?> - <?= date("jS F Y", strtotime($event->ticket_types[0]->_joinData->date_to)) ?></span></li>
+																							<li class="event_metaList__1bEBH text-ellipsis"><span><i class="fa fa-clock-o"> </i><?= $event->ticket_types[0]->_joinData->time->format('H:i:s A') ?></span></li>
+																							<li class="event_metaList__1bEBH text-ellipsis"><span><a href="#" target="_blank"><span><i class="fa fa-map-marker"></i><?= $event->city->name ?>, <?= $event->country->name ?></span></a></span></li>
+																						</ul>
+																					</div>
 																				</div>
 																			</div>
 																		</div>
-																	</div>
-																	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-																		<div class="event_inner">
-																			<div class="listing-thumb">
-																				<a href='event/digital-economy-conference/index.html'>
-																					<img src='<?= BASE_URL ?>/frontend/wp-content/uploads/2016/12/schedule_bg.jpg' />
-																				</a>
-																				<div class="event-status">Upcoming </div>
-																				<div class="event-price">$50</div>
-																				<ul class="event_icon">
-																					<li><a href="#" data-post-type="grids" data-post-id="2257" data-success-text="Saved" class="status-btn add-to-fav add-to-fav Save" title="Add To Bookmark"><i class="fa fa-bookmark-o"></i></a></li>
-																					<li><a href="javascript:void(0)" onclick="location.http://php.webmasterdriver.net/beevent/wp-admin/admin-ajax.php?action=process_simple_interest&post_id=2257&nonce=bd6b1b441d&is_comment=0&disabled=true" class="batn interested sl-buttons sl-buttons-2257" data-nonce="bd6b1b441d" data-post-id="2257" data-iscomment="0" title="interest"><em class="sl-icons"><i class="fa fa-star-o"></i></em><span style="display:none;">interested</span></a><span id="sl-loaders"></span></li>
-																					<li><a class="batn dropdown-toggle" data-toggle="dropdown" title="Share This Event" aria-expanded="false"><i class="fa fa-share"></i> </a>
-																						<ul class="dropdown-menu dp_social_share">
-																							<li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Fdigital-economy-conference%2F" target="_blank"><i class="fa fa-facebook"></i>Facebook </a></li>
-																							<li><a href="https://twitter.com/intent/tweet?text=Digital%20Economy%20Conference&amp;url=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Fdigital-economy-conference%2F&amp;via=beevent" target="_blank"><i class="fa fa-twitter"></i>Twitter </a></li>
-																							<li><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Fdigital-economy-conference%2F" target="_blank"><i class="fa fa-linkedin"></i>Linkedin </a></li>
-																							<li><a href="https://plus.google.com/share?url=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Fdigital-economy-conference%2F" target="_blank"><i class="fa fa-google-plus"></i>Google+ </a></li>
-																						</ul>
-																					</li>
-																				</ul>
-																			</div>
-																			<div class="js-grid-item-body event_body__BfZIC">
-																				<div class="event_calendar__2x4Hv">
-																					<span class="event_month__S8D_o color-primary">Wed</span>
-																					<span class="event_date__2Z7TH">01</span>
-																				</div>
-																				<div class="event_content__2fB-4">
-																					<h2 class="event_title__3C2PA"><a href="event/digital-economy-conference/index.html">Digital Economy Conference</a></h2>
-																					<ul class="event_meta__CFFPg list-none">
-																						<li class="event_metaList__1bEBH text-ellipsis"><span><i class="fa fa-calendar"> </i>September 1, 2021 - February 7, 2022</span></li>
-																						<li class="event_metaList__1bEBH text-ellipsis"><span><i class="fa fa-clock-o"> </i>12:00 PM - 10:00 PM</span></li>
-																						<li class="event_metaList__1bEBH text-ellipsis"><span><a href="#" target="_blank"><span><i class="fa fa-map-marker"></i>London Eye, The Queen's Walk, London, UK</span></a></span></li>
-																					</ul>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-																		<div class="event_inner">
-																			<div class="listing-thumb">
-																				<a href='event/demo/index.html'>
-																					<img src='<?= BASE_URL ?>/frontend/wp-content/uploads/2019/12/live-concert-455762_1920.jpg' />
-																				</a>
-																				<div class="event-status">Upcoming </div>
-																				<div class="event-price">$200</div>
-																				<ul class="event_icon">
-																					<li><a href="#" data-post-type="grids" data-post-id="1784" data-success-text="Saved" class="status-btn add-to-fav add-to-fav Save" title="Add To Bookmark"><i class="fa fa-bookmark-o"></i></a></li>
-																					<li><a href="javascript:void(0)" onclick="location.http://php.webmasterdriver.net/beevent/wp-admin/admin-ajax.php?action=process_simple_interest&post_id=1784&nonce=bd6b1b441d&is_comment=0&disabled=true" class="batn interested sl-buttons sl-buttons-1784" data-nonce="bd6b1b441d" data-post-id="1784" data-iscomment="0" title="interest"><em class="sl-icons"><i class="fa fa-star-o"></i></em><span style="display:none;">interested</span></a><span id="sl-loaders"></span></li>
-																					<li><a class="batn dropdown-toggle" data-toggle="dropdown" title="Share This Event" aria-expanded="false"><i class="fa fa-share"></i> </a>
-																						<ul class="dropdown-menu dp_social_share">
-																							<li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Fdemo%2F" target="_blank"><i class="fa fa-facebook"></i>Facebook </a></li>
-																							<li><a href="https://twitter.com/intent/tweet?text=Live%20Music%20Event%20Concert&amp;url=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Fdemo%2F&amp;via=beevent" target="_blank"><i class="fa fa-twitter"></i>Twitter </a></li>
-																							<li><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Fdemo%2F" target="_blank"><i class="fa fa-linkedin"></i>Linkedin </a></li>
-																							<li><a href="https://plus.google.com/share?url=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Fdemo%2F" target="_blank"><i class="fa fa-google-plus"></i>Google+ </a></li>
-																						</ul>
-																					</li>
-																				</ul>
-																			</div>
-																			<div class="js-grid-item-body event_body__BfZIC">
-																				<div class="event_calendar__2x4Hv">
-																					<span class="event_month__S8D_o color-primary">Mon</span>
-																					<span class="event_date__2Z7TH">01</span>
-																				</div>
-																				<div class="event_content__2fB-4">
-																					<h2 class="event_title__3C2PA"><a href="event/demo/index.html">Live Music Event Concert</a></h2>
-																					<ul class="event_meta__CFFPg list-none">
-																						<li class="event_metaList__1bEBH text-ellipsis"><span><i class="fa fa-calendar"> </i>November 1, 2021 - January 10, 2022</span></li>
-																						<li class="event_metaList__1bEBH text-ellipsis"><span><i class="fa fa-clock-o"> </i>1:00 AM - 3:00 AM</span></li>
-																						<li class="event_metaList__1bEBH text-ellipsis"><span><a href="#" target="_blank"><span><i class="fa fa-map-marker"></i>London Bridge, London, UK</span></a></span></li>
-																					</ul>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
+																	<?php
+																		}
+																	?>
 																</div>
 
 																<!-- Ongoing -->
@@ -475,7 +410,7 @@
 																			<div class="event_inner">
 																				<div class="listing-thumb">
 																					<a href='<?= BASE_URL ?>/guides/event-details'>
-																						<img src='<?= BASE_URL ?>/frontend/wp-content/uploads/2020/01/circus-828680_1920.jpg' />
+																						<img src='<?= $event->images[0] ?>' />
 																					</a>
 																					<div class="event-status">ongoing </div>
 																					<div class="event-price">EGP <?= $event->ticket_types[0]->_joinData->price ?></div>
@@ -515,117 +450,50 @@
 
 																<!-- Expired -->
 																<div class="tab-pane" id="expired">
-																	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-																		<div class="event_inner">
-																			<div class="listing-thumb">
-																				<a href='event/designing-concert/index.html'>
-																					<img src='<?= BASE_URL ?>/frontend/wp-content/uploads/2020/02/art-1478831_1920.jpg' />
-																				</a>
-																				<div class="event-status">Expired </div>
-																				<div class="event-price">$150</div>
-																				<ul class="event_icon">
-																					<li><a href="#" data-post-type="grids" data-post-id="2302" data-success-text="Saved" class="status-btn add-to-fav add-to-fav Save" title="Add To Bookmark"><i class="fa fa-bookmark-o"></i></a></li>
-																					<li><a href="javascript:void(0)" onclick="location.http://php.webmasterdriver.net/beevent/wp-admin/admin-ajax.php?action=process_simple_interest&post_id=2302&nonce=bd6b1b441d&is_comment=0&disabled=true" class="batn interested sl-buttons sl-buttons-2302" data-nonce="bd6b1b441d" data-post-id="2302" data-iscomment="0" title="interest"><em class="sl-icons"><i class="fa fa-star-o"></i></em><span style="display:none;">interested</span></a><span id="sl-loaders"></span></li>
-																					<li><a class="batn dropdown-toggle" title="Share This Event" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-share"></i> </a>
-																						<ul class="dropdown-menu dp_social_share">
-																							<li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Fdesigning-concert%2F" target="_blank"><i class="fa fa-facebook"></i>Facebook </a></li>
-																							<li><a href="https://twitter.com/intent/tweet?text=Designing%20Concert&amp;url=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Fdesigning-concert%2F&amp;via=beevent" target="_blank"><i class="fa fa-twitter"></i>Twitter </a></li>
-																							<li><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Fdesigning-concert%2F" target="_blank"><i class="fa fa-linkedin"></i>Linkedin </a></li>
-																							<li><a href="https://plus.google.com/share?url=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Fdesigning-concert%2F" target="_blank"><i class="fa fa-google-plus"></i>Google+ </a></li>
-																						</ul>
-																					</li>
-																				</ul>
-																			</div>
-																			<div class="js-grid-item-body event_body__BfZIC">
-																				<div class="event_calendar__2x4Hv">
-																					<span class="event_month__S8D_o color-primary">Wed</span>
-																					<span class="event_date__2Z7TH">12</span>
-																				</div>
-																				<div class="event_content__2fB-4">
-																					<h2 class="event_title__3C2PA"><a href="event/designing-concert/index.html">Designing Concert</a></h2>
-																					<ul class="event_meta__CFFPg list-none">
-																						<li class="event_metaList__1bEBH text-ellipsis"><span><i class="fa fa-calendar"> </i>February 12, 2020 - January 31, 2021</span></li>
-																						<li class="event_metaList__1bEBH text-ellipsis"><span><i class="fa fa-clock-o"> </i>1:00 PM - 5:00 PM</span></li>
-																						<li class="event_metaList__1bEBH text-ellipsis"><span><a href="#" target="_blank"><span><i class="fa fa-map-marker"></i>London Eye, The Queen's Walk, London, UK</span></a></span></li>
+																	<?php
+																		foreach($expiredEvents as $event){
+																	?>
+																		<!-- Incoming -->
+																		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+																			<div class="event_inner">
+																				<div class="listing-thumb">
+																					<a href='<?= BASE_URL ?>/guides/event-details'>
+																						<img src='<?= $event->images[0] ?>' />
+																					</a>
+																					<div class="event-status">ongoing </div>
+																					<div class="event-price">EGP <?= $event->ticket_types[0]->_joinData->price ?></div>
+																					<ul class="event_icon">
+																						<li><a href="#" data-post-type="grids" data-post-id="2332" data-success-text="Saved" class="status-btn add-to-fav add-to-fav Save" title="Add To Bookmark"><i class="fa fa-bookmark-o"></i></a></li>
+																						<li><a href="javascript:void(0)" onclick="location.http://php.webmasterdriver.net/beevent/wp-admin/admin-ajax.php?action=process_simple_interest&post_id=2332&nonce=bd6b1b441d&is_comment=0&disabled=true" class="batn interested sl-buttons sl-buttons-2332" data-nonce="bd6b1b441d" data-post-id="2332" data-iscomment="0" title="interest"><em class="sl-icons"><i class="fa fa-star-o"></i></em><span style="display:none;">interested</span></a><span id="sl-loaders"></span></li>
+																						<li><a class="batn dropdown-toggle" title="Share This Event" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-share"></i> </a>
+																							<ul class="dropdown-menu dp_social_share">
+																								<li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Fcircus-carnival%2F" target="_blank"><i class="fa fa-facebook"></i>Facebook </a></li>
+																								<li><a href="https://twitter.com/intent/tweet?text=Circus%20Carnival%202020&amp;url=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Fcircus-carnival%2F&amp;via=beevent" target="_blank"><i class="fa fa-twitter"></i>Twitter </a></li>
+																								<li><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Fcircus-carnival%2F" target="_blank"><i class="fa fa-linkedin"></i>Linkedin </a></li>
+																								<li><a href="https://plus.google.com/share?url=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Fcircus-carnival%2F" target="_blank"><i class="fa fa-google-plus"></i>Google+ </a></li>
+																							</ul>
+																						</li>
 																					</ul>
+																				</div>
+																				<div class="js-grid-item-body event_body__BfZIC">
+																					<div class="event_calendar__2x4Hv">
+																						<span class="event_month__S8D_o color-primary"><?= date('D', strtotime($event->ticket_types[0]->_joinData->date_from)) ?></span>
+																						<span class="event_date__2Z7TH"><?= date('d', strtotime($event->ticket_types[0]->_joinData->date_from)) ?></span>
+																					</div>
+																					<div class="event_content__2fB-4">
+																						<h2 class="event_title__3C2PA"><a href="event/circus-carnival/index.html"><?= $event->name ?></a></h2>
+																						<ul class="event_meta__CFFPg list-none">
+																							<li class="event_metaList__1bEBH text-ellipsis"><span><i class="fa fa-calendar"> </i><?= date("jS F Y", strtotime($event->ticket_types[0]->_joinData->date_from)) ?> - <?= date("jS F Y", strtotime($event->ticket_types[0]->_joinData->date_to)) ?></span></li>
+																							<li class="event_metaList__1bEBH text-ellipsis"><span><i class="fa fa-clock-o"> </i><?= $event->ticket_types[0]->_joinData->time->format('H:i:s A') ?></span></li>
+																							<li class="event_metaList__1bEBH text-ellipsis"><span><a href="#" target="_blank"><span><i class="fa fa-map-marker"></i><?= $event->city->name ?>, <?= $event->country->name ?></span></a></span></li>
+																						</ul>
+																					</div>
 																				</div>
 																			</div>
 																		</div>
-																	</div>
-																	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-																		<div class="event_inner">
-																			<div class="listing-thumb">
-																				<a href='event/fun-mania-christmas-event/index.html'>
-																					<img src='<?= BASE_URL ?>/frontend/wp-content/uploads/2019/12/decorating-christmas-tree-2999722_1920.jpg' />
-																				</a>
-																				<div class="event-status">Expired </div>
-																				<div class="event-price">$100</div>
-																				<ul class="event_icon">
-																					<li><a href="#" data-post-type="grids" data-post-id="1805" data-success-text="Saved" class="status-btn add-to-fav add-to-fav Save" title="Add To Bookmark"><i class="fa fa-bookmark-o"></i></a></li>
-																					<li><a href="javascript:void(0)" onclick="location.http://php.webmasterdriver.net/beevent/wp-admin/admin-ajax.php?action=process_simple_interest&post_id=1805&nonce=bd6b1b441d&is_comment=0&disabled=true" class="batn interested sl-buttons sl-buttons-1805" data-nonce="bd6b1b441d" data-post-id="1805" data-iscomment="0" title="interest"><em class="sl-icons"><i class="fa fa-star-o"></i></em><span style="display:none;">interested</span></a><span id="sl-loaders"></span></li>
-																					<li><a class="batn dropdown-toggle" title="Share This Event" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-share"></i> </a>
-																						<ul class="dropdown-menu dp_social_share">
-																							<li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Ffun-mania-christmas-event%2F" target="_blank"><i class="fa fa-facebook"></i>Facebook </a></li>
-																							<li><a href="https://twitter.com/intent/tweet?text=Fun%20Mania%20Christmas%20Event&amp;url=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Ffun-mania-christmas-event%2F&amp;via=beevent" target="_blank"><i class="fa fa-twitter"></i>Twitter </a></li>
-																							<li><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Ffun-mania-christmas-event%2F" target="_blank"><i class="fa fa-linkedin"></i>Linkedin </a></li>
-																							<li><a href="https://plus.google.com/share?url=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Ffun-mania-christmas-event%2F" target="_blank"><i class="fa fa-google-plus"></i>Google+ </a></li>
-																						</ul>
-																					</li>
-																				</ul>
-																			</div>
-																			<div class="js-grid-item-body event_body__BfZIC">
-																				<div class="event_calendar__2x4Hv">
-																					<span class="event_month__S8D_o color-primary">Wed</span>
-																					<span class="event_date__2Z7TH">25</span>
-																				</div>
-																				<div class="event_content__2fB-4">
-																					<h2 class="event_title__3C2PA"><a href="event/fun-mania-christmas-event/index.html">Fun Mania Christmas Event</a></h2>
-																					<ul class="event_meta__CFFPg list-none">
-																						<li class="event_metaList__1bEBH text-ellipsis"><span><i class="fa fa-calendar"> </i>December 25, 2019 - December 28, 2019</span></li>
-																						<li class="event_metaList__1bEBH text-ellipsis"><span><i class="fa fa-clock-o"> </i>2:00 PM - 10:00 PM</span></li>
-																						<li class="event_metaList__1bEBH text-ellipsis"><span><a href="#" target="_blank"><span><i class="fa fa-map-marker"></i>Switzer Falls Trail, Angeles Crest Highway, Tujunga, CA, USA</span></a></span></li>
-																					</ul>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-																		<div class="event_inner">
-																			<div class="listing-thumb">
-																				<a href='event/new-year-party/index.html'>
-																					<img src='<?= BASE_URL ?>/frontend/wp-content/uploads/2019/12/champagne-3515140_1920.jpg' />
-																				</a>
-																				<div class="event-status">Expired </div>
-																				<div class="event-price">$200</div>
-																				<ul class="event_icon">
-																					<li><a href="#" data-post-type="grids" data-post-id="1803" data-success-text="Saved" class="status-btn add-to-fav add-to-fav Save" title="Add To Bookmark"><i class="fa fa-bookmark-o"></i></a></li>
-																					<li><a href="javascript:void(0)" onclick="location.http://php.webmasterdriver.net/beevent/wp-admin/admin-ajax.php?action=process_simple_interest&post_id=1803&nonce=bd6b1b441d&is_comment=0&disabled=true" class="batn interested sl-buttons sl-buttons-1803" data-nonce="bd6b1b441d" data-post-id="1803" data-iscomment="0" title="interest"><em class="sl-icons"><i class="fa fa-star-o"></i></em><span style="display:none;">interested</span></a><span id="sl-loaders"></span></li>
-																					<li><a class="batn dropdown-toggle" title="Share This Event" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-share"></i> </a>
-																						<ul class="dropdown-menu dp_social_share">
-																							<li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Fnew-year-party%2F" target="_blank"><i class="fa fa-facebook"></i>Facebook </a></li>
-																							<li><a href="https://twitter.com/intent/tweet?text=New%20year%20party&amp;url=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Fnew-year-party%2F&amp;via=beevent" target="_blank"><i class="fa fa-twitter"></i>Twitter </a></li>
-																							<li><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Fnew-year-party%2F" target="_blank"><i class="fa fa-linkedin"></i>Linkedin </a></li>
-																							<li><a href="https://plus.google.com/share?url=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Fnew-year-party%2F" target="_blank"><i class="fa fa-google-plus"></i>Google+ </a></li>
-																						</ul>
-																					</li>
-																				</ul>
-																			</div>
-																			<div class="js-grid-item-body event_body__BfZIC">
-																				<div class="event_calendar__2x4Hv">
-																					<span class="event_month__S8D_o color-primary">Tue</span>
-																					<span class="event_date__2Z7TH">31</span>
-																				</div>
-																				<div class="event_content__2fB-4">
-																					<h2 class="event_title__3C2PA"><a href="event/new-year-party/index.html">New year party</a></h2>
-																					<ul class="event_meta__CFFPg list-none">
-																						<li class="event_metaList__1bEBH text-ellipsis"><span><i class="fa fa-calendar"> </i>December 31, 2019 - January 1, 2020</span></li>
-																						<li class="event_metaList__1bEBH text-ellipsis"><span><i class="fa fa-clock-o"> </i>7:00 PM - 11:00 PM</span></li>
-																						<li class="event_metaList__1bEBH text-ellipsis"><span><a href="#" target="_blank"><span><i class="fa fa-map-marker"></i>Englandsvej, Copenhagen Municipality, Denmark</span></a></span></li>
-																					</ul>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
+																	<?php
+																		}
+																	?>
 																</div>
 															</div>
 														</div>
@@ -897,7 +765,7 @@
 												</div>
 												<div class="elementor-element elementor-element-429f457 elementor-widget elementor-widget-text-editor" data-id="429f457" data-element_type="widget" data-widget_type="text-editor.default">
 													<div class="elementor-widget-container">
-														<div class="elementor-text-editor elementor-clearfix"><a class="btn" href="featured-event.html">Browse More Event</a></div>
+														<div class="elementor-text-editor elementor-clearfix"><a class="btn" href="<?= BASE_URL ?>/guides/all-events">Browse More Event</a></div>
 													</div>
 												</div>
 											</div>
