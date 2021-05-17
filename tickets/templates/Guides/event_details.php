@@ -1,5 +1,5 @@
 <div id="eventshow" class="slideshow">
-    <div id="siderwidth" class="slides" style="background-image:url(<?= BASE_URL ?>/frontend/wp-content/uploads/2020/01/circus-828680_1920.jpg);">
+    <div id="siderwidth" class="slides" style="background-image:url(<?= $event->images[0] ?>);">
         <div class="banner-fixed">
             <div class="container">
                 <div class="banner-content">

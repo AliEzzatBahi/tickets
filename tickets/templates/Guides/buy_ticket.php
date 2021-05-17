@@ -85,7 +85,7 @@
                         <input id="total-price" class="form-control" name="total-price" type="text" value="<?= $ticketType->events[0]->_joinData->price ?> EGP" disabled/>
                     </div>
                 </div>
-                <a class="btn btn-sm btn-danger js-target-scroll" href="#">Buy Now</a>
+                <a class="btn btn-sm btn-danger js-target-scroll" href="<?= BASE_URL ?>/guides/checkout">Buy Now</a>
             </form>
         </div>
     </div>

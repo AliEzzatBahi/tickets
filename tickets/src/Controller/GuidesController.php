@@ -112,4 +112,8 @@ class GuidesController extends AppController
         $ticketType = $this->TicketTypes->get($ticketId, [ 'contain' => ['Events.Cities', 'Events.Countries']]);
         $this->set(compact('ticketType'));
     }
+
+    public function checkout(){
+        
+    }
 }

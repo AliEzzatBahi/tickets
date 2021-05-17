@@ -356,7 +356,7 @@
 															<div class="tab-content">
 																<div class="tab-pane" id="upcoming">
 																	<?php
-																		foreach($upComingEvents as $event){
+																		foreach(array_slice($upComingEvents, -3, 3, true) as $event){
 																	?>
 																		<!-- Incoming -->
 																		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
@@ -386,7 +386,7 @@
 																						<span class="event_date__2Z7TH"><?= date('d', strtotime($event->ticket_types[0]->_joinData->date_from)) ?></span>
 																					</div>
 																					<div class="event_content__2fB-4">
-																						<h2 class="event_title__3C2PA"><a href="event/circus-carnival/index.html"><?= $event->name ?></a></h2>
+																						<h2 class="event_title__3C2PA"><a href="<?= BASE_URL ?>/guides/event-details/<?= $event->id ?>"><?= $event->name ?></a></h2>
 																						<ul class="event_meta__CFFPg list-none">
 																							<li class="event_metaList__1bEBH text-ellipsis"><span><i class="fa fa-calendar"> </i><?= date("jS F Y", strtotime($event->ticket_types[0]->_joinData->date_from)) ?> - <?= date("jS F Y", strtotime($event->ticket_types[0]->_joinData->date_to)) ?></span></li>
 																							<li class="event_metaList__1bEBH text-ellipsis"><span><i class="fa fa-clock-o"> </i><?= $event->ticket_types[0]->_joinData->time->format('H:i:s A') ?></span></li>
@@ -404,7 +404,7 @@
 																<!-- Ongoing -->
 																<div class="tab-pane active" id="ongoing">
 																	<?php
-																		foreach($onGoingEvents as $event){
+																		foreach(array_slice($onGoingEvents, -3, 3, true) as $event){
 																	?>
 																		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 																			<div class="event_inner">
@@ -433,7 +433,7 @@
 																						<span class="event_date__2Z7TH"><?= date('d', strtotime($event->ticket_types[0]->_joinData->date_from)) ?></span>
 																					</div>
 																					<div class="event_content__2fB-4">
-																						<h2 class="event_title__3C2PA"><a href="event/circus-carnival/index.html"><?= $event->name ?></a></h2>
+																						<h2 class="event_title__3C2PA"><a href="<?= BASE_URL ?>/guides/event-details/<?= $event->id ?>"><?= $event->name ?></a></h2>
 																						<ul class="event_meta__CFFPg list-none">
 																							<li class="event_metaList__1bEBH text-ellipsis"><span><i class="fa fa-calendar"> </i><?= date("jS F Y", strtotime($event->ticket_types[0]->_joinData->date_from)) ?> - <?= date("jS F Y", strtotime($event->ticket_types[0]->_joinData->date_to)) ?></span></li>
 																							<li class="event_metaList__1bEBH text-ellipsis"><span><i class="fa fa-clock-o"> </i><?= $event->ticket_types[0]->_joinData->time->format('H:i:s A') ?></span></li>
@@ -451,7 +451,7 @@
 																<!-- Expired -->
 																<div class="tab-pane" id="expired">
 																	<?php
-																		foreach($expiredEvents as $event){
+																		foreach(array_slice($expiredEvents, -3, 3, true) as $event){
 																	?>
 																		<!-- Incoming -->
 																		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
@@ -481,7 +481,7 @@
 																						<span class="event_date__2Z7TH"><?= date('d', strtotime($event->ticket_types[0]->_joinData->date_from)) ?></span>
 																					</div>
 																					<div class="event_content__2fB-4">
-																						<h2 class="event_title__3C2PA"><a href="event/circus-carnival/index.html"><?= $event->name ?></a></h2>
+																						<h2 class="event_title__3C2PA"><a href="<?= BASE_URL ?>/guides/event-details/<?= $event->id ?>"><?= $event->name ?></a></h2>
 																						<ul class="event_meta__CFFPg list-none">
 																							<li class="event_metaList__1bEBH text-ellipsis"><span><i class="fa fa-calendar"> </i><?= date("jS F Y", strtotime($event->ticket_types[0]->_joinData->date_from)) ?> - <?= date("jS F Y", strtotime($event->ticket_types[0]->_joinData->date_to)) ?></span></li>
 																							<li class="event_metaList__1bEBH text-ellipsis"><span><i class="fa fa-clock-o"> </i><?= $event->ticket_types[0]->_joinData->time->format('H:i:s A') ?></span></li>
@@ -647,117 +647,49 @@
 													<div class="elementor-widget-container">
 														<div class="container">
 															<div class="row">
-																<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-																	<div class="event_inner">
-																		<div class="listing-thumb">
-																			<a href='event/fashion-carnival-2021/index.html'>
-																				<img src='<?= BASE_URL ?>/frontend/wp-content/uploads/2020/02/574784-PLQEH5-409-scaled-1.jpg' />
-																			</a>
-																			<div class="event-status">$200</div>
-																			<div class="event-featured"><i class="fa fa-star"></i></div>
-																			<ul class="event_icon">
-																				<li><a href="#" data-post-type="grids" data-post-id="2289" data-success-text="Saved" class="status-btn add-to-fav add-to-fav Save" title="Add To Bookmark"><i class="fa fa-bookmark-o"></i></a></li>
-																				<li><a href="javascript:void(0)" onclick="location.http://php.webmasterdriver.net/beevent/wp-admin/admin-ajax.php?action=process_simple_interest&post_id=2289&nonce=bd6b1b441d&is_comment=0&disabled=true" class="batn interested sl-buttons sl-buttons-2289" data-nonce="bd6b1b441d" data-post-id="2289" data-iscomment="0" title="interest"><em class="sl-icons"><i class="fa fa-star-o"></i></em><span style="display:none;">interested</span></a><span id="sl-loaders"></span></li>
-																				<li><a class="batn dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Share This Event"><i class="fa fa-share"></i> </a>
-																					<ul class="dropdown-menu dp_social_share">
-																						<li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Ffashion-carnival-2021%2F" target="_blank"><i class="fa fa-facebook"></i>Facebook </a></li>
-																						<li><a href="https://twitter.com/intent/tweet?text=Fashion%20Carnival%202021&amp;url=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Ffashion-carnival-2021%2F&amp;via=beevent" target="_blank"><i class="fa fa-twitter"></i>Twitter </a></li>
-																						<li><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Ffashion-carnival-2021%2F" target="_blank"><i class="fa fa-linkedin"></i>Linkedin </a></li>
-																						<li><a href="https://plus.google.com/share?url=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Ffashion-carnival-2021%2F" target="_blank"><i class="fa fa-google-plus"></i>Google + </a></li>
-																					</ul>
-																				</li>
-																			</ul>
-																		</div>
-																		<div class="js-grid-item-body event_body__BfZIC">
-																			<div class="event_calendar__2x4Hv">
-																				<span class="event_month__S8D_o color-primary">Fri</span>
-																				<span class="event_date__2Z7TH">01</span>
-																			</div>
-																			<div class="event_content__2fB-4">
-																				<h2 class="event_title__3C2PA"><a href="event/fashion-carnival-2021/index.html">Fashion Carnival 2021</a></h2>
-																				<ul class="event_meta__CFFPg list-none">
-																					<li class="event_metaList__1bEBH text-ellipsis"><span><i class="fa fa-calendar"> </i>January 1, 2021 - March 9, 2022</span></li>
-																					<li class="event_metaList__1bEBH text-ellipsis"><span><i class="fa fa-clock-o"> </i>10:00 AM - 8:00 PM</span></li>
-																					<li class="event_metaList__1bEBH text-ellipsis"><span><a href="#" target="_blank"><span><i class="fa fa-map-marker"></i>Indonesian Embassy, Road No 2432, Manama, Bahrain</span></a></span></li>
+																<?php
+																	foreach(array_slice($upComingEvents, -3, 3, true) as $event){
+																?>
+																	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+																		<div class="event_inner">
+																			<div class="listing-thumb">
+																				<a href='<?= BASE_URL ?>/guides/event-details/<?= $event->id ?>'>
+																					<img src='<?= $event->images[0] ?>' />
+																				</a>
+																				<div class="event-status">EGP <?= $event->ticket_types[0]->_joinData->price ?></div>
+																				<div class="event-featured"><i class="fa fa-star"></i></div>
+																				<ul class="event_icon">
+																					<li><a href="#" data-post-type="grids" data-post-id="2289" data-success-text="Saved" class="status-btn add-to-fav add-to-fav Save" title="Add To Bookmark"><i class="fa fa-bookmark-o"></i></a></li>
+																					<li><a href="javascript:void(0)" onclick="location.http://php.webmasterdriver.net/beevent/wp-admin/admin-ajax.php?action=process_simple_interest&post_id=2289&nonce=bd6b1b441d&is_comment=0&disabled=true" class="batn interested sl-buttons sl-buttons-2289" data-nonce="bd6b1b441d" data-post-id="2289" data-iscomment="0" title="interest"><em class="sl-icons"><i class="fa fa-star-o"></i></em><span style="display:none;">interested</span></a><span id="sl-loaders"></span></li>
+																					<li><a class="batn dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Share This Event"><i class="fa fa-share"></i> </a>
+																						<ul class="dropdown-menu dp_social_share">
+																							<li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Ffashion-carnival-2021%2F" target="_blank"><i class="fa fa-facebook"></i>Facebook </a></li>
+																							<li><a href="https://twitter.com/intent/tweet?text=Fashion%20Carnival%202021&amp;url=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Ffashion-carnival-2021%2F&amp;via=beevent" target="_blank"><i class="fa fa-twitter"></i>Twitter </a></li>
+																							<li><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Ffashion-carnival-2021%2F" target="_blank"><i class="fa fa-linkedin"></i>Linkedin </a></li>
+																							<li><a href="https://plus.google.com/share?url=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Ffashion-carnival-2021%2F" target="_blank"><i class="fa fa-google-plus"></i>Google + </a></li>
+																						</ul>
+																					</li>
 																				</ul>
+																			</div>
+																			<div class="js-grid-item-body event_body__BfZIC">
+																				<div class="event_calendar__2x4Hv">
+																					<span class="event_month__S8D_o color-primary"><?= date('D', strtotime($event->ticket_types[0]->_joinData->date_from)) ?></span>
+																					<span class="event_date__2Z7TH"><?= date('d', strtotime($event->ticket_types[0]->_joinData->date_from)) ?></span>
+																				</div>
+																				<div class="event_content__2fB-4">
+																					<h2 class="event_title__3C2PA"><a href="<?= BASE_URL ?>/guides/event-details/<?= $event->id ?>"><?= $event->name ?></a></h2>
+																					<ul class="event_meta__CFFPg list-none">
+																						<li class="event_metaList__1bEBH text-ellipsis"><span><i class="fa fa-calendar"> </i><?= date("jS F Y", strtotime($event->ticket_types[0]->_joinData->date_from)) ?> - <?= date("jS F Y", strtotime($event->ticket_types[0]->_joinData->date_to)) ?></span></li>
+																						<li class="event_metaList__1bEBH text-ellipsis"><span><i class="fa fa-clock-o"> </i><?= $event->ticket_types[0]->_joinData->time->format('H:i:s A') ?></span></li>
+																						<li class="event_metaList__1bEBH text-ellipsis"><span><a href="#" target="_blank"><span><i class="fa fa-map-marker"></i><?= $event->city->name ?>, <?= $event->country->name ?></span></a></span></li>
+																					</ul>
+																				</div>
 																			</div>
 																		</div>
 																	</div>
-																</div>
-																<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-																	<div class="event_inner">
-																		<div class="listing-thumb">
-																			<a href='event/spain-education-seminar-2021/index.html'>
-																				<img src='<?= BASE_URL ?>/frontend/wp-content/uploads/2020/02/lecture-3986809_1920.jpg' />
-																			</a>
-																			<div class="event-status">$100</div>
-																			<div class="event-featured"><i class="fa fa-star"></i></div>
-																			<ul class="event_icon">
-																				<li><a href="#" data-post-type="grids" data-post-id="2296" data-success-text="Saved" class="status-btn add-to-fav add-to-fav Save" title="Add To Bookmark"><i class="fa fa-bookmark-o"></i></a></li>
-																				<li><a href="javascript:void(0)" onclick="location.http://php.webmasterdriver.net/beevent/wp-admin/admin-ajax.php?action=process_simple_interest&post_id=2296&nonce=bd6b1b441d&is_comment=0&disabled=true" class="batn interested sl-buttons sl-buttons-2296" data-nonce="bd6b1b441d" data-post-id="2296" data-iscomment="0" title="interest"><em class="sl-icons"><i class="fa fa-star-o"></i></em><span style="display:none;">interested</span></a><span id="sl-loaders"></span></li>
-																				<li><a class="batn dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Share This Event"><i class="fa fa-share"></i> </a>
-																					<ul class="dropdown-menu dp_social_share">
-																						<li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Fspain-education-seminar-2021%2F" target="_blank"><i class="fa fa-facebook"></i>Facebook </a></li>
-																						<li><a href="https://twitter.com/intent/tweet?text=Spain%20Education%20Seminar&amp;url=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Fspain-education-seminar-2021%2F&amp;via=beevent" target="_blank"><i class="fa fa-twitter"></i>Twitter </a></li>
-																						<li><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Fspain-education-seminar-2021%2F" target="_blank"><i class="fa fa-linkedin"></i>Linkedin </a></li>
-																						<li><a href="https://plus.google.com/share?url=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Fspain-education-seminar-2021%2F" target="_blank"><i class="fa fa-google-plus"></i>Google + </a></li>
-																					</ul>
-																				</li>
-																			</ul>
-																		</div>
-																		<div class="js-grid-item-body event_body__BfZIC">
-																			<div class="event_calendar__2x4Hv">
-																				<span class="event_month__S8D_o color-primary">Mon</span>
-																				<span class="event_date__2Z7TH">01</span>
-																			</div>
-																			<div class="event_content__2fB-4">
-																				<h2 class="event_title__3C2PA"><a href="event/spain-education-seminar-2021/index.html">Spain Education Seminar</a></h2>
-																				<ul class="event_meta__CFFPg list-none">
-																					<li class="event_metaList__1bEBH text-ellipsis"><span><i class="fa fa-calendar"> </i>March 1, 2021 - May 20, 2022</span></li>
-																					<li class="event_metaList__1bEBH text-ellipsis"><span><i class="fa fa-clock-o"> </i>1:00 PM - 8:00 PM</span></li>
-																					<li class="event_metaList__1bEBH text-ellipsis"><span><a href="#" target="_blank"><span><i class="fa fa-map-marker"></i>Spain Park High School, Jaguar Drive, Birmingham, AL, USA</span></a></span></li>
-																				</ul>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-																<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-																	<div class="event_inner">
-																		<div class="listing-thumb">
-																			<a href='event/digital-economy-conference/index.html'>
-																				<img src='<?= BASE_URL ?>/frontend/wp-content/uploads/2016/12/schedule_bg.jpg' />
-																			</a>
-																			<div class="event-status">$50</div>
-																			<div class="event-featured"><i class="fa fa-star"></i></div>
-																			<ul class="event_icon">
-																				<li><a href="#" data-post-type="grids" data-post-id="2257" data-success-text="Saved" class="status-btn add-to-fav add-to-fav Save" title="Add To Bookmark"><i class="fa fa-bookmark-o"></i></a></li>
-																				<li><a href="javascript:void(0)" onclick="location.http://php.webmasterdriver.net/beevent/wp-admin/admin-ajax.php?action=process_simple_interest&post_id=2257&nonce=bd6b1b441d&is_comment=0&disabled=true" class="batn interested sl-buttons sl-buttons-2257" data-nonce="bd6b1b441d" data-post-id="2257" data-iscomment="0" title="interest"><em class="sl-icons"><i class="fa fa-star-o"></i></em><span style="display:none;">interested</span></a><span id="sl-loaders"></span></li>
-																				<li><a class="batn dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Share This Event"><i class="fa fa-share"></i> </a>
-																					<ul class="dropdown-menu dp_social_share">
-																						<li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Fdigital-economy-conference%2F" target="_blank"><i class="fa fa-facebook"></i>Facebook </a></li>
-																						<li><a href="https://twitter.com/intent/tweet?text=Digital%20Economy%20Conference&amp;url=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Fdigital-economy-conference%2F&amp;via=beevent" target="_blank"><i class="fa fa-twitter"></i>Twitter </a></li>
-																						<li><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Fdigital-economy-conference%2F" target="_blank"><i class="fa fa-linkedin"></i>Linkedin </a></li>
-																						<li><a href="https://plus.google.com/share?url=http%3A%2F%2Fphp.webmasterdriver.net%2Fbeevent%2Fevent%2Fdigital-economy-conference%2F" target="_blank"><i class="fa fa-google-plus"></i>Google + </a></li>
-																					</ul>
-																				</li>
-																			</ul>
-																		</div>
-																		<div class="js-grid-item-body event_body__BfZIC">
-																			<div class="event_calendar__2x4Hv">
-																				<span class="event_month__S8D_o color-primary">Wed</span>
-																				<span class="event_date__2Z7TH">01</span>
-																			</div>
-																			<div class="event_content__2fB-4">
-																				<h2 class="event_title__3C2PA"><a href="event/digital-economy-conference/index.html">Digital Economy Conference</a></h2>
-																				<ul class="event_meta__CFFPg list-none">
-																					<li class="event_metaList__1bEBH text-ellipsis"><span><i class="fa fa-calendar"> </i>September 1, 2021 - February 7, 2022</span></li>
-																					<li class="event_metaList__1bEBH text-ellipsis"><span><i class="fa fa-clock-o"> </i>12:00 PM - 10:00 PM</span></li>
-																					<li class="event_metaList__1bEBH text-ellipsis"><span><a href="#" target="_blank"><span><i class="fa fa-map-marker"></i>London Eye, The Queen's Walk, London, UK</span></a></span></li>
-																				</ul>
-																			</div>
-																		</div>
-																	</div>
-																</div>
+																<?php
+																	}
+																?>
 															</div>
 														</div>
 														<div class="elementor-shortcode"></div>
@@ -880,7 +812,7 @@
 													<div class="elementor-widget-container">
 														<div class="row">
 															<?php
-																foreach($blogs as $blog){
+																foreach($blogs->limit(3) as $blog){
 															?>
 																<div class="col-md-9 col-lg-4">
 																	<div class="post-wp">
