@@ -582,5 +582,4 @@ $(document).ready(function() {
             }
         });
     });
-
 });

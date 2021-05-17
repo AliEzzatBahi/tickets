@@ -316,24 +316,7 @@
 											<div class="table_btn">
 												<p class="available"> <?= date("jS F Y", strtotime($event->ticket_types[0]->_joinData->date_from)) ?> </p>
 												<div class="wp_cart_button_wrapper">
-													<form method="post" class="wp-cart-button-form" action="#"
-														style="display:inline" onsubmit="return ReadForm(this, true);">
-														<input type="hidden" id="_wpnonce" name="_wpnonce"
-															value="a3e9ce12c3" /><input type="hidden"
-															name="_wp_http_referer"
-															value="/beevent/event/circus-carnival/" /><input type="submit"
-															class="wspsc_add_cart_submit" name="wspsc_add_cart_submit"
-															value="Buy Now" /><input type="hidden" name="wspsc_product"
-															value="Front Seat" /><input type="hidden" name="price"
-															value="49" /><input type="hidden" name="shipping"
-															value="0" /><input type="hidden" name="addcart"
-															value="1" /><input type="hidden" name="cartLink"
-															value="index.html" /><input type="hidden" name="product_tmp"
-															value="Front Seat" /><input type="hidden" name="item_number"
-															value="" /><input type="hidden" name="hash_one"
-															value="1f8af97fd741c782603bfe134f9c3111" /><input type="hidden"
-															name="hash_two" value="ae0ebfac454303419b070252ca132b51" />
-													</form>
+                                                    <a class="btn btn-sm btn-danger js-target-scroll" href="/guides/buy-ticket/<?= $ticket->id ?>">Buy Now</a>
 												</div>
 												<p class="remaining"><?= $event->ticket_types[0]->_joinData->time->format('H:i:s A') ?></p>
 											</div>

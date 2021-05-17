@@ -106,4 +106,10 @@ class GuidesController extends AppController
         $blogs = $this->Blogs->find()->contain(['Users']);
         return $blogs;
     }
+
+    public function buyTicket($ticketId){
+        $this->loadModel('TicketTypes');
+        $ticketType = $this->TicketTypes->get($ticketId, [ 'contain' => ['Events.Cities', 'Events.Countries']]);
+        $this->set(compact('ticketType'));
+    }
 }
