@@ -362,7 +362,7 @@
 																		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 																			<div class="event_inner">
 																				<div class="listing-thumb">
-																					<a href='<?= BASE_URL ?>/guides/event-details'>
+																					<a href='<?= BASE_URL ?>/guides/event-details/<?= $event->id ?>'>
 																						<img src='<?= $event->images[0] ?>' />
 																					</a>
 																					<div class="event-status">ongoing </div>
@@ -409,7 +409,7 @@
 																		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 																			<div class="event_inner">
 																				<div class="listing-thumb">
-																					<a href='<?= BASE_URL ?>/guides/event-details'>
+																					<a href='<?= BASE_URL ?>/guides/event-details/<?= $event->id ?>'>
 																						<img src='<?= $event->images[0] ?>' />
 																					</a>
 																					<div class="event-status">ongoing </div>
@@ -457,7 +457,7 @@
 																		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 																			<div class="event_inner">
 																				<div class="listing-thumb">
-																					<a href='<?= BASE_URL ?>/guides/event-details'>
+																					<a href='<?= BASE_URL ?>/guides/event-details/<?= $event->id ?>'>
 																						<img src='<?= $event->images[0] ?>' />
 																					</a>
 																					<div class="event-status">ongoing </div>
@@ -879,48 +879,26 @@
 												<div class="elementor-element elementor-element-0d5f4ac elementor-widget elementor-widget-shortcode" data-id="0d5f4ac" data-element_type="widget" data-widget_type="shortcode.default">
 													<div class="elementor-widget-container">
 														<div class="row">
-															<div class="col-md-9 col-lg-4">
-																<div class="post-wp">
-																	<div class="post-img-wp">
-																		<a href="the-standard-chunk-of-lorem-ipsum-used/index.html">
-																			<div class="post_img"><img width="800" height="510" src="<?= BASE_URL ?>/frontend/wp-content/uploads/2016/12/blog_800x510-1.jpg" class="img-responsive center-block wp-post-image" alt="" loading="lazy" srcset="http://php.webmasterdriver.net/beevent/wp-content/uploads/2016/12/blog_800x510-1.jpg 800w, http://php.webmasterdriver.net/beevent/wp-content/uploads/2016/12/blog_800x510-1-300x191.jpg 300w, http://php.webmasterdriver.net/beevent/wp-content/uploads/2016/12/blog_800x510-1-768x490.jpg 768w" sizes="(max-width: 800px) 100vw, 800px" /></div>
-																		</a>
+															<?php
+																foreach($blogs as $blog){
+															?>
+																<div class="col-md-9 col-lg-4">
+																	<div class="post-wp">
+																		<div class="post-img-wp">
+																			<a href="the-standard-chunk-of-lorem-ipsum-used/index.html">
+																				<div class="post_img"><img width="800" height="510" src="<?= BASE_URL ?>/frontend/wp-content/uploads/2016/12/blog_800x510-1.jpg" class="img-responsive center-block wp-post-image" alt="" loading="lazy" srcset="http://php.webmasterdriver.net/beevent/wp-content/uploads/2016/12/blog_800x510-1.jpg 800w, http://php.webmasterdriver.net/beevent/wp-content/uploads/2016/12/blog_800x510-1-300x191.jpg 300w, http://php.webmasterdriver.net/beevent/wp-content/uploads/2016/12/blog_800x510-1-768x490.jpg 768w" sizes="(max-width: 800px) 100vw, 800px" /></div>
+																			</a>
+																		</div>
+																		<div class="post_meta">
+																			<span><?= $blog->title ?></span> | 
+																			<span><?= date("jS F Y", strtotime($blog->created)) ?> </span>
+																		</div>
+																		<h4><a href="the-standard-chunk-of-lorem-ipsum-used/index.html"><?= $blog->post ?></a></h4>
 																	</div>
-																	<div class="post_meta">
-																		<span>January 30, 2020 </span> |
-																		<span>No Comments</span>
-																	</div>
-																	<h4><a href="the-standard-chunk-of-lorem-ipsum-used/index.html">The standard chunk of Lorem Ipsum used</a></h4>
 																</div>
-															</div>
-															<div class="col-md-9 col-lg-4">
-																<div class="post-wp">
-																	<div class="post-img-wp">
-																		<a href="pork-loin-leberkas-ribeye-capicola-2/index.html">
-																			<div class="post_img"><img width="800" height="510" src="<?= BASE_URL ?>/frontend/wp-content/uploads/2016/12/blog_800x510_2.jpg" class="img-responsive center-block wp-post-image" alt="" loading="lazy" srcset="http://php.webmasterdriver.net/beevent/wp-content/uploads/2016/12/blog_800x510_2.jpg 800w, http://php.webmasterdriver.net/beevent/wp-content/uploads/2016/12/blog_800x510_2-300x191.jpg 300w, http://php.webmasterdriver.net/beevent/wp-content/uploads/2016/12/blog_800x510_2-768x490.jpg 768w" sizes="(max-width: 800px) 100vw, 800px" /></div>
-																		</a>
-																	</div>
-																	<div class="post_meta">
-																		<span>January 21, 2020 </span> |
-																		<span>No Comments</span>
-																	</div>
-																	<h4><a href="pork-loin-leberkas-ribeye-capicola-2/index.html">Pork loin leberkas ribeye capicola</a></h4>
-																</div>
-															</div>
-															<div class="col-md-9 col-lg-4">
-																<div class="post-wp">
-																	<div class="post-img-wp">
-																		<a href="it-is-a-long-established-fact/index.html">
-																			<div class="post_img"><img width="1920" height="1275" src="<?= BASE_URL ?>/frontend/wp-content/uploads/2020/01/audience-828584_1920.jpg" class="img-responsive center-block wp-post-image" alt="" loading="lazy" srcset="http://php.webmasterdriver.net/beevent/wp-content/uploads/2020/01/audience-828584_1920.jpg 1920w, http://php.webmasterdriver.net/beevent/wp-content/uploads/2020/01/audience-828584_1920-300x199.jpg 300w, http://php.webmasterdriver.net/beevent/wp-content/uploads/2020/01/audience-828584_1920-1024x680.jpg 1024w, http://php.webmasterdriver.net/beevent/wp-content/uploads/2020/01/audience-828584_1920-768x510.jpg 768w, http://php.webmasterdriver.net/beevent/wp-content/uploads/2020/01/audience-828584_1920-1536x1020.jpg 1536w" sizes="(max-width: 1920px) 100vw, 1920px" /></div>
-																		</a>
-																	</div>
-																	<div class="post_meta">
-																		<span>January 11, 2020 </span> |
-																		<span>No Comments</span>
-																	</div>
-																	<h4><a href="it-is-a-long-established-fact/index.html">It is a long established fact</a></h4>
-																</div>
-															</div>
+															<?php
+																}
+															?>
 														</div>
 														<div class="elementor-shortcode"></div>
 													</div>
