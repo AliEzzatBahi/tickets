@@ -114,6 +114,12 @@ class GuidesController extends AppController
     }
 
     public function checkout(){
-        
+        $totalPrice = $_REQUEST['total-price'];
+        $ticketId = $_REQUEST['ticket-id'];
+        $selectedSeatsNumber = $_REQUEST['seats-number'];
+
+        $this->loadModel('TicketTypes');
+        $checkout = $this->TicketTypes->get($ticketId, [ 'contain' => ['Events.Cities', 'Events.Countries', 'Events.Categories']]);
+        $this->set(compact('checkout', 'selectedSeatsNumber', 'totalPrice'));
     }
 }

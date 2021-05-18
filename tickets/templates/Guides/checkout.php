@@ -5,10 +5,10 @@
                 <div class="banner-content">
                     <div class="content">
                         <div class="banner-tagline text-center">
-                            <h1>kjbkjb</h1>
+                            <h1><?= $checkout->events[0]->name ?></h1>
                             <ul class="gt-information">
-                                <li><i class="fa fa-clock-o"></i><span>k</span> </li>
-                                <li><i class="fa fa-map-marker"></i><span>jyfv</span></li>
+                                <li><i class="fa fa-clock-o"></i><span><?= date("jS F Y", strtotime($checkout->events[0]->_joinData->date_from)) ?></span> </li>
+                                <li><i class="fa fa-map-marker"></i><span><?= $checkout->events[0]->city->name ?>, <?= $checkout->events[0]->country->name ?></span></li>
                             </ul>
                         </div>
                     </div>
@@ -30,37 +30,37 @@
         <div class="col-lg-8 col-md-8 col-sm12">
             <div class="row" style="margin: 24px">
                 <div class="col-lg-6 col-md-6 col-sm12">
-                    <label>Event Category</label>
-                    <h5>Event name</h5>
+                    <label><?= $checkout->events[0]->category->name ?></label>
+                    <h5><?= $checkout->events[0]->name ?></h5>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm12">
                     <label>VENUE</label>
-                    <p>Ryadh, Sudei Arebia</p>
+                    <p><?= $checkout->events[0]->city->name ?>, <?= $checkout->events[0]->country->name ?></p>
                 </div>
             </div>
             <div class="row" style="margin: 24px">
                 <div class="col-lg-6 col-md-6 col-sm12">
                     <div><label>DATE</label></div>
-                    19th JUNE 2021
+                    <?= date("jS F Y", strtotime($checkout->events[0]->_joinData->date_from)) ?>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm12">
                     <div><label>HOUR</label></div>
-                    15:15 PM
+                    <?= $checkout->events[0]->_joinData->time->format('H:i:s A') ?>
                 </div>
             </div>
             <hr>
             <div class="row" style="margin: 24px">
                 <div class="col-lg-4 col-md-4 col-sm12">
                     <div><label>TICKET</label></div>
-                    VIP / REGULAR
+                    <?= $checkout->name ?>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm12">
                     <div><label>TOTAL TICKETS/SEATS</label></div>
-                    5 Ticket(s)
+                    <?= $selectedSeatsNumber ?> Ticket(s)
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm12">
                     <div><label>PRICE</label></div>
-                    500.00 EGP
+                    <?= $totalPrice ?>
                 </div>
             </div>
             <hr>
@@ -69,7 +69,7 @@
                     <h5>Total</h5>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm12">
-                    <h5>1548.00 EGP</h5>
+                    <h5><?= $totalPrice ?></h5>
                 </div>
             </div>
         </div>

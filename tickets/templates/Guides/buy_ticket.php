@@ -61,13 +61,13 @@
 <div class="container" id="event-data">
     <div class="row">
         <div class="col-lg-8 col-md-12">
-            <form action="http://php.webmasterdriver.net/beevent/wp-comments-post.php" method="post"
+            <form action="<?= BASE_URL ?>/guides/checkout" method="post"
                 id="commentform" class="comment-form" novalidate>
                 <h5><?= $ticketType->name ?></h5>
                 <p><?= $ticketType->description ?></p>
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-6 form-group">
-                        <label for="seats-number">Choose a seats number:</label>
+                        <label for="seats-number">Choose a seat number:</label>
                         <select name="seats-number" id="seats-number">
                             <?php
                                 for($i=$ticketType->events[0]->_joinData->min_seats_number; $i<=$ticketType->events[0]->_joinData->max_seats_number; $i++){
@@ -80,12 +80,13 @@
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 form-group">
                         <input id="get-total-price" type="hidden" value="<?= $ticketType->events[0]->_joinData->price ?>">
+                        <input id="ticket-id" name="ticket-id" type="hidden" value="<?= $ticketType->id ?>">
 
                         <label for="seats-number">Total Price:</label>
-                        <input id="total-price" class="form-control" name="total-price" type="text" value="<?= $ticketType->events[0]->_joinData->price ?> EGP" disabled/>
+                        <input id="total-price" class="form-control" name="total-price" type="text" value="<?= $ticketType->events[0]->_joinData->price ?> EGP" readonly />
                     </div>
                 </div>
-                <a class="btn btn-sm btn-danger js-target-scroll" href="<?= BASE_URL ?>/guides/checkout">Buy Now</a>
+                <input class="btn btn-sm btn-danger js-target-scroll" type="submit" value="BUY NOW" >
             </form>
         </div>
     </div>
