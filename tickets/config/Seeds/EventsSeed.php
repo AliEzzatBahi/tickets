@@ -23,7 +23,7 @@ class EventsSeed extends AbstractSeed
         $data = [
             [
                 'id' => '1',
-                'name' => 'Event Name 1',
+                'name' => 'Layaly Ramadan',
                 'description' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
                 'info' => 'This is info',
                 'image_folder' => '1618581810',
@@ -40,7 +40,7 @@ class EventsSeed extends AbstractSeed
             ],
             [
                 'id' => '2',
-                'name' => 'Event Name 2',
+                'name' => 'Happy Eid',
                 'description' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
                 'info' => 'This is info',
                 'image_folder' => '1618581810',
@@ -57,7 +57,7 @@ class EventsSeed extends AbstractSeed
             ],
             [
                 'id' => '3',
-                'name' => 'Event Name 3',
+                'name' => 'Shahid Mshafsh Haga',
                 'description' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
                 'info' => 'This is info',
                 'image_folder' => '1618581810',
@@ -74,7 +74,7 @@ class EventsSeed extends AbstractSeed
             ],
             [
                 'id' => '4',
-                'name' => 'Event Name 4',
+                'name' => 'El-Eyal Kbrt',
                 'description' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
                 'info' => 'This is info',
                 'image_folder' => '1618581810',
@@ -91,7 +91,7 @@ class EventsSeed extends AbstractSeed
             ],
             [
                 'id' => '5',
-                'name' => 'Event Name 5',
+                'name' => 'El-Motazawgoon',
                 'description' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
                 'info' => 'This is info',
                 'image_folder' => '1618581810',

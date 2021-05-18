@@ -566,19 +566,22 @@ $(document).ready(function() {
 
     // Delete a Ticket Type From Event
     $(".delete-ticket-from-event").click(function() {
-        var priceDetailId = $(".price_detail_id").val()
-        var ticketTypeId = $(".ticket_type_id").val()
+        var removeBtnId = $(this).attr("id");
+        var priceDetailId = $("#price-detail-" + removeBtnId).val()
+        var ticketTypeId = $("#ticket-type-" + removeBtnId).val()
+        var url =  window.location.href = "../deleteTicketTypeFromEvent/" + priceDetailId + "/" + ticketTypeId
         console.log(priceDetailId + " " + ticketTypeId)
         $.ajax({
-            type : "POST",
+            type : "post",
             dataType : "json",
             contentType: "application/json; charset=utf-8",
-            url : "/admin/events/test",
-            success: function(data){
+            url: url,
+            success: function(){
                 alert("Item Deleted Successfully")
             },
             error: function (e) {
                 console.log(e);
+                console.log(url);
             }
         });
     });

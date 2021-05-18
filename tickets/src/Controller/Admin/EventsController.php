@@ -184,16 +184,11 @@ class EventsController extends AppController
 
         if($this->request->allowMethod(['post', 'delete'])){
             $priceDetail = $this->PriceDetails->get($priceDetail_id);
-            $this->PriceDetails->delete($priceDetail);
-
-            $ticketType = $this->TicketTypes->get($ticket_type_id);
-            $this->TicketTypes->delete($ticketType);
+            if($this->PriceDetails->delete($priceDetail)){
+                $ticketType = $this->TicketTypes->get($ticket_type_id);
+                $this->TicketTypes->delete($ticketType);
+            }
         }
-    }
-
-    public function test(){
-        $this->autoRender = false;
-
     }
 
 }

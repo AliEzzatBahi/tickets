@@ -246,10 +246,10 @@
                                                 </div>
 
                                                 <input type="hidden" value="<?= $key ?>" name="edit_key">
-                                                <input type="hidden" value="<?= $event_ticket_type->_joinData->id ?>" name="price_detail_id[<?= $key ?>]" class="price_detail_id">
-                                                <input type="hidden" value="<?= $event_ticket_type->_joinData->ticket_type_id ?>" name="ticket_type_id[<?= $key ?>]" class="ticket_type_id">
+                                                <input type="hidden" value="<?= $event_ticket_type->_joinData->id ?>" name="price_detail_id" class="price_detail_id" id="price-detail-<?= $key ?>">
+                                                <input type="hidden" value="<?= $event_ticket_type->_joinData->ticket_type_id ?>" name="ticket_type_id" class="ticket_type_id" id="ticket-type-<?= $key ?>">
                                                 
-                                                <button class="btn btn-outline-danger btn-icon remove-ticket-btn delete-ticket-from-event">
+                                                <button class="btn btn-outline-danger btn-icon remove-ticket-btn delete-ticket-from-event" id="<?= $key ?>">
                                                     <i class="far fa-trash-alt"></i>
                                                 </button>
                                             </div>
