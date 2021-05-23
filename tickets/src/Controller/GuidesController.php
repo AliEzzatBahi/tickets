@@ -28,7 +28,8 @@ class GuidesController extends AppController
     }
 
     public function blogs(){
-
+        $blogs = $this->get_blogs();
+        $this->set(compact('blogs'));
     }
 
     public function aboutUs(){
