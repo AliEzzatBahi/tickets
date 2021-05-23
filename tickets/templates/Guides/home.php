@@ -9,11 +9,10 @@
 								<div id="slideshow1" class="slideshow">
 								<?php
 									$slideCount = 1;
-									$slideImg = 0;
 									foreach($hotestEvents as $hotEvent){
 										$slideCount++;
 								?>
-										<div id="siderwidth<?= $slideCount ?>" class="slides" style="background-image:url(<?= $hotEvent->images[$slideImg] ?>);">
+										<div id="siderwidth<?= $slideCount ?>" class="slides" style="background-image:url(<?= $hotEvent->images[0] ?>);">
 											<div class="banner-fixed">
 												<div class="container">
 													<div class="banner-content">
@@ -40,7 +39,7 @@
 																</div>
 															</div>
 														</div>
-														<div class="countdown-btn half-width"><a class="btn btn-lg btn-danger js-target-scroll" href="event/international-literacy-day/index.html#event-display">Book now</a>
+														<div class="countdown-btn half-width"><a class="btn btn-lg btn-danger js-target-scroll" href="<?= BASE_URL ?>/guides/event-details/<?= $hotEvent->id ?>">Book now</a>
 														</div>
 													</div>
 												</div>
@@ -62,7 +61,6 @@
 											</script>
 										</div>
 								<?php
-									$slideImg++;
 									}
 								?>
 								</div>

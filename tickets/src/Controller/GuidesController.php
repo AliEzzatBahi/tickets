@@ -52,7 +52,7 @@ class GuidesController extends AppController
     }
 
     public function hotest_events(){
-        $hotestEvents = $this->all_events()->where(['is_hot' => 1]);
+        $hotestEvents = $this->all_events()->where(['is_hot' => 1])->order(['Events.created' => 'DESC'])->limit(3);
         return $hotestEvents;
     }
 
