@@ -168,6 +168,8 @@ class EventsController extends AppController
                 $priceDetail->min_seats_number = $_REQUEST['price_detail_min_seats'][$i];
                 $priceDetail->max_seats_number = $_REQUEST['price_detail_max_seats'][$i];
                 $priceDetail->price = $_REQUEST['price_detail_price'][$i];
+                $priceDetail->is_vat = $_REQUEST['price_detail_is_vat'][$i];
+                $priceDetail->vat = $_REQUEST['price_detail_vat'][$i];
                 $priceDetail->event_id = $event_id;
                 $priceDetail->ticket_type_id = $ticketType->id;
 

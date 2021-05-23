@@ -39,6 +39,8 @@ class PriceDetail extends Entity
         'date_to' => true,
         'time' => true,
         'price' => true,
+        'vat' => true,
+        'is_vat' => true,
         'min_seats_number' => true,
         'max_seats_number' => true,
         'event_id' => true,

@@ -32,6 +32,19 @@
                             <?= $this->Form->control('price', ['class' => 'form-control', 'placeholder' => 'Enter price', 'type' => 'number', 'label' => false]); ?>
                         </div>
                         <div class="form-group">
+                            <div class="input checkbox">
+                                <input type="hidden" name="is_vat" value="0">
+                                <label for="is-vat" class="kt-checkbox">
+                                    <input type="checkbox" name="is_vat" value="1" id="is-vat">Is vat
+                                    <span></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Vat</label>
+                            <?= $this->Form->control('vat', ['class' => 'form-control', 'placeholder' => 'Enter vat', 'type' => 'number', 'label' => false]); ?>
+                        </div>
+                        <div class="form-group">
                             <label>Minimum Seats Number</label>
                             <?= $this->Form->control('min_seats_number', ['class' => 'form-control', 'placeholder' => 'Enter minimum seats number', 'type' => 'number', 'label' => false]); ?>
                         </div>

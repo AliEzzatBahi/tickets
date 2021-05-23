@@ -558,6 +558,25 @@ $(document).ready(function() {
                                     '</div>' +
                                 '</div>' +
                             '</div>' +
+                            '<div class="row">' +
+                                '<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">' +
+                                    '<div class="form-group">' +
+                                        '<div class="input checkbox">' +
+                                            '<input type="hidden" name="is_vat" value="0">' +
+                                            '<label for="ticket_types.' + field + '.is_vat" class="kt-checkbox">' +
+                                                '<input type="checkbox" name="price_detail_is_vat[' + field + ']" value="1" id="ticket_types.' + field + '.is_vat">Is vat' +
+                                                '<span></span>' +
+                                            '</label>' +
+                                        '</div>' +
+                                    '</div>' +
+                                '</div>' +
+                                '<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">' +
+                                    '<div class="form-group">' +
+                                        '<label for="ticket_types.' + field + '.vat">Vat</label>' +
+                                        '<input id="ticket_types.' + field + '.vat" type="number" name="price_detail_vat[' + field + ']" class="form-control" placeholder="Enter vat"">' +
+                                    '</div>' +
+                                '</div>' +
+                            '</div>' +
                         '</div>'
 
         $('#add-ticket-type-rendered').append(element);

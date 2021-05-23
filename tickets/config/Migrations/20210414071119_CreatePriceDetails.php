@@ -31,6 +31,14 @@ class CreatePriceDetails extends AbstractMigration
             'default' => null,
             'null' => false,
         ]);
+        $table->addColumn('vat', 'double', [
+            'default' => null,
+            'null' => false,
+        ]);
+        $table->addColumn('is_vat', 'boolean', [
+            'default' => false,
+            'null' => false,
+        ]);
         $table->addColumn('min_seats_number', 'integer', [
             'default' => null,
             'limit' => 11,

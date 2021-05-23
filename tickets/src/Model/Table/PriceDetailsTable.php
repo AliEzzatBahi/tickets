@@ -95,6 +95,15 @@ class PriceDetailsTable extends Table
             ->notEmptyString('price');
 
         $validator
+            ->numeric('vat')
+            ->requirePresence('vat', 'create')
+            ->notEmptyString('vat');
+
+        $validator
+            ->boolean('is_vat')
+            ->notEmptyString('is_vat');
+
+        $validator
             ->integer('min_seats_number')
             ->requirePresence('min_seats_number', 'create')
             ->notEmptyString('min_seats_number');
