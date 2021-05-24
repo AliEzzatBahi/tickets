@@ -1,26 +1,9 @@
-<div id="eventshow" class="slideshow">
-    <div id="siderwidth" class="slides" style="background-image:url(<?= BASE_URL ?>/frontend/wp-content/uploads/2020/01/circus-828680_1920.jpg);">
-        <div class="banner-fixed">
-            <div class="container">
-                <div class="banner-content">
-                    <div class="content">
-                        <div class="banner-tagline text-center">
-                            <h1><?= $checkout->events[0]->name ?></h1>
-                            <ul class="gt-information">
-                                <li><i class="fa fa-clock-o"></i><span><?= date("jS F Y", strtotime($checkout->events[0]->_joinData->date_from)) ?></span> </li>
-                                <li><i class="fa fa-map-marker"></i><span><?= $checkout->events[0]->city->name ?>, <?= $checkout->events[0]->country->name ?></span></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
+<div style="background-color: black; height: 80px">
+</div>
 <div class="container">
-    <div class="jumbotron">
-        <h3 class="display-2">Checkout</h3>
+    <div style="margin: 100px 0 100px 0;">
+        <h2 class="display-2">Checkout</h2>
     </div>
     <div class="row">
         <div class="col-lg-4 col-md-4 col-sm12">
